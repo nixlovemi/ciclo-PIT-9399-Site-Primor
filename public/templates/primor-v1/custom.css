@@ -1,0 +1,483 @@
+/* ========== FONTS ========== */
+@font-face {
+    font-family: 'Neulis Alt';
+    src: url('fonts/NeulisAltMedium/NeulisAlt-Medium.woff2') format('woff2'),
+        url('fonts/NeulisAltMedium/NeulisAlt-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NeulisAltBlack';
+    src: url('fonts/NeulisAltBlack/NeulisAlt-Black.woff2') format('woff2'),
+        url('fonts/NeulisAltBlack/NeulisAlt-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'StashBold';
+    src: url('fonts/StashBold/Stash-Bold.woff2') format('woff2'),
+        url('fonts/StashBold/Stash-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NeulisAltLight';
+    src: url('fonts/NeulisAltLight/NeulisAlt-Light.woff2') format('woff2'),
+        url('fonts/NeulisAltLight/NeulisAlt-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+/* =========================== */
+
+body {
+    background-color: #ffffe6;
+    font-family: 'NeulisAltLight';
+    font-size: 1em;
+    letter-spacing: 0.3px;
+}
+img.responsive {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+h1.offset {
+    font-size: 0;
+    width: 1px;
+    height: 1px;
+    display: inline-block;
+    overflow: hidden;
+    position: absolute!important;
+    border: 0!important;
+    padding: 0!important;
+    margin: 0!important;
+    clip: rect(1px,1px,1px,1px);
+    text-indent: -9999;
+}
+span.title {
+    font-size: 1.5em;
+    line-height: 0.99;
+}
+span.title.stash {
+    font-family: 'StashBold';
+    color: #ffd200;
+}
+span.title.black {
+    font-family: 'NeulisAltBlack';
+    color: #8c001e;
+}
+span.title.black.clear,
+.text-clear {
+    color: #ffffe6;
+}
+#header {
+    width: 100%;
+    max-height: 100px;
+    background-image: url(images/header-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.content-wrapper {
+    max-width: 1220px;
+    margin: 0 auto;
+    position: relative;
+}
+a.button-clear {
+    padding: 10px 15px;
+    background-color: #efe5be;
+    color: #ca1639;
+    border: solid 1px #8c001e;
+    border-radius: 10px;
+}
+a.button-clear:hover {
+    text-decoration: none;
+    background-color: #f0e3b0;
+}
+#header-logo-primor {
+    position: relative;
+    top: 20px;
+    z-index: 1000;
+}
+#header-menu ul {
+    margin: 36px 0;
+    padding: 0;
+}
+#footer-menu ul {
+    margin: 0;
+    padding: 0;
+}
+#header-menu ul li,
+#footer-menu ul li {
+    display: inline-block;
+    padding: 0 15px;
+    border-right: solid 1px #FFF;
+}
+#header-menu ul li:first-child,
+#footer-menu ul li:first-child {
+    padding-left: 0 !important;
+}
+#header-menu ul li:last-child,
+#footer-menu ul li:last-child {
+    border-right: none;
+}
+#header-menu ul li a,
+#footer-menu ul li a {
+    color: #FFF;
+}
+#header-menu-mobile {
+    display: none;
+}
+#header-menu-mobile #hmm-icon {
+    font-size: 2em;
+    color: #efe5be;
+    position: absolute;
+    right: 0px;
+    top: 32px;
+}
+#header-mobile-menu {
+    z-index: 999;
+    font-size: 0.8em;
+    width: 100%;
+    background: #f6041d;
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+    display: none;
+    top: 100px; /* same as #header -> min-height */
+}
+#header-mobile-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    list-style-image: none;
+}
+#header-mobile-menu li {
+    display: block;
+    border-bottom: #dddddd 1px solid;
+}
+#header-mobile-menu li:last-child {
+    border-bottom: none;
+}
+#header-mobile-menu li:hover {
+    display: block;
+    background: #f8082f;
+    border-bottom: #dddddd 1px solid;
+}
+#header-mobile-menu ul li a {
+    text-decoration: none;
+    margin: 0px;
+    color: #FFF;
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0 15px 0;
+    text-align: right;
+}
+#header-mobile-menu ul li a:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+#header-mobile-menu a {
+    text-decoration: none;
+    color: #FFF;
+}
+#header-mobile-menu a:hover {
+    text-decoration: none;
+    color: #FFF;
+}
+section#receitas {
+    width: 100%;
+    display: inline-block;
+    background-image: url(images/receitas-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 75px;
+}
+.recipes-item {
+    background-color: #efe5be;
+    border-radius: 10px;
+    padding: 8px;
+    color: #f00023;
+    width: 94%;
+    margin: 0 3% 0 3%;
+}
+.recipes-item .type {
+    font-size: 0.75em;
+}
+.recipes-item .title {
+    font-size: 1em;
+    font-weight: bold;
+}
+.recipes-item .img {
+    margin: 6px 0;
+}
+.recipes-item .img img {
+    border-radius: 6px;
+}
+.recipes-item .footer {
+    font-size: 0.65em;
+}
+section#produtos {
+    margin-bottom: 75px;
+}
+section#produtos .col1,
+section#produtos .col2 {
+    float: left;
+    width: 45%;
+}
+section#produtos .col2 {
+    margin-left: 10%;
+}
+.products {
+    background-color: #ce0027;
+    padding: 20px;
+    color: #FFF;
+    border-radius: 10px;
+    min-height: 140px;
+}
+.products.no-image {
+    min-height: auto;
+}
+.products .title {
+    font-family: 'Neulis Alt';
+    font-weight: bold;
+    color: #ffffe6;
+    line-height: 1.18;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+.products .img img {
+    display: unset;
+    position: absolute;
+    bottom: -35px;
+    right: 0;
+    filter: drop-shadow(11px 9px 16px #000000);
+    max-height: 245px;
+}
+.products .img#margarina-tradicional img {
+    max-width: 78%;
+}
+.products .img#margarina-tablete img {
+    max-width: 58%;
+}
+.products .products-btn {
+    background-color: #b40023;
+    color: #FFF;
+    padding: 4px 16px;
+    border: solid 1px #ffd200;
+    border-radius: 10px;
+    font-size: 0.75em;
+}
+.products .products-btn:hover {
+    text-decoration: none;
+    background-color: #960522;
+}
+.carousel-single .text-box {
+    position: absolute;
+    color: #fff;
+    width: 34vw;
+    left: 9.8%;
+    top: 25%;
+    line-height: 1;
+}
+.carousel-single .button {
+    color: #FFF;
+    background-color: #a32a18;
+    padding: 8px 20px;
+    border: solid 1px #ffd200;
+    border-radius: 10px;
+}
+.carousel-single .button:hover {
+    text-decoration: none;
+    background-color: #be321c;
+}
+.carousel-single .text-box .stash {
+    font-family: 'StashBold';
+    font-size: 4em;
+    color: #ffd200;
+}
+.carousel-single .text-box .black {
+    font-family: 'NeulisAltBlack';
+    font-size: 4em;
+    color: #FFF;
+}
+.carousel-single .text-box.medium .stash,
+.carousel-single .text-box.medium .black {
+    font-size: 3em;
+}
+.carousel-single .text-box p.text {
+    font-size: 1.1em;
+    color: #FFF;
+    line-height: 1.3;
+}
+.carousel-recipes .slick-prev,
+.carousel-recipes .slick-next {
+    top: 43%
+}
+.slick-dots {
+    position: relative;
+    bottom: 40px;
+}
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+.slick-dots li button::before {
+    font-size: 12px;
+}
+.slick-prev::before, .slick-next::before {
+    font-size: 30px;
+}
+.slick-prev, .slick-next {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    z-index: 998;
+}
+.slick-prev {
+    left: 15px;
+}
+.slick-next {
+    right: 15px;
+}
+footer {
+    font-size: 0.8em;
+    position: relative;
+}
+footer .container {
+    margin-top: -9vw;
+}
+footer .container-fluid {
+    background-color: #f40b34;
+    color: #FFF;
+    padding-bottom: 40px;
+}
+footer #footer-social-media a {
+    color: #fff;
+    margin-right: 4px;
+}
+footer #footer-social-media a i {
+    font-size: 1em;
+}
+footer #footer-logo {
+    position: absolute;
+    bottom: 40px;
+    right: 9vw;
+    max-width: 13%;
+}
+
+/* Bootstrap Extra Large */
+@media screen and (max-width: 1200px) {
+}
+
+/* Bootstrap Large */
+@media screen and (max-width: 992px) {
+    #header-menu ul {
+        margin: 26px 0;
+        padding: 0;
+    }
+    .products .img#margarina-tradicional img {
+        max-width: 100%;
+    }
+    .products .img#margarina-tablete img {
+        max-width: 85%;
+    }
+}
+
+/* Bootstrap Medium */
+@media screen and (max-width: 768px) {
+    #header-menu {
+        display: none;
+    }
+    #header-menu-mobile {
+        display: block;
+    }
+    .slick-dots li button::before {
+        font-size: 8px;
+    }
+    .slick-prev::before, .slick-next::before {
+        font-size: 20px;
+    }
+    .slick-prev, .slick-next {
+        width: 20px;
+        height: 20px;
+    }
+    .carousel-single .text-box {
+        top: 20%;
+        left: 9.94%;
+    }
+    .carousel-single .text-box p {
+        margin-bottom: 0;
+    }
+    .carousel-single .text-box .stash,
+    .carousel-single .text-box .black {
+        font-size: 6vw;
+    }
+    .carousel-single .text-box.medium .stash,
+    .carousel-single .text-box.medium .black {
+        font-size: 5vw;
+    }
+    .carousel-single .text-box p.text {
+        font-size: 2.5vw;
+    }
+    .carousel-single .text-box p.text br {
+        display: none;
+    }
+    .carousel-single .button {
+        padding: 3px 10px;
+        position: relative;
+        top: -10px;
+        font-size: 0.75em;
+    }
+    .products .img#margarina-tradicional img {
+        max-width: 110%;
+        bottom: -8px;
+    }
+    .products .img#margarina-tablete img {
+        max-width: 98%;
+    }
+    #footer-menu ul li {
+        padding: 0 4px;
+    }
+    footer .container div,
+    footer .container p {
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+    }
+    footer .container #footer-logo {
+        position: initial;
+        max-width: 40%;
+        display: block;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Bootstrap Small */
+@media screen and (max-width: 576px) {
+    span.title {
+        font-size: 1.2em;
+        line-height: 1.05;
+    }
+    section#produtos .col1,
+    section#produtos .col2 {
+        float: none;
+        display: inline-block;
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 60px;
+    }
+    .products .img#margarina-tradicional img {
+        max-width: 50%;
+        bottom: -3.5vw;
+    }
+    .products .img#margarina-tablete img {
+        max-width: 48%;
+    }
+    #footer-menu {
+        display: none;
+    }
+}
