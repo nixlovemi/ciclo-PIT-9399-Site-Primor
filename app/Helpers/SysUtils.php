@@ -95,57 +95,6 @@ final class SysUtils {
         return $fileName;
     }
 
-    /**
-     * 3 levels maximum
-     * @param string keys [check App\View\Components\MainMenu]
-     */
-    public static function getMainMenuItems(?User $User = null): array
-    {
-        return [
-            [
-                MainMenu::KEY_ROUTE_NAME => 'site.dashboard',
-                MainMenu::KEY_ICON => '<i data-feather="home" class="feather-icon"></i>',
-                MainMenu::KEY_LABEL => 'Dashboard',
-            ],
-            [MainMenu::KEY_DIVIDER => true],
-            [
-                MainMenu::KEY_ROUTE_NAME => 'client.index',
-                MainMenu::KEY_ICON => '<i class="fas fa-suitcase"></i>',
-                MainMenu::KEY_LABEL => 'Clientes',
-            ],
-            [
-                MainMenu::KEY_ROUTE_NAME => 'user.index',
-                MainMenu::KEY_ICON => '<i class="fas fa-users"></i>',
-                MainMenu::KEY_LABEL => 'Usuários',
-            ],
-            [
-                MainMenu::KEY_ROUTE_NAME => 'job.index',
-                MainMenu::KEY_ICON => '<i class="fas fa-rocket"></i>',
-                MainMenu::KEY_LABEL => 'Jobs',
-            ],
-            [
-                MainMenu::KEY_ICON => '<i class="fas fa-dollar-sign"></i>',
-                MainMenu::KEY_LABEL => 'Orçamento',
-                MainMenu::KEY_ROUTE_ACL => 'QUOTE_MENU',
-                MainMenu::KEY_SUBITEMS => [
-                    [
-                        MainMenu::KEY_ROUTE_NAME => 'quote.index',
-                        MainMenu::KEY_LABEL => 'Consulta de Orçamentos',
-                    ],
-                    [
-                        MainMenu::KEY_ROUTE_NAME => 'serviceItems.index',
-                        MainMenu::KEY_LABEL => 'Cadastro Items',
-                    ],
-                ]
-            ],
-            [
-                MainMenu::KEY_ROUTE_NAME => 'site.showJobs',
-                MainMenu::KEY_ICON => '<i class="fas fa-tv"></i>',
-                MainMenu::KEY_LABEL => 'Show Jobs',
-            ],
-        ];
-    }
-
     public static function getArrayOnlyKeys(array $array, array $keys): array
     {
         if (!count($keys) > 0) {

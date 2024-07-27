@@ -285,14 +285,17 @@ section#produtos .col2 {
     top: 25%;
     line-height: 1;
 }
-.carousel-single .button {
+.carousel-single .button,
+form input[type="submit"] {
     color: #FFF;
     background-color: #a32a18;
     padding: 8px 20px;
     border: solid 1px #ffd200;
     border-radius: 10px;
+    cursor: pointer;
 }
-.carousel-single .button:hover {
+.carousel-single .button:hover,
+form input[type="submit"]:hover {
     text-decoration: none;
     background-color: #be321c;
 }
@@ -344,7 +347,8 @@ section#produtos .col2 {
 .slick-next {
     right: 15px;
 }
-section#our-history {
+section#our-history,
+section#contact {
     background-color: #ce0027;
     background-image: url(images/nossa-historia-header-bg.png);
     background-repeat: no-repeat;
@@ -364,6 +368,19 @@ section#our-history-about img#nossa-historia-food-min {
     right: 0;
     top: -50px;
     z-index: 1;
+}
+section#contact-form #canais-atendimento {
+    width: 100%;
+    padding: 10px 30px;
+    background-color: #b2271f;
+    color: #FFF;
+    border-radius: 15px;
+}
+section#contact-form #canais-atendimento .fa-border {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
 }
 footer {
     font-size: 0.8em;
