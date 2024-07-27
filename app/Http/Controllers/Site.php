@@ -14,4 +14,9 @@ class Site extends Controller
     {
         return view('site-home');
     }
+
+    public function nossaHistoria()
+    {
+        return view('site-nossa-historia');
+    }
 }

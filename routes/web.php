@@ -24,6 +24,7 @@ Route::group([], function(){
 });
 
 Route::get('/', 'App\Http\Controllers\Site@home')->name('site.home');
+Route::get('/nossa-historia', 'App\Http\Controllers\Site@nossaHistoria')->name('site.nossaHistoria');
 
 /*
 Route::get('/', 'App\Http\Controllers\Login@index')->name('site.login');

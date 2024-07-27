@@ -9,6 +9,7 @@ php artisan make:table:row:action MyNewRowAction
 php artisan make:model Employee -mfsc (model/factory/seeder/controller)
 php artisan key:generate (csrf token)
 php artisan storage:link --relative
+php artisan serve
 
 [TABLE]
 - https://packagist.org/packages/okipa/laravel-table

@@ -57,6 +57,9 @@ h1.offset {
     clip: rect(1px,1px,1px,1px);
     text-indent: -9999;
 }
+.color-red {
+    color: #c12a21 !important;
+}
 span.title {
     font-size: 1.5em;
     line-height: 0.99;
@@ -341,6 +344,27 @@ section#produtos .col2 {
 .slick-next {
     right: 15px;
 }
+section#our-history {
+    background-color: #ce0027;
+    background-image: url(images/nossa-historia-header-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 75px 0;
+    z-index: 2;
+    position: relative;
+}
+section#our-history #nossa-historia-img-top {
+    border-radius: 3vw;
+}
+section#our-history-about {
+    position: relative;
+}
+section#our-history-about img#nossa-historia-food-min {
+    position: absolute;
+    right: 0;
+    top: -50px;
+    z-index: 1;
+}
 footer {
     font-size: 0.8em;
     position: relative;
@@ -382,6 +406,9 @@ footer #footer-logo {
     }
     .products .img#margarina-tablete img {
         max-width: 85%;
+    }
+    section#our-history-about img#nossa-historia-food-min {
+        max-width: 50%;
     }
 }
 
