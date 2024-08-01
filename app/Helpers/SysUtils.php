@@ -127,56 +127,236 @@ final class SysUtils {
             [
                 'type' => 'Lanche',
                 'title' => 'Salgadinho de Queijo',
-                'image' => 'templates/primor-v1/images/receitas-item-01.jpg',
+                'image' => url('/') . '/templates/primor-v1/images/receitas-item-01.jpg',
+                'bannerSingle' => url('/') . '/templates/primor-v1/images/recipes-search-image.jpg',
                 'details' => null,
                 'timeStr' => '90 min',
                 'portionsStr' => '10 porções',
-                'url' => ''
+                'difficultyStr' => 'Difícil',
+                'url' => route('site.receitaSingle', ['slug' => 'lanche-salgadinho-de-queijo']),
+                'ingredients' => [
+                    [
+                        'qty' => '1/2',
+                        'item' => 'cebola picada'
+                    ],
+                    [
+                        'qty' => '1/3',
+                        'item' => 'de pimentão amarelo picado'
+                    ],
+                    [
+                        'qty' => null,
+                        'item' => 'Sal a gosto'
+                    ],
+                ],
+                'steps' => [
+                    [
+                        'title' => 'Farinha torrada',
+                        'desc' => 'Em uma panela, leve a margarina Primor para aquecer. Junte a farinha e misture bem, adicione sal e frite até que doure. Reserve quente.'
+                    ],
+                    [
+                        'title' => 'Feijão',
+                        'desc' => 'Em uma frigideira funda, doure o alho e a cebola na margarina Primor. Junte o pimentão, o colorau, os tomates, o caldo, o feijão e refogue por alguns minutos. Desligue o fogo, adicione o coentro e reserve quente.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Em uma frigideira leve, aqueça a margarina Primor, acrescente a carne e frite até que doure. Junte a cebola, o colorau e deixe a cebola fritar até dourar. Numa travessa, sirva o feijão e a carne separados.'
+                    ]
+                ]
             ],
             [
                 'type' => 'Sobremesa',
                 'title' => 'Bolo de Mandioca',
-                'image' => 'templates/primor-v1/images/receitas-item-02.jpg',
+                'image' => url('/') . '/templates/primor-v1/images/receitas-item-02.jpg',
+                'bannerSingle' => url('/') . '/templates/primor-v1/images/recipes-search-image.jpg',
                 'details' => null,
                 'timeStr' => '60 min',
                 'portionsStr' => '8 porções',
-                'url' => ''
+                'difficultyStr' => 'Médio',
+                'url' => route('site.receitaSingle', ['slug' => 'sobremesa-bolo-de-mandioca']),
+                'ingredients' => [
+                    [
+                        'qty' => '1/2',
+                        'item' => 'cebola picada'
+                    ],
+                    [
+                        'qty' => '1/3',
+                        'item' => 'de pimentão amarelo picado'
+                    ],
+                    [
+                        'qty' => null,
+                        'item' => 'Sal a gosto'
+                    ],
+                ],
+                'steps' => [
+                    [
+                        'title' => 'Farinha torrada',
+                        'desc' => 'Em uma panela, leve a margarina Primor para aquecer. Junte a farinha e misture bem, adicione sal e frite até que doure. Reserve quente.'
+                    ],
+                    [
+                        'title' => 'Feijão',
+                        'desc' => 'Em uma frigideira funda, doure o alho e a cebola na margarina Primor. Junte o pimentão, o colorau, os tomates, o caldo, o feijão e refogue por alguns minutos. Desligue o fogo, adicione o coentro e reserve quente.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Em uma frigideira leve, aqueça a margarina Primor, acrescente a carne e frite até que doure. Junte a cebola, o colorau e deixe a cebola fritar até dourar. Numa travessa, sirva o feijão e a carne separados.'
+                    ]
+                ]
             ],
             [
                 'type' => 'Jantar',
                 'title' => 'Arrumadinho de Carne Seca',
-                'image' => 'templates/primor-v1/images/receitas-item-03.jpg',
+                'image' => url('/') . '/templates/primor-v1/images/receitas-item-03.jpg',
+                'bannerSingle' => url('/') . '/templates/primor-v1/images/recipes-search-image.jpg',
                 'details' => 'Deixe qualquer dia<br />com cara de domingo!',
                 'timeStr' => '45 min',
                 'portionsStr' => '3 porções',
-                'url' => ''
+                'difficultyStr' => 'Fácil',
+                'url' => route('site.receitaSingle', ['slug' => 'jantar-arrumadinho-de-carne-seca']),
+                'ingredients' => [
+                    [
+                        'qty' => '1/2',
+                        'item' => 'cebola picada'
+                    ],
+                    [
+                        'qty' => '1/3',
+                        'item' => 'de pimentão amarelo picado'
+                    ],
+                    [
+                        'qty' => null,
+                        'item' => 'Sal a gosto'
+                    ],
+                ],
+                'steps' => [
+                    [
+                        'title' => 'Farinha torrada',
+                        'desc' => 'Em uma panela, leve a margarina Primor para aquecer. Junte a farinha e misture bem, adicione sal e frite até que doure. Reserve quente.'
+                    ],
+                    [
+                        'title' => 'Feijão',
+                        'desc' => 'Em uma frigideira funda, doure o alho e a cebola na margarina Primor. Junte o pimentão, o colorau, os tomates, o caldo, o feijão e refogue por alguns minutos. Desligue o fogo, adicione o coentro e reserve quente.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Em uma frigideira leve, aqueça a margarina Primor, acrescente a carne e frite até que doure. Junte a cebola, o colorau e deixe a cebola fritar até dourar. Numa travessa, sirva o feijão e a carne separados.'
+                    ]
+                ]
             ],
             [
                 'type' => 'Almoço',
                 'title' => 'Arroz Maria Isabel',
-                'image' => 'templates/primor-v1/images/receitas-item-04.jpg',
+                'image' => url('/') . '/templates/primor-v1/images/receitas-item-04.jpg',
+                'bannerSingle' => url('/') . '/templates/primor-v1/images/recipes-search-image.jpg',
                 'details' => null,
                 'timeStr' => '60 min',
                 'portionsStr' => '10 porções',
-                'url' => ''
+                'difficultyStr' => 'Médio',
+                'url' => route('site.receitaSingle', ['slug' => 'almoco-arroz-maria-isabel']),
+                'ingredients' => [
+                    [
+                        'qty' => '1/2',
+                        'item' => 'cebola picada'
+                    ],
+                    [
+                        'qty' => '1/3',
+                        'item' => 'de pimentão amarelo picado'
+                    ],
+                    [
+                        'qty' => null,
+                        'item' => 'Sal a gosto'
+                    ],
+                ],
+                'steps' => [
+                    [
+                        'title' => 'Farinha torrada',
+                        'desc' => 'Em uma panela, leve a margarina Primor para aquecer. Junte a farinha e misture bem, adicione sal e frite até que doure. Reserve quente.'
+                    ],
+                    [
+                        'title' => 'Feijão',
+                        'desc' => 'Em uma frigideira funda, doure o alho e a cebola na margarina Primor. Junte o pimentão, o colorau, os tomates, o caldo, o feijão e refogue por alguns minutos. Desligue o fogo, adicione o coentro e reserve quente.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Em uma frigideira leve, aqueça a margarina Primor, acrescente a carne e frite até que doure. Junte a cebola, o colorau e deixe a cebola fritar até dourar. Numa travessa, sirva o feijão e a carne separados.'
+                    ]
+                ]
             ],
             [
                 'type' => 'Lanche',
-                'title' => 'Bolo Pé de Moloque',
-                'image' => 'templates/primor-v1/images/receitas-item-05.jpg',
+                'title' => 'Bolo Pé de Moleque',
+                'image' => url('/') . '/templates/primor-v1/images/receitas-item-05.jpg',
+                'bannerSingle' => url('/') . '/templates/primor-v1/images/recipes-search-image.jpg',
                 'details' => null,
                 'timeStr' => '60 min',
                 'portionsStr' => '12 porções',
-                'url' => ''
+                'difficultyStr' => 'Médio',
+                'url' => route('site.receitaSingle', ['slug' => 'lanche-bolo-pe-de-moleque']),
+                'ingredients' => [
+                    [
+                        'qty' => '1/2',
+                        'item' => 'cebola picada'
+                    ],
+                    [
+                        'qty' => '1/3',
+                        'item' => 'de pimentão amarelo picado'
+                    ],
+                    [
+                        'qty' => null,
+                        'item' => 'Sal a gosto'
+                    ],
+                ],
+                'steps' => [
+                    [
+                        'title' => 'Farinha torrada',
+                        'desc' => 'Em uma panela, leve a margarina Primor para aquecer. Junte a farinha e misture bem, adicione sal e frite até que doure. Reserve quente.'
+                    ],
+                    [
+                        'title' => 'Feijão',
+                        'desc' => 'Em uma frigideira funda, doure o alho e a cebola na margarina Primor. Junte o pimentão, o colorau, os tomates, o caldo, o feijão e refogue por alguns minutos. Desligue o fogo, adicione o coentro e reserve quente.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Em uma frigideira leve, aqueça a margarina Primor, acrescente a carne e frite até que doure. Junte a cebola, o colorau e deixe a cebola fritar até dourar. Numa travessa, sirva o feijão e a carne separados.'
+                    ]
+                ]
             ],
             [
                 'type' => 'Sobremesa',
                 'title' => 'Sorvete Caseiro',
-                'image' => 'templates/primor-v1/images/receitas-item-06.jpg',
+                'image' => url('/') . '/templates/primor-v1/images/receitas-item-06.jpg',
+                'bannerSingle' => url('/') . '/templates/primor-v1/images/recipes-search-image.jpg',
                 'details' => null,
                 'timeStr' => '45 min',
                 'portionsStr' => '10 porções',
-                'url' => ''
+                'difficultyStr' => 'Fácil',
+                'url' => route('site.receitaSingle', ['slug' => 'sobremesa-sorvete-caseiro']),
+                'ingredients' => [
+                    [
+                        'qty' => '1/2',
+                        'item' => 'cebola picada'
+                    ],
+                    [
+                        'qty' => '1/3',
+                        'item' => 'de pimentão amarelo picado'
+                    ],
+                    [
+                        'qty' => null,
+                        'item' => 'Sal a gosto'
+                    ],
+                ],
+                'steps' => [
+                    [
+                        'title' => 'Farinha torrada',
+                        'desc' => 'Em uma panela, leve a margarina Primor para aquecer. Junte a farinha e misture bem, adicione sal e frite até que doure. Reserve quente.'
+                    ],
+                    [
+                        'title' => 'Feijão',
+                        'desc' => 'Em uma frigideira funda, doure o alho e a cebola na margarina Primor. Junte o pimentão, o colorau, os tomates, o caldo, o feijão e refogue por alguns minutos. Desligue o fogo, adicione o coentro e reserve quente.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Em uma frigideira leve, aqueça a margarina Primor, acrescente a carne e frite até que doure. Junte a cebola, o colorau e deixe a cebola fritar até dourar. Numa travessa, sirva o feijão e a carne separados.'
+                    ]
+                ]
             ],
         ];
     }

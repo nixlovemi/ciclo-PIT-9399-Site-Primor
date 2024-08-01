@@ -4,28 +4,29 @@ View variables:
 ===============
     - $PAGE_TITLE: string
 */
+$V_TITLE = ($PAGE_TITLE ?? '') . ' | ' . env('SITE_DISPLAY_NAME');
 @endphp
 
 <!DOCTYPE html>
 <html lang="pt-BR" itemscope itemtype="https://schema.org/WebPage">
     <head>
-        <title>{{ $PAGE_TITLE ?? '' }} | {{ env('SITE_DISPLAY_NAME') }}</title>
+        <title>{{ $V_TITLE }}</title>
 
         <meta charset="UTF-8" />
         <meta name='robots' content='max-image-preview:large' />
         <meta name="format-detection" content="telephone=no">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        <link rel="shortcut icon" href="templates/primor-v1/images/favicon.png" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="templates/primor-v1/images/favicon.png" />
+        <link rel="shortcut icon" href="{{ url('/') }}/templates/primor-v1/images/favicon.png" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="{{ url('/') }}/templates/primor-v1/images/favicon.png" />
 
         <!-- Custom CSS -->
         @livewireStyles
         @yield('HEADER_CUSTOM_CSS')
-        <link rel='stylesheet' href='templates/primor-v1/reset.css' type='text/css' media='all' />
-        <link rel='stylesheet' href='templates/primor-v1/components/bootstrap/css/bootstrap.min.css' type='text/css' media='all' />
-        <link rel='stylesheet' href='templates/primor-v1/components/font-awesome-5/css/all.min.css' type='text/css' media='all' />
-        <link rel='stylesheet' href='templates/primor-v1/components/slick-carousel/slick.css' type='text/css' media='all' />
-        <link rel='stylesheet' href='templates/primor-v1/components/slick-carousel/slick-theme.css' type='text/css' media='all' />
+        <link rel='stylesheet' href='{{ url('/') }}/templates/primor-v1/reset.css' type='text/css' media='all' />
+        <link rel='stylesheet' href='{{ url('/') }}/templates/primor-v1/components/bootstrap/css/bootstrap.min.css' type='text/css' media='all' />
+        <link rel='stylesheet' href='{{ url('/') }}/templates/primor-v1/components/font-awesome-5/css/all.min.css' type='text/css' media='all' />
+        <link rel='stylesheet' href='{{ url('/') }}/templates/primor-v1/components/slick-carousel/slick.css' type='text/css' media='all' />
+        <link rel='stylesheet' href='{{ url('/') }}/templates/primor-v1/components/slick-carousel/slick-theme.css' type='text/css' media='all' />
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -33,7 +34,7 @@ View variables:
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
         <!-- ========== -->
-        <link rel='stylesheet' href='templates/primor-v1/custom.css' type='text/css' media='all' />
+        <link rel='stylesheet' href='{{ url('/') }}/templates/primor-v1/custom.css' type='text/css' media='all' />
     </head>
 
     <body>
@@ -42,8 +43,8 @@ View variables:
                 <div class="container">
                     <div class="row no-gutters">
                         <div class="col-lg-3 col-4">
-                            <h1 class="offset">Primor</h1>
-                            <img id="header-logo-primor" alt="Logotipo Primor" src="templates/primor-v1/images/header-logo-primor.png" />
+                            <h1 class="offset">{{ $V_TITLE }}</h1>
+                            <img id="header-logo-primor" alt="Logotipo Primor" src="{{ url('/') }}/templates/primor-v1/images/header-logo-primor.png" />
                         </div>
                         <div class="col-lg-9 col-8">
                             <div id="header-menu">
@@ -70,7 +71,7 @@ View variables:
         @yield('BODY_CONTENT')
 
         <footer>
-            <img class="responsive" src="templates/primor-v1/images/footer-bg-wave.png" />
+            <img class="responsive" src="{{ url('/') }}/templates/primor-v1/images/footer-bg-wave.png" />
             <div class="container-fluid">
                 <div class="container">
                     &nbsp; <!-- need to have this here O___O -->
@@ -97,7 +98,7 @@ View variables:
                             <span>Acompanhe nas redes sociais</span>
                         </div>
                     </div>
-                    <img class="responsive" id="footer-logo" src="templates/primor-v1/images/footer-logo.png" />
+                    <img class="responsive" id="footer-logo" src="{{ url('/') }}/templates/primor-v1/images/footer-logo.png" />
                 </div>
             </div>
         </footer>
@@ -105,13 +106,13 @@ View variables:
         <!-- ============================================================== -->
         <!-- All Required js -->
         <!-- ============================================================== -->
-        <script type="text/javascript" src="templates/primor-v1/components/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="templates/primor-v1/components/jquery/jquery-migrate.min.js"></script>
-        <script type="text/javascript" src="templates/primor-v1/components/bootstrap/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="templates/primor-v1/components/font-awesome-5/js/all.min.js"></script>
-        <script type="text/javascript" src="templates/primor-v1/components/slick-carousel/slick.min.js"></script>
+        <script type="text/javascript" src="{{ url('/') }}/templates/primor-v1/components/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ url('/') }}/templates/primor-v1/components/jquery/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="{{ url('/') }}/templates/primor-v1/components/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ url('/') }}/templates/primor-v1/components/font-awesome-5/js/all.min.js"></script>
+        <script type="text/javascript" src="{{ url('/') }}/templates/primor-v1/components/slick-carousel/slick.min.js"></script>
         @livewireScripts
         @yield('FOOTER_CUSTOM_JS')
-        <script type="text/javascript" src="templates/primor-v1/custom.js"></script>
+        <script type="text/javascript" src="{{ url('/') }}/templates/primor-v1/custom.js"></script>
     </body>
 </html>

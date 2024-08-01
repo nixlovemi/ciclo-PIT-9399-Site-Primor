@@ -50,4 +50,22 @@ class Site extends Controller
     {
         return view('site-receitas');
     }
+
+    public function receitaSingle(string $slug)
+    {
+        return view('site-receitas-single', [
+            'RECEITA' => $this->getReceitaBySlug($slug)
+        ]);
+    }
+
+    private function getReceitaBySlug(string $slug): array
+    {
+        $receitas = \App\Helpers\SysUtils::getRecipes();
+        $receita = array_filter($receitas, function($v, $k) use ($slug) {
+            return ($v['url'] ?? '') === route('site.receitaSingle', ['slug' => $slug]);
+        }, ARRAY_FILTER_USE_BOTH);
+
+        // returning first element or blank array
+        return (!is_array($receita) || empty($receita)) ? []: reset($receita);
+    }
 }
