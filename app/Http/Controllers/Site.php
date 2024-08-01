@@ -45,4 +45,9 @@ class Site extends Controller
             return redirect()->route('site.faleConosco')->withErrors(['msg' => 'Erro ao enviar contato. Tente novamente mais tarde.']);
         }
     }
+
+    public function receitas()
+    {
+        return view('site-receitas');
+    }
 }

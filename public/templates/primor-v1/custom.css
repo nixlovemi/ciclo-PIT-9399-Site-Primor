@@ -212,6 +212,11 @@ section#receitas {
 .recipes-item .title {
     font-size: 1em;
     font-weight: bold;
+    display: inline-block;
+    min-height: 50px;
+}
+.recipes-item .title a {
+    color: inherit;
 }
 .recipes-item .img {
     margin: 6px 0;
@@ -286,7 +291,8 @@ section#produtos .col2 {
     line-height: 1;
 }
 .carousel-single .button,
-form input[type="submit"] {
+form input[type="submit"],
+.button-red {
     color: #FFF;
     background-color: #a32a18;
     padding: 8px 20px;
@@ -295,9 +301,11 @@ form input[type="submit"] {
     cursor: pointer;
 }
 .carousel-single .button:hover,
-form input[type="submit"]:hover {
+form input[type="submit"]:hover,
+.button-red:hover {
     text-decoration: none;
     background-color: #be321c;
+    color: #FFF;
 }
 .carousel-single .text-box .stash {
     font-family: 'StashBold';
@@ -348,7 +356,8 @@ form input[type="submit"]:hover {
     right: 15px;
 }
 section#our-history,
-section#contact {
+section#contact,
+section#recipes {
     background-color: #ce0027;
     background-image: url(images/nossa-historia-header-bg.png);
     background-repeat: no-repeat;
@@ -381,6 +390,48 @@ section#contact-form #canais-atendimento .fa-border {
     width: 40px;
     height: 40px;
     padding: 8px;
+}
+section#recipes h2 {
+    font-size: 3em;
+}
+section#recipes h5 {
+    color: #ffffe4;
+}
+section#recipes .search-holder {
+    width: 100%;
+    background-color: #8c001e;
+    border-radius: 20px;
+}
+section#recipes .search-holder .sh-image{
+    padding-bottom: 15px;
+}
+section#recipes .search-holder .sh-image img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+section#recipes .search-holder .sh-search {
+    padding: 5px 12px;
+}
+section#recipes .search-holder .sh-search .form-control {
+    border: solid 0px;
+}
+section#recipes .search-holder .sh-search #f-search,
+section#recipes .search-holder .sh-search .input-group-text {
+    color: #8c001e;
+    background-color: #ffffe4;
+}
+section#recipes .search-holder .sh-search .input-group-text {
+    border: none;
+}
+section#recipes .search-holder .sh-search #f-search::placeholder,
+section#recipes .search-holder .sh-search #f-search::-ms-input-placeholder {
+    color: red;
+    opacity: 1; /* Firefox */
+}
+section#recipes-list {
+    margin-bottom: -14vw;
+    position: relative;
+    z-index: 1;
 }
 footer {
     font-size: 0.8em;

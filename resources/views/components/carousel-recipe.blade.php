@@ -5,29 +5,15 @@
         @endphp
 
         <div class="carousel-item">
-            <div class="recipes-item">
-                <div class="type">{{ $item->type ?? '' }}</div>
-                <div class="title">{{ $item->title ?? '' }}</div>
-                <div class="img">
-                    <img class="responsive" src="{{ $item->image ?? '' }}" />
-                </div>
-                <div class="footer">
-                    @if ($item->details && $item->details != '')
-                        <p class="text-center mb-3">{!! $item->details !!}</p>
-                    @endif
-
-                    <div class="row">
-                        <div class="col">
-                            <i class="far fa-clock"></i>
-                            {{ $item->timeStr ?? '' }}
-                        </div>
-                        <div class="col">
-                            <i class="fas fa-user-friends"></i>
-                            {{ $item->portionsStr ?? '' }}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <x-recipes-item
+                :type="$item->type ?? ''"
+                :title="$item->title ?? ''"
+                :image="$item->image ?? ''"
+                :details="$item->details ?? null"
+                :timeStr="$item->timeStr ?? ''"
+                :portionsStr="$item->portionsStr ?? ''"
+                :url="$item->url ?? null"
+            />
         </div>
     @endforeach
 </div>
