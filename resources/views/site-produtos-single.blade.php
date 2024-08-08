@@ -13,7 +13,7 @@ $PRODUCT = (object) $PRODUCT;
 
 @section('BODY_CONTENT')
 
-    <section id="product-single">
+    <section id="product-single" class="sec-top">
         <div class="content-wrapper">
             <div class="container">
                 <div class="row">

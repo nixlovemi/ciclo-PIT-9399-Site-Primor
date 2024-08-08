@@ -6,7 +6,7 @@
 
 @section('BODY_CONTENT')
 
-    <section id="recipes">
+    <section id="recipes" class="sec-top">
         <div class="content-wrapper">
             <div class="container">
                 <h2>

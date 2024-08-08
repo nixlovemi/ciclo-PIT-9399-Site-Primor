@@ -4,7 +4,7 @@
 
 @section('BODY_CONTENT')
 
-    <section id="campaign">
+    <section id="campaign" class="sec-top">
         <div class="content-wrapper">
             <div class="container">
                 <div class="row">

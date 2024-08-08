@@ -60,6 +60,9 @@ img.responsive {
     max-width: 100%;
     height: auto;
 }
+img.border-rounded {
+    border-radius: 1.6em !important;
+}
 h1.offset {
     font-size: 0;
     width: 1px;
@@ -75,6 +78,9 @@ h1.offset {
 }
 .color-red {
     color: #c12a21 !important;
+}
+.color-wine {
+    color: #8c001e !important;
 }
 .color-yellow {
     color: #ffd200 !important;
@@ -416,12 +422,7 @@ form input[type="submit"]:hover,
 .slick-next {
     right: 15px;
 }
-section#our-history,
-section#contact,
-section#recipes,
-section#campaign,
-section#product-single,
-section#product {
+section.sec-top {
     background-color: #ce0027;
     background-image: url(images/nossa-historia-header-bg.png);
     background-repeat: no-repeat;
@@ -510,6 +511,9 @@ section#product-single table#ps-info-nutri-table tbody tr td {
     border-bottom-style: solid;
     border-bottom-color: rgba(0, 0, 0, 0.4);
     padding: .4rem;
+}
+section#banner-mes-nordestino {
+    background-image: url(images/banner-bg-mes-nordestino.png);
 }
 footer {
     font-size: 0.8em;

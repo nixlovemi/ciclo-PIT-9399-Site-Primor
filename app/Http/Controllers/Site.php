@@ -96,4 +96,9 @@ class Site extends Controller
         // returning first element or blank array
         return (!is_array($product) || empty($product)) ? []: reset($product);
     }
+
+    public function bannerMesDoNordestino()
+    {
+        return view('site-banner-mesDoNordestino');
+    }
 }

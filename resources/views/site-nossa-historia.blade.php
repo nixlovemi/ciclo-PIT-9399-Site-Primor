@@ -4,7 +4,7 @@
 
 @section('BODY_CONTENT')
 
-    <section id="our-history">
+    <section id="our-history" class="sec-top">
         <div class="content-wrapper">
             <div class="container">
                 <h2>

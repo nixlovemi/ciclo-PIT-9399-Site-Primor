@@ -17,7 +17,7 @@ $items[] = [
         HTML,
     'descriptionShort' => null,
     'image' => 'templates/primor-v1/images/header-banner-01.jpg',
-    'link' => 'javascript:;',
+    'url' => route('site.banner.mesDoNordestino'),
 ];
 
 // Slide 02
@@ -35,7 +35,7 @@ $items[] = [
         HTML,
     'descriptionShort' => null,
     'image' => 'templates/primor-v1/images/header-banner-02.jpg',
-    'link' => 'javascript:;',
+    'url' => 'javascript:;',
 ];
 
 // Slide 03
@@ -53,7 +53,7 @@ $items[] = [
         HTML,
     'descriptionShort' => null,
     'image' => 'templates/primor-v1/images/header-banner-03.jpg',
-    'link' => 'javascript:;',
+    'url' => 'javascript:;',
 ];
 
 // Slide 04
@@ -71,7 +71,7 @@ $items[] = [
         HTML,
     'descriptionShort' => null,
     'image' => 'templates/primor-v1/images/header-banner-04.jpg',
-    'link' => 'javascript:;',
+    'url' => 'javascript:;',
 ];
 
 // Slide 05
