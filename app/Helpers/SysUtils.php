@@ -207,7 +207,7 @@ final class SysUtils {
                 'title' => 'Arrumadinho de Carne Seca',
                 'image' => url('/') . '/templates/primor-v1/images/receitas-item-03.jpg',
                 'bannerSingle' => url('/') . '/templates/primor-v1/images/recipes-search-image.jpg',
-                'details' => 'Deixe qualquer dia<br />com cara de domingo!',
+                'details' => null,
                 'timeStr' => '45 min',
                 'portionsStr' => '3 porções',
                 'difficultyStr' => 'Fácil',
