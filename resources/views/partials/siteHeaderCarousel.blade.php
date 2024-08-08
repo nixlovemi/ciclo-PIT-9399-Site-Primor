@@ -97,7 +97,7 @@ $items[] = [
             do Norte e do Nordeste. Ao seu lado fazemos ...
         HTML,
     'image' => 'templates/primor-v1/images/header-banner-05.jpg',
-    'link' => 'javascript:;',
+    'url' => route('site.banner.saborQueConta'),
 ];
 @endphp
 

@@ -544,7 +544,8 @@ section#banner-primor-60 {
     background-image: url(images/banner-bg-primor-60.jpg);
     color: #fff;
 }
-section#banner-primor-60 h2 {
+section#banner-primor-60 h2,
+section#banner-sabor-que-conta h2 {
     font-size: 3em;
 }
 section#banner-primor-60-bot #bp6b-image {
@@ -553,6 +554,10 @@ section#banner-primor-60-bot #bp6b-image {
     right: 19vw;
     z-index: 1;
     width: 33vw;
+}
+section#banner-sabor-que-conta {
+    background-image: url(images/banner-bg-sabor-que-conta.jpg);
+    color: #fff;
 }
 footer {
     font-size: 0.8em;

@@ -28,6 +28,7 @@ Route::get('/banner/mes-do-nordestino', 'App\Http\Controllers\Site@bannerMesDoNo
 Route::get('/banner/top-of-mind', 'App\Http\Controllers\Site@bannerTopOfMind')->name('site.banner.topOfMind');
 Route::get('/banner/cirio-de-nazare', 'App\Http\Controllers\Site@cirioDeNazare')->name('site.banner.cirioDeNazare');
 Route::get('/banner/primor-60', 'App\Http\Controllers\Site@primor60')->name('site.banner.primor60');
+Route::get('/banner/sabor-que-conta', 'App\Http\Controllers\Site@saborQueConta')->name('site.banner.saborQueConta');
 Route::get('/produtos', 'App\Http\Controllers\Site@produtos')->name('site.produtos');
 Route::get('/produtos/{slug}', 'App\Http\Controllers\Site@produtosSingle')->name('site.produtosSingle');
 Route::get('/receitas', 'App\Http\Controllers\Site@receitas')->name('site.receitas');

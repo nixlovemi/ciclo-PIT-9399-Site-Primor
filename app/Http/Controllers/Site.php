@@ -116,4 +116,9 @@ class Site extends Controller
     {
         return view('site-banner-primor60');
     }
+
+    public function saborQueConta()
+    {
+        return view('site-banner-saborQueConta');
+    }
 }
