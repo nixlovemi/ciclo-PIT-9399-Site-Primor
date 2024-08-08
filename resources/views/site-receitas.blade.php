@@ -40,26 +40,14 @@
                 $recipes = $SysUtils::getRecipes();
                 @endphp
 
-                <div class="row">
-                    @foreach ($recipes as $item)
-                        @php
-                        $item = (object) $item;
-                        @endphp
-
-                        <div class="col-6 col-sm-4 col-md-3 mb-4">
-                            <x-recipes-item
-                                :type="$item->type ?? ''"
-                                :title="$item->title ?? ''"
-                                :image="$item->image ?? ''"
-                                :timeStr="$item->timeStr ?? ''"
-                                :portionsStr="$item->portionsStr ?? ''"
-                                :url="$item->url ?? null"
-                            />
-                        </div>
-                    @endforeach
+                <div class="recipes-holder">
+                    @include('partials.pageRecipesList', [
+                        'RECIPES' => $recipes
+                    ])
                 </div>
 
-                <p class="text-center mt-4">
+                <!-- TODO: implement the pagination -->
+                <p class="text-center mt-4 d-none">
                     <a class="button-red" href="javascript:;">CARREGAR MAIS</a>
                 </p>
 

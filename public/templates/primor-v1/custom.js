@@ -64,6 +64,20 @@
         });
     });
 
+    $('#recipes #f-search').on('keypress', function(e) {
+        if(e.which == 13) {
+            const search = $(this).val();
+            const div_recipes_holder = $('#recipes-list .recipes-holder')
+            
+            $.post(`/api/v1/recipes/filter`, { 'search': search }, function (retData) {
+
+              if (retData?.data?.html !== null) {
+                div_recipes_holder.html(retData?.data?.html);
+              }
+            });
+        }
+    });
+
     $(window).on('resize', function(){
         var win = $(this); //this = window
         if (win.width() >= BOOTSTRAP_BREAKPOINT_MD) {
