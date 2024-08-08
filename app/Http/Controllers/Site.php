@@ -73,4 +73,22 @@ class Site extends Controller
     {
         return view('site-campanha');
     }
+
+    public function produtosSingle(string $slug)
+    {
+        return view('site-produtos-single', [
+            'PRODUCT' => $this->getProductBySlug($slug)
+        ]);
+    }
+
+    private function getProductBySlug(string $slug): array
+    {
+        $products = \App\Helpers\SysUtils::getProducts();
+        $product = array_filter($products, function($v, $k) use ($slug) {
+            return ($v['url'] ?? '') === route('site.produtosSingle', ['slug' => $slug]);
+        }, ARRAY_FILTER_USE_BOTH);
+
+        // returning first element or blank array
+        return (!is_array($product) || empty($product)) ? []: reset($product);
+    }
 }

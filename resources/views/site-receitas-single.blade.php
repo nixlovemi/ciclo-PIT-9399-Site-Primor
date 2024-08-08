@@ -18,25 +18,9 @@ $RECEITA = (object) $RECEITA;
     <section id="recipes-single">
         <div class="content-wrapper">
             <div class="container">
-                <h2>
-                    @if(str_word_count($RECEITA->title) == 1)
-                        <span class="title black">{{ $RECEITA->title }}</span>
-                    @endif
-
-                    @if(str_word_count($RECEITA->title) > 1)
-                        @php
-                        $arrTitle = explode(' ', trim($RECEITA->title));
-                        @endphp
-
-                        <span class="title stash">{{ $arrTitle[0] }}</span>
-                        <br />
-                        @php
-                        array_shift($arrTitle);
-                        @endphp
-                        
-                        <span class="title black">{{ implode(' ', $arrTitle) }}</span>
-                    @endif
-                </h2>
+                @include('partials.titleSingle', [
+                    'TITLE' => $RECEITA->title
+                ])
 
                 <div class="search-holder mb-5 pb-5">
                     <div class="sh-image">
@@ -71,7 +55,7 @@ $RECEITA = (object) $RECEITA;
                 </div>
 
                 <div class="row">
-                    <div id="rs-ingredients" class="col">
+                    <div id="rs-ingredients" class="col-12 mb-4 col-md-6 mb-md-0">
                         <h4 class="mb-3">
                             <span class="title black">Ingredientes</span>
                         </h4>
@@ -86,7 +70,7 @@ $RECEITA = (object) $RECEITA;
                             </p>
                         @endforeach
                     </div>
-                    <div class="col">
+                    <div class="col-12 col-md-6">
                         <h4 class="mb-3">
                             <span class="title black">Modo de Preparo</span>
                         </h4>

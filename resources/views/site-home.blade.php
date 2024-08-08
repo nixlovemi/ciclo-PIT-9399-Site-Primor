@@ -60,7 +60,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="title">Margarina<br />Tradicional</div>
-                                    <a class="products-btn" href="javascript:;">Conheça</a>
+                                    <a class="products-btn" href="{{ route('site.produtosSingle', ['slug' => 'margarina-original-sal-primor-pote-500g']) }}">Conheça</a>
                                 </div>
                                 <div class="col">
                                     <div class="img" id="margarina-tradicional">

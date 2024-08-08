@@ -60,6 +60,9 @@ h1.offset {
 .color-red {
     color: #c12a21 !important;
 }
+.color-yellow {
+    color: #ffd200 !important;
+}
 span.title {
     font-size: 1.5em;
     line-height: 0.99;
@@ -74,7 +77,7 @@ span.title.black {
 }
 span.title.black.clear,
 .text-clear {
-    color: #ffffe6;
+    color: #ffffe6 !important;
 }
 .search-holder {
     width: 100%;
@@ -393,7 +396,8 @@ form input[type="submit"]:hover,
 section#our-history,
 section#contact,
 section#recipes,
-section#campaign {
+section#campaign,
+section#product-single {
     background-color: #ce0027;
     background-image: url(images/nossa-historia-header-bg.png);
     background-repeat: no-repeat;
@@ -467,6 +471,21 @@ section#recipes-single #rs-ingredients p {
 section#campaign {
     margin-bottom: -8vw;
     z-index: 0;
+}
+section#product-single .ps-icon-choices {
+    max-height: 90px;
+}
+section#product-single table#ps-info-nutri-table thead {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+section#product-single table#ps-info-nutri-table th {
+    border: none;
+}
+section#product-single table#ps-info-nutri-table tbody tr td {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.4);
+    padding: .4rem;
 }
 footer {
     font-size: 0.8em;
@@ -584,10 +603,15 @@ footer #footer-logo {
         margin-left: auto;
         margin-right: auto;
     }
-    section#campaign h2 {
+    section#campaign h2,
+    section#product-single h2,
+    section#recipes-single h2 {
         text-align: center;
+        font-size: 3.5em;
     }
-    section#campaign h2 br {
+    section#campaign h2 br,
+    section#product-single h2 br,
+    section#recipes-single h2 br {
         display: none;
     }
 }

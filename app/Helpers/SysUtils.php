@@ -360,4 +360,82 @@ final class SysUtils {
             ],
         ];
     }
+
+    public static function getProducts(): array
+    {
+        $iconAssar = url('/') . '/templates/primor-v1/images/product-icon-assar.png';
+        $iconCozinhar = url('/') . '/templates/primor-v1/images/product-icon-cozinhar.png';
+        $iconServir = url('/') . '/templates/primor-v1/images/product-icon-servir.png';
+
+        return [
+            [
+                'family' => 'margarina-original-com-sal',
+                'familySize' => '500g',
+                'title' => 'Margarina Original com Sal Primor Pote 500g',
+                'titleShort' => 'Margarina Primor',
+                'url' => route('site.produtosSingle', ['slug' => 'margarina-original-sal-primor-pote-500g']),
+                'description' => 'Seja no forno, preparando seu bolo preferido ou no toque final daquele cuscuz quentinho, a margarina Primor é a escolha certa para quem cozinha com amor. Tenha sempre em casa!',
+                'image' => url('/') . '/templates/primor-v1/images/product-margarina-original-sal-primor-pote-500g.png',
+                'iconChoices' => [
+                    $iconAssar,
+                    $iconCozinhar,
+                    $iconServir
+                ],
+                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, cloreto de potássio, emulsificantes: mono e diglicerídeos de ácidos graxos, lecitina de soja* e ésteres de poliglicerol de ácidos graxos, aromatizantes, conservador benzoato de sódio, corante natural de urucum e cúrcuma, antioxidantes: EDTA cálcio dissódico, BHT e ácido cítrico e acidulante ácido láctico. *(Geneticamente modificado a partir de Streptomyces viridochromogenes e/ou Agrobacterium tumefaciens e/ou Bacillus thuringiensis). NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
+                'nutritionalInfo' => [
+                    'title' => 'Quantidade por porção de 10g',
+                    'items' => [
+                        [
+                            'description' => 'Valor energético',
+                            'value' => '54 kcal = 227kJ',
+                            'percentage' => '3%'
+                        ],
+                        [
+                            'description' => 'Carboidratos',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Proteínas',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Gorduras totais',
+                            'value' => '6g',
+                            'percentage' => '11%'
+                        ],
+                        [
+                            'description' => 'Gorduras saturadas',
+                            'value' => '1,9g',
+                            'percentage' => '9%'
+                        ],
+                        [
+                            'description' => 'Gorduras trans',
+                            'value' => '0g',
+                            'percentage' => '**'
+                        ],
+                        [
+                            'description' => 'Fibra alimentar',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Sódio',
+                            'value' => '64mg',
+                            'percentage' => '3%'
+                        ],
+                    ],
+                    'obs' => [
+                        [
+                            'description' => '* % Valores Diários de Referência com base em uma dieta de 2.000 kcal ou 8.400 kJ. Seus valores diários podem ser maiores ou menores dependendo de suas necessidades energéticas.'
+                        ],
+                        [
+                            'description' => '** VD não estabelecido'
+                        ],
+                    ]
+                ],
+            ]
+        ];
+    }
 }
