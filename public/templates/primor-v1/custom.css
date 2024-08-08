@@ -114,6 +114,14 @@ span.title.black.clear,
     border-radius: 35px;
     z-index: 1;
 }
+.partials-products .col1,
+.partials-products .col2 {
+    float: left;
+    width: 45%;
+}
+.partials-products .col2 {
+    margin-left: 10%;
+}
 #header {
     width: 100%;
     max-height: 100px;
@@ -268,14 +276,6 @@ section#receitas {
 section#produtos {
     margin-bottom: 75px;
 }
-section#produtos .col1,
-section#produtos .col2 {
-    float: left;
-    width: 45%;
-}
-section#produtos .col2 {
-    margin-left: 10%;
-}
 .products {
     background-color: #ce0027;
     padding: 20px;
@@ -397,7 +397,8 @@ section#our-history,
 section#contact,
 section#recipes,
 section#campaign,
-section#product-single {
+section#product-single,
+section#product {
     background-color: #ce0027;
     background-image: url(images/nossa-historia-header-bg.png);
     background-repeat: no-repeat;
@@ -622,8 +623,8 @@ footer #footer-logo {
         font-size: 1.2em;
         line-height: 1.05;
     }
-    section#produtos .col1,
-    section#produtos .col2 {
+    .partials-products .col1,
+    .partials-products .col2 {
         float: none;
         display: inline-block;
         width: 100%;

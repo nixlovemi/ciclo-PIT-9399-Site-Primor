@@ -74,6 +74,11 @@ class Site extends Controller
         return view('site-campanha');
     }
 
+    public function produtos()
+    {
+        return view('site-produtos');
+    }
+
     public function produtosSingle(string $slug)
     {
         return view('site-produtos-single', [
