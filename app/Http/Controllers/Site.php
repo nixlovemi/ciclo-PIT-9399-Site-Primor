@@ -111,4 +111,9 @@ class Site extends Controller
     {
         return view('site-banner-cirioDeNazare');
     }
+
+    public function primor60()
+    {
+        return view('site-banner-primor60');
+    }
 }

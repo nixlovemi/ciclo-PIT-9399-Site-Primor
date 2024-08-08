@@ -6,7 +6,7 @@ View variables:
 @endphp
 
 @extends('layout.site-core', [
-    'PAGE_TITLE' => 'Mês do Nordestino'
+    'PAGE_TITLE' => 'Top of Mind'
 ])
 
 @section('BODY_CONTENT')

@@ -31,7 +31,7 @@
          url('fonts/StashBold/Stash-Bold.woff') format('woff'), /* Pretty Modern Browsers */
          url('fonts/StashBold/Stash-Bold.otf')  format('truetype'), /* Safari, Android, iOS */
          url('fonts/StashBold/Stash-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
-    font-weight: bold;
+    font-weight: normal;
     font-style: italic;
     font-display: swap;
 }
@@ -540,6 +540,20 @@ section#banner-top-of-mind #btom-icon-top {
     right: 0;
     width: 20vw;
 }
+section#banner-primor-60 {
+    background-image: url(images/banner-bg-primor-60.jpg);
+    color: #fff;
+}
+section#banner-primor-60 h2 {
+    font-size: 3em;
+}
+section#banner-primor-60-bot #bp6b-image {
+    position: absolute;
+    top: 0;
+    right: 19vw;
+    z-index: 1;
+    width: 33vw;
+}
 footer {
     font-size: 0.8em;
     position: relative;
@@ -584,6 +598,14 @@ footer #footer-logo {
     }
     section#our-history-about img#nossa-historia-food-min {
         max-width: 50%;
+    }
+    section#banner-primor-60-bot #bp6b-image {
+        position: relative;
+        z-index: 1;
+        margin-left: auto;
+        margin-right: auto;
+        left: -7vw;
+        margin-bottom: -20vw;
     }
 }
 
@@ -698,5 +720,9 @@ footer #footer-logo {
     }
     section#banner-top-of-mind #btom-icon-top {
         width: 55vw;
+    }
+    section#banner-primor-60-bot #bp6b-image {
+        width: 56vw;
+        left: -10vw;
     }
 }

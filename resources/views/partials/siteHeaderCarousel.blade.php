@@ -71,7 +71,7 @@ $items[] = [
         HTML,
     'descriptionShort' => null,
     'image' => 'templates/primor-v1/images/header-banner-04.jpg',
-    'url' => 'javascript:;',
+    'url' => route('site.banner.primor60'),
 ];
 
 // Slide 05
