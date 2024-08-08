@@ -515,6 +515,16 @@ section#product-single table#ps-info-nutri-table tbody tr td {
 section#banner-mes-nordestino {
     background-image: url(images/banner-bg-mes-nordestino.png);
 }
+section#banner-top-of-mind {
+    background-image: url(images/banner-bg-top-of-mind.jpg);
+    color: #fff;
+}
+section#banner-top-of-mind #btom-icon-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20vw;
+}
 footer {
     font-size: 0.8em;
     position: relative;
@@ -642,6 +652,9 @@ footer #footer-logo {
     section#recipes-single h2 br {
         display: none;
     }
+    section#banner-top-of-mind #btom-icon-top {
+        width: 35vw;
+    }
 }
 
 /* Bootstrap Small */
@@ -667,5 +680,8 @@ footer #footer-logo {
     }
     #footer-menu {
         display: none;
+    }
+    section#banner-top-of-mind #btom-icon-top {
+        width: 55vw;
     }
 }

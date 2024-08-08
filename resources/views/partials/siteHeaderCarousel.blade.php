@@ -35,7 +35,7 @@ $items[] = [
         HTML,
     'descriptionShort' => null,
     'image' => 'templates/primor-v1/images/header-banner-02.jpg',
-    'url' => 'javascript:;',
+    'url' => route('site.banner.topOfMind'),
 ];
 
 // Slide 03

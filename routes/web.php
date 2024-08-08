@@ -25,6 +25,7 @@ Route::group([], function(){
 
 Route::get('/', 'App\Http\Controllers\Site@home')->name('site.home');
 Route::get('/banner/mes-do-nordestino', 'App\Http\Controllers\Site@bannerMesDoNordestino')->name('site.banner.mesDoNordestino');
+Route::get('/banner/top-of-mind', 'App\Http\Controllers\Site@bannerTopOfMind')->name('site.banner.topOfMind');
 Route::get('/produtos', 'App\Http\Controllers\Site@produtos')->name('site.produtos');
 Route::get('/produtos/{slug}', 'App\Http\Controllers\Site@produtosSingle')->name('site.produtosSingle');
 Route::get('/receitas', 'App\Http\Controllers\Site@receitas')->name('site.receitas');

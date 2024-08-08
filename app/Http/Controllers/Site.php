@@ -101,4 +101,9 @@ class Site extends Controller
     {
         return view('site-banner-mesDoNordestino');
     }
+
+    public function bannerTopOfMind()
+    {
+        return view('site-banner-topOfMind');
+    }
 }
