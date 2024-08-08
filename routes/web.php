@@ -26,6 +26,7 @@ Route::group([], function(){
 Route::get('/', 'App\Http\Controllers\Site@home')->name('site.home');
 Route::get('/receitas', 'App\Http\Controllers\Site@receitas')->name('site.receitas');
 Route::get('/receitas/{slug}', 'App\Http\Controllers\Site@receitaSingle')->name('site.receitaSingle');
+Route::get('/campanha', 'App\Http\Controllers\Site@campanha')->name('site.campanha');
 Route::get('/nossa-historia', 'App\Http\Controllers\Site@nossaHistoria')->name('site.nossaHistoria');
 Route::get('/fale-conosco', 'App\Http\Controllers\Site@faleConosco')->name('site.faleConosco');
 Route::post('/do-fale-conosco', 'App\Http\Controllers\Site@doFaleConosco')->name('site.doFaleConosco');

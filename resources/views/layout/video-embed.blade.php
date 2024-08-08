@@ -3,9 +3,13 @@
 View variables:
 ===============
     - $VIDEO_SRC: string
+    - $ROUNDED: bool
 */
+
+$ROUNDED = $ROUNDED ?? false;
+$roundedClass = ($ROUNDED) ? 'embed-responsive-rounded': '';
 @endphp
 
-<div class="embed-responsive embed-responsive-16by9 mb-5">
+<div class="embed-responsive embed-responsive-16by9 {{$roundedClass}} mb-5">
     <iframe class="embed-responsive-item" src="{{ $VIDEO_SRC ?? '' }}" allowfullscreen></iframe>
 </div>

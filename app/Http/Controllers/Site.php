@@ -68,4 +68,9 @@ class Site extends Controller
         // returning first element or blank array
         return (!is_array($receita) || empty($receita)) ? []: reset($receita);
     }
+
+    public function campanha()
+    {
+        return view('site-campanha');
+    }
 }
