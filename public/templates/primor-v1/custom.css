@@ -1,35 +1,51 @@
 /* ========== FONTS ========== */
 @font-face {
     font-family: 'Neulis Alt';
-    src: url('fonts/NeulisAltMedium/NeulisAlt-Medium.woff2') format('woff2'),
-        url('fonts/NeulisAltMedium/NeulisAlt-Medium.woff') format('woff');
+    src: url('fonts/NeulisAltMedium/NeulisAlt-Medium.eot'); /* IE9 Compat Modes */
+    src: url('fonts/NeulisAltMedium/NeulisAlt-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/NeulisAltMedium/NeulisAlt-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+         url('fonts/NeulisAltMedium/NeulisAlt-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+         url('fonts/NeulisAltMedium/NeulisAlt-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/NeulisAltMedium/NeulisAlt-Medium.svg') format('svg'); /* Legacy iOS */
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'NeulisAltBlack';
-    src: url('fonts/NeulisAltBlack/NeulisAlt-Black.woff2') format('woff2'),
-        url('fonts/NeulisAltBlack/NeulisAlt-Black.woff') format('woff');
+    src: url('fonts/NeulisAltBlack/NeulisAlt-Black.eot'); /* IE9 Compat Modes */
+    src: url('fonts/NeulisAltBlack/NeulisAlt-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/NeulisAltBlack/NeulisAlt-Black.woff2') format('woff2'), /* Super Modern Browsers */
+         url('fonts/NeulisAltBlack/NeulisAlt-Black.woff') format('woff'), /* Pretty Modern Browsers */
+         url('fonts/NeulisAltBlack/NeulisAlt-Black.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/NeulisAltBlack/NeulisAlt-Black.svg') format('svg'); /* Legacy iOS */
     font-weight: 900;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'StashBold';
-    src: url('fonts/StashBold/Stash-Bold.woff2') format('woff2'),
-        url('fonts/StashBold/Stash-Bold.woff') format('woff');
+    src: url('fonts/StashBold/Stash-Bold.eot'); /* IE9 Compat Modes */
+    src: url('fonts/StashBold/Stash-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/StashBold/Stash-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('fonts/StashBold/Stash-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('fonts/StashBold/Stash-Bold.otf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/StashBold/Stash-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
     font-weight: bold;
     font-style: italic;
     font-display: swap;
 }
 @font-face {
     font-family: 'NeulisAltLight';
-    src: url('fonts/NeulisAltLight/NeulisAlt-Light.woff2') format('woff2'),
-        url('fonts/NeulisAltLight/NeulisAlt-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+    src: url('fonts/NeulisAltLight/NeulisAlt-Light.eot'); /* IE9 Compat Modes */
+    src: url('fonts/NeulisAltLight/NeulisAlt-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/NeulisAltLight/NeulisAlt-Light.woff2') format('woff2'), /* Super Modern Browsers */
+         url('fonts/NeulisAltLight/NeulisAlt-Light.woff') format('woff'), /* Pretty Modern Browsers */
+         url('fonts/NeulisAltLight/NeulisAlt-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/NeulisAltLight/NeulisAlt-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
 }
 /* =========================== */
 

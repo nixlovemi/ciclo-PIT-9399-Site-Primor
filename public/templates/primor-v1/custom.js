@@ -17,7 +17,9 @@
             'adaptiveHeight': true,
             'dots': true,
             'draggable': false,
-            'zIndex': 998
+            'zIndex': 998,
+            'autoplay': true,
+            'autoplaySpeed': 4000,
         });
         CAROUSEL_SINGLE.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
             // hide all text-box
@@ -34,6 +36,8 @@
             'zIndex': 998,
             'slidesToShow': 5,
             'slidesToScroll': 1,
+            'autoplay': true,
+            'autoplaySpeed': 4000,
             responsive: [
                 {
                     breakpoint: BOOTSTRAP_BREAKPOINT_LG,
