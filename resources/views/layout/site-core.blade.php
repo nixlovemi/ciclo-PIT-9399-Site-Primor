@@ -44,7 +44,9 @@ $V_TITLE = ($PAGE_TITLE ?? '') . ' | ' . env('SITE_DISPLAY_NAME');
                     <div class="row no-gutters">
                         <div class="col-lg-3 col-4">
                             <h1 class="offset">{{ $V_TITLE }}</h1>
-                            <img id="header-logo-primor" alt="Logotipo Primor" src="{{ url('/') }}/templates/primor-v1/images/header-logo-primor.png" />
+                            <a href="{{ route('site.home') }}">
+                                <img id="header-logo-primor" alt="Logotipo Primor" src="{{ url('/') }}/templates/primor-v1/images/header-logo-primor.png" />
+                            </a>
                         </div>
                         <div class="col-lg-9 col-8">
                             <div id="header-menu">
