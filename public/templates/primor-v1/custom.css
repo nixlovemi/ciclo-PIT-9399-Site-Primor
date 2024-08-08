@@ -519,6 +519,21 @@ section#banner-top-of-mind {
     background-image: url(images/banner-bg-top-of-mind.jpg);
     color: #fff;
 }
+section#banner-cirio-nazare {
+    background-image: url(images/banner-bg-cirio-nazare.jpg);
+    color: #fff;
+}
+section#banner-cirio-nazare-bot {
+    margin-bottom: -14vw;
+    z-index: 1;
+    position: relative;
+}
+section#banner-cirio-nazare-bot #bcn-row-photos {
+    background-color: #efe5be;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+}
 section#banner-top-of-mind #btom-icon-top {
     position: absolute;
     top: 0;

@@ -53,7 +53,7 @@ $items[] = [
         HTML,
     'descriptionShort' => null,
     'image' => 'templates/primor-v1/images/header-banner-03.jpg',
-    'url' => 'javascript:;',
+    'url' => route('site.banner.cirioDeNazare'),
 ];
 
 // Slide 04

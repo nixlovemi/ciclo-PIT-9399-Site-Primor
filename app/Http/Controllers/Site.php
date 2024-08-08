@@ -106,4 +106,9 @@ class Site extends Controller
     {
         return view('site-banner-topOfMind');
     }
+
+    public function cirioDeNazare()
+    {
+        return view('site-banner-cirioDeNazare');
+    }
 }
