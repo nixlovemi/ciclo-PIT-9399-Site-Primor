@@ -48,13 +48,19 @@ View variables:
                     <div class="col-10 offset-1">
                         <div id="bcn-row-photos" class="row">
                             <div class="col">
-                                <img class="responsive border-rounded" alt="Círio de Nazaré 01" src="{{ url('/') }}/templates/primor-v1/images/page-cirio-nazare-img-01.jpg" />
+                                <a href="javascript:;" data-toggle="modal" data-target="#modal-img-1">
+                                    <img class="responsive border-rounded" alt="Círio de Nazaré 01" src="{{ url('/') }}/templates/primor-v1/images/page-cirio-nazare-img-01.jpg" />
+                                </a>
                             </div>
                             <div class="col">
-                                <img class="responsive border-rounded" alt="Círio de Nazaré 01" src="{{ url('/') }}/templates/primor-v1/images/page-cirio-nazare-img-02.jpg" />
+                                <a href="javascript:;" data-toggle="modal" data-target="#modal-img-2">
+                                    <img class="responsive border-rounded" alt="Círio de Nazaré 02" src="{{ url('/') }}/templates/primor-v1/images/page-cirio-nazare-img-02.jpg" />
+                                </a>
                             </div>
                             <div class="col">
-                                <img class="responsive border-rounded" alt="Círio de Nazaré 01" src="{{ url('/') }}/templates/primor-v1/images/page-cirio-nazare-img-03.jpg" />
+                                <a href="javascript:;" data-toggle="modal" data-target="#modal-img-3">
+                                    <img class="responsive border-rounded" alt="Círio de Nazaré 03" src="{{ url('/') }}/templates/primor-v1/images/page-cirio-nazare-img-03.jpg" />
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -62,5 +68,50 @@ View variables:
             </div>
         </div>
     </section>
+
+    <div class="modal fade" id="modal-img-1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img class="responsive border-rounded" alt="Círio de Nazaré 01" src="{{ url('/') }}/templates/primor-v1/images/page-cirio-nazare-img-01.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-img-2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img class="responsive border-rounded" alt="Círio de Nazaré 01" src="{{ url('/') }}/templates/primor-v1/images/page-cirio-nazare-img-02.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-img-3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img class="responsive border-rounded" alt="Círio de Nazaré 01" src="{{ url('/') }}/templates/primor-v1/images/page-cirio-nazare-img-03.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection

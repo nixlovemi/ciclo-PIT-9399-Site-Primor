@@ -554,12 +554,14 @@ section#banner-cirio-nazare {
     background-image: url(images/banner-bg-cirio-nazare.jpg);
     color: #fff;
 }
-section#banner-cirio-nazare-bot {
+section#banner-cirio-nazare-bot,
+section#banner-top-of-mind-bot {
     margin-bottom: -14vw;
     z-index: 1;
     position: relative;
 }
-section#banner-cirio-nazare-bot #bcn-row-photos {
+section#banner-cirio-nazare-bot #bcn-row-photos,
+section#banner-top-of-mind-bot #bcn-row-photos {
     background-color: #efe5be;
     padding-top: 15px;
     padding-bottom: 15px;
