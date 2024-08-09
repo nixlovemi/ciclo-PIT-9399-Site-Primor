@@ -283,6 +283,9 @@ section#receitas {
     width: 98%;
     margin-left: 0;
 }
+.recipes-item:hover > div.img {
+    transform: scale(1.05);
+}
 .recipes-item .type {
     font-size: 0.75em;
 }
