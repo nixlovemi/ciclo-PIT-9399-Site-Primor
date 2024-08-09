@@ -1,5 +1,5 @@
 <div class="recipes-item">
-    <div class="type">{{ $type ?? '' }}</div>
+    <div class="type d-none">{{ $type ?? '' }}</div>
     <div class="title">
         <a href="{{ $url }}">
             {{ $title ?? '' }}

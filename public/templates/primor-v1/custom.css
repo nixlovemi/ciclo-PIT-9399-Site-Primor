@@ -265,6 +265,7 @@ a.button-clear:hover {
 }
 section#receitas {
     width: 100%;
+    min-height: 650px;
     display: inline-block;
     background-image: url(images/receitas-bg.jpg);
     background-repeat: no-repeat;
