@@ -5,19 +5,26 @@ $items = [];
 $items[] = [
     'title' =>
         <<<HTML
-            <span class="black">Mês do</span>
+            <span class="black">Conheça</span>
             <br />
-            <span class="stash">Nordestino</span>
+            <span class="black">o</span>&nbsp;<span class="stash">sabor</span>
+            <br />
+            <span class="black">que conta.</span>
         HTML,
     'description' =>
         <<<HTML
-            Desde sempre a Primor é ingrediente<br />
-            nas receitas que contam a história do<br />
-            Nordeste. Relembre o porquê.
+            A Primor é o sabor que conta nas receitas<br />
+            do Norte e do Nordeste. Ao seu lado fazemos<br />
+            da cozinha um templo de cultura e tradição.<br />
+            Descubra como mantemos essa chama acesa.
         HTML,
-    'descriptionShort' => null,
-    'image' => 'templates/primor-v1/images/header-banner-01.jpg',
-    'url' => route('site.banner.mesDoNordestino'),
+    'descriptionShort' => 
+        <<<HTML
+            A Primor é o sabor que conta nas receitas<br />
+            do Norte e do Nordeste. Ao seu lado fazemos ...
+        HTML,
+    'image' => 'templates/primor-v1/images/header-banner-05.jpg',
+    'url' => route('site.banner.saborQueConta'),
 ];
 
 // Slide 02
@@ -78,26 +85,19 @@ $items[] = [
 $items[] = [
     'title' =>
         <<<HTML
-            <span class="black">Conheça</span>
+            <span class="black">Mês do</span>
             <br />
-            <span class="black">o</span>&nbsp;<span class="stash">sabor</span>
-            <br />
-            <span class="black">que conta.</span>
+            <span class="stash">Nordestino</span>
         HTML,
     'description' =>
         <<<HTML
-            A Primor é o sabor que conta nas receitas<br />
-            do Norte e do Nordeste. Ao seu lado fazemos<br />
-            da cozinha um templo de cultura e tradição.<br />
-            Descubra como mantemos essa chama acesa.
+            Desde sempre a Primor é ingrediente<br />
+            nas receitas que contam a história do<br />
+            Nordeste. Relembre o porquê.
         HTML,
-    'descriptionShort' => 
-        <<<HTML
-            A Primor é o sabor que conta nas receitas<br />
-            do Norte e do Nordeste. Ao seu lado fazemos ...
-        HTML,
-    'image' => 'templates/primor-v1/images/header-banner-05.jpg',
-    'url' => route('site.banner.saborQueConta'),
+    'descriptionShort' => null,
+    'image' => 'templates/primor-v1/images/header-banner-01.jpg',
+    'url' => route('site.banner.mesDoNordestino'),
 ];
 @endphp
 
