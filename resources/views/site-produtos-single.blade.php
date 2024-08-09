@@ -81,7 +81,9 @@ $PRODUCT = (object) $PRODUCT;
                         @endif
                     </div>
                     <div class="col-12 mt-4 col-md-7 mt-md-0 text-center">
-                        <img alt="{{ $PRODUCT->title }}" class="responsive" src="{{ $PRODUCT->image ?? '' }}" />
+                        @if (!empty($PRODUCT->image))
+                            <img alt="{{ $PRODUCT->title }}" class="responsive" src="{{ $PRODUCT->image ?? '' }}" />
+                        @endif
                     </div>
                 </div>
 

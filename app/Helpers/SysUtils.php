@@ -747,6 +747,41 @@ final class SysUtils {
                     ]
                 ],
             ],
+
+            [
+                'family' => 'margarina-tablete',
+                'familySize' => '100g',
+                'familyOrder' => 1,
+                'title' => 'Margarina Primor Forno e Fogão Pacote 4 Unidades 100g',
+                'titleShort' => 'Margarina Tablete 4 Unidades 100g',
+                'url' => route('site.produtosSingle', ['slug' => 'margarina-primor-forno-fogão-pacote-100g']),
+                'description' => 'Seja no forno, preparando seu bolo preferido ou no toque final daquele cuscuz quentinho, a margarina Primor é a escolha certa para quem cozinha com amor. Tenha sempre em casa!',
+                'image' => null,
+                'iconChoices' => [
+                    $iconAssar,
+                    $iconCozinhar,
+                    $iconServir
+                ],
+                'ingredients' => 'Óleos vegetais líquidos e totalmente hidrogenados (contém óleo de soja), água, sal, emulsificantes: mono e diglicerídeos de ácidos graxos e lecitina de soja, conservador benzoato de sódio, aromatizantes, antioxidantes: EDTA cálcio dissódico, BHT e ácido cítrico, acidulante ácido láctico e corante idêntico ao natural betacaroteno. NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
+                'nutritionalInfo' => [
+                    'title' => 'Quantidade por porção de 10g',
+                    'items' => [
+                        [
+                            'description' => 'Valor energético',
+                            'value' => '63 kcal = 265kJ',
+                            'percentage' => '3%'
+                        ],
+                    ],
+                    'obs' => [
+                        [
+                            'description' => '* %Valores Diários de referência com base em uma dieta de 2.000kcal ou 8.400kj. Seus valores diários podem ser maiores ou menores dependendo de suas necessidades energéticas.'
+                        ],
+                        [
+                            'description' => '** VD não estabelecido.'
+                        ]
+                    ]
+                ],
+            ],
         ];
     }
 }

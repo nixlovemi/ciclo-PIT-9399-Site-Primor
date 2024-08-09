@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="title">Margarina<br />Tablete</div>
-                        <a class="products-btn" href="javascript:;">Conheça</a>
+                        <a class="products-btn" href="{{ route('site.produtosSingle', ['slug' => 'margarina-primor-forno-fogão-pacote-100g']) }}">Conheça</a>
                     </div>
                 </div>
             </div>
