@@ -369,10 +369,82 @@ final class SysUtils {
 
         return [
             [
-                'family' => 'margarina-original-com-sal',
+                'family' => 'margarina-tradicional',
+                'familySize' => '250g',
+                'familyOrder' => 1,
+                'title' => 'Margarina Original com Sal Primor Pote 250g',
+                'titleShort' => 'Margarina Primor 250g',
+                'url' => route('site.produtosSingle', ['slug' => 'margarina-original-sal-primor-pote-250g']),
+                'description' => 'Seja no forno, preparando seu bolo preferido ou no toque final daquele cuscuz quentinho, a margarina Primor é a escolha certa para quem cozinha com amor. Tenha sempre em casa!',
+                'image' => url('/') . '/templates/primor-v1/images/product-margarina-original-sal-primor-pote-250g.png',
+                'iconChoices' => [
+                    $iconAssar,
+                    $iconCozinhar,
+                    $iconServir
+                ],
+                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, cloreto de potássio, emulsificantes mono e diglicerídeos de ácidos graxos, ésteres de poliglicerol de ácidos graxos e lecitina de soja*, aromatizantes, conservador benzoato de sódio, corante natural de urucum e cúrcuma, antioxidantes EDTA cálcio dissódico, BHT e ácido cítrico e acidulante ácido láctico. *Geneticamente modificado a partir de streptomyces viridochromogenes e/ou agrobacterium tumefaciens e/ou bacillus thuringiensis. NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
+                'nutritionalInfo' => [
+                    'title' => 'Quantidade por porção de 10g',
+                    'items' => [
+                        [
+                            'description' => 'Valor energético',
+                            'value' => '54 kcal = 227kJ',
+                            'percentage' => '3%'
+                        ],
+                        [
+                            'description' => 'Carboidratos',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Açucares Totais',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Proteínas',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Gorduras totais',
+                            'value' => '6g',
+                            'percentage' => '9%'
+                        ],
+                        [
+                            'description' => 'Gorduras saturadas',
+                            'value' => '2,1g',
+                            'percentage' => '11%'
+                        ],
+                        [
+                            'description' => 'Gorduras trans',
+                            'value' => '0,1g',
+                            'percentage' => '5%'
+                        ],
+                        [
+                            'description' => 'Fibra alimentar',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Sódio',
+                            'value' => '6mg',
+                            'percentage' => '3%'
+                        ],
+                    ],
+                    'obs' => [
+                        [
+                            'description' => '*Percentual de valores diários fornecidos pela porção.'
+                        ]
+                    ]
+                ],
+            ],
+            [
+                'family' => 'margarina-tradicional',
                 'familySize' => '500g',
+                'familyOrder' => 2,
                 'title' => 'Margarina Original com Sal Primor Pote 500g',
-                'titleShort' => 'Margarina Primor',
+                'titleShort' => 'Margarina Primor 500g',
                 'url' => route('site.produtosSingle', ['slug' => 'margarina-original-sal-primor-pote-500g']),
                 'description' => 'Seja no forno, preparando seu bolo preferido ou no toque final daquele cuscuz quentinho, a margarina Primor é a escolha certa para quem cozinha com amor. Tenha sempre em casa!',
                 'image' => url('/') . '/templates/primor-v1/images/product-margarina-original-sal-primor-pote-500g.png',
@@ -435,7 +507,246 @@ final class SysUtils {
                         ],
                     ]
                 ],
-            ]
+            ],
+            [
+                'family' => 'margarina-tradicional',
+                'familySize' => '1kg',
+                'familyOrder' => 3,
+                'title' => 'Margarina Original com Sal Primor Pote 1kg',
+                'titleShort' => 'Margarina Primor 1kg',
+                'url' => route('site.produtosSingle', ['slug' => 'margarina-original-sal-primor-pote-1kg']),
+                'description' => 'Seja no forno, preparando seu bolo preferido ou no toque final daquele cuscuz quentinho, a margarina Primor é a escolha certa para quem cozinha com amor. Tenha sempre em casa!',
+                'image' => url('/') . '/templates/primor-v1/images/product-margarina-original-sal-primor-pote-1kg.png',
+                'iconChoices' => [
+                    $iconAssar,
+                    $iconCozinhar,
+                    $iconServir
+                ],
+                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, cloreto de potássio, emulsificantes mono e diglicerídeos de ácidos graxos, ésteres de poliglicerol de ácidos graxos e lecitina de soja*, aromatizantes, conservador benzoato de sódio, corante natural de urucum e cúrcuma, antioxidantes EDTA cálcio dissódico, BHT e ácido cítrico e acidulante ácido láctico. *Geneticamente modificado a partir de streptomyces viridochromogenes e/ou agrobacterium tumefaciens e/ou bacillus thuringiensis. NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
+                'nutritionalInfo' => [
+                    'title' => 'Quantidade por porção de 10g',
+                    'items' => [
+                        [
+                            'description' => 'Valor energético',
+                            'value' => '54 kcal = 227kJ',
+                            'percentage' => '3%'
+                        ],
+                        [
+                            'description' => 'Gorduras totais',
+                            'value' => '6g',
+                            'percentage' => '9%'
+                        ],
+                        [
+                            'description' => 'Gorduras saturadas',
+                            'value' => '2,1g',
+                            'percentage' => '11%'
+                        ],
+                        [
+                            'description' => 'Gorduras trans',
+                            'value' => '0,1g',
+                            'percentage' => '5%'
+                        ],
+                        [
+                            'description' => 'Sódio',
+                            'value' => '66mg',
+                            'percentage' => '3%'
+                        ],
+                    ],
+                    'obs' => [
+                        [
+                            'description' => '*Percentual de valores diários fornecidos pela porção. Não contém quantidades significativas de carboidratos, açúcares totais, açúcares adicionados, proteínas e fibras alimentares.'
+                        ],
+                        [
+                            'description' => '** VD não estabelecido'
+                        ],
+                    ]
+                ],
+            ],
+
+            [
+                'family' => 'margarina-balde',
+                'familySize' => '3kg',
+                'familyOrder' => 1,
+                'title' => 'Margarina Amanteigada com Sal Primor Balde 3kg',
+                'titleShort' => 'Margarina Balde 3kg',
+                'url' => route('site.produtosSingle', ['slug' => 'margarina-amanteigada-sal-primor-balde-3kg']),
+                'description' => 'Seja no forno, preparando seu bolo preferido ou no toque final daquele cuscuz quentinho, a margarina Primor é a escolha certa para quem cozinha com amor. Tenha sempre em casa!',
+                'image' => url('/') . '/templates/primor-v1/images/margarina-amanteigada-sal-primor-balde-3kg.png',
+                'iconChoices' => [
+                    $iconAssar,
+                    $iconCozinhar,
+                    $iconServir
+                ],
+                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, emulsificantes mono e diglicerídeos de ácidos graxos, ésteres de poliglicerol de ácidos graxos e lecitina de soja*, aromatizantes, conservador benzoato de sódio, corante natural de urucum e cúrcuma, antioxidantes EDTA cálcio dissódico, BHT e ácido cítrico e acidulante ácido láctico. *Geneticamente modificado a partir de streptomyces viridochromogenes e/ou agrobacterium tumefaciens e/ou bacillus thuringiensis. NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
+                'nutritionalInfo' => [
+                    'title' => 'Quantidade por porção de 10g',
+                    'items' => [
+                        [
+                            'description' => 'Valor energético',
+                            'value' => '54 kcal = 225kJ',
+                            'percentage' => '3%'
+                        ],
+                        [
+                            'description' => 'Carboidratos',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Açucares Totais',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Açucares Adicionados',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Proteínas',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Gorduras Totais',
+                            'value' => '6g',
+                            'percentage' => '9%'
+                        ],
+                        [
+                            'description' => 'Gorduras saturadas',
+                            'value' => '2,2g',
+                            'percentage' => '11%'
+                        ],
+                        [
+                            'description' => 'Gorduras trans',
+                            'value' => '0,1g',
+                            'percentage' => '5%'
+                        ],
+                        [
+                            'description' => 'Fibra Alimentar',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Sódio',
+                            'value' => '60mg',
+                            'percentage' => '3%'
+                        ],
+                    ],
+                    'obs' => [
+                        [
+                            'description' => '* Percentual de valores diários fornecidos pela porção.'
+                        ]
+                    ]
+                ],
+            ],
+            [
+                'family' => 'margarina-balde',
+                'familySize' => '15kg',
+                'familyOrder' => 2,
+                'title' => 'Margarina Amanteigada com Sal Primor Balde 15kg',
+                'titleShort' => 'Margarina Balde 15kg',
+                'url' => route('site.produtosSingle', ['slug' => 'margarina-amanteigada-sal-primor-balde-15kg']),
+                'description' => 'Seja no forno, preparando seu bolo preferido ou no toque final daquele cuscuz quentinho, a margarina Primor é a escolha certa para quem cozinha com amor. Tenha sempre em casa!',
+                'image' => url('/') . '/templates/primor-v1/images/margarina-amanteigada-sal-primor-balde-15kg.png',
+                'iconChoices' => [
+                    $iconAssar,
+                    $iconCozinhar,
+                    $iconServir
+                ],
+                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, emulsificantes lecitina de soja*, mono e diglicerídeos de ácidos graxos e ésteres de poliglicerol de ácidos graxos, conservador benzoato de sódio, aromatizante, acidulante ácido láctico, antioxidantes EDTA cálcio dissódico, BHT e ácido cítrico e corante natural de urucum e cúrcuma. *(Geneticamente modificado a partir de streptomyces viridochromogenes e/ou agrobacterium tumefaciens e/ou bacillus thuringiensis). NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
+                'nutritionalInfo' => [
+                    'title' => 'Quantidade por porção de 10g',
+                    'items' => [
+                        [
+                            'description' => 'Valor energético',
+                            'value' => '68 kcal = 284kJ',
+                            'percentage' => '3%'
+                        ],
+                        [
+                            'description' => 'Carboidratos',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Açucares Totais',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Açucares Adicionados',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Proteínas',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Gorduras Totais',
+                            'value' => '7,5g',
+                            'percentage' => '12%'
+                        ],
+                        [
+                            'description' => 'Gorduras saturadas',
+                            'value' => '4g',
+                            'percentage' => '20%'
+                        ],
+                        [
+                            'description' => 'Gorduras trans',
+                            'value' => '0,1g',
+                            'percentage' => '5%'
+                        ],
+                        [
+                            'description' => 'Fibra Alimentar',
+                            'value' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Sódio',
+                            'value' => '68mg',
+                            'percentage' => '3%'
+                        ],
+                    ],
+                    'obs' => [
+                        [
+                            'description' => '* Percentual de valores diários fornecidos pela porção.'
+                        ]
+                    ]
+                ],
+            ],
+
+            [
+                'family' => 'gordura-vegetal',
+                'familySize' => '500g',
+                'familyOrder' => 1,
+                'title' => 'Gordura Vegetal Primor Pacote 500g',
+                'titleShort' => 'Gordura Vegetal 500g',
+                'url' => route('site.produtosSingle', ['slug' => 'gordura-vegetal-primor-pacote-500g']),
+                'description' => 'Seja no forno, preparando seu bolo preferido ou no toque final daquele cuscuz quentinho, a margarina Primor é a escolha certa para quem cozinha com amor. Tenha sempre em casa!',
+                'image' => url('/') . '/templates/primor-v1/images/gordura-vegetal-primor-pacote-500g.png',
+                'iconChoices' => [
+                    $iconAssar,
+                    $iconCozinhar,
+                    $iconServir
+                ],
+                'ingredients' => 'Gordura de palma e antioxidantes: BHT e ácido cítrico. NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
+                'nutritionalInfo' => [
+                    'title' => 'Quantidade por porção de 10g',
+                    'items' => [
+                        [
+                            'description' => 'Valor energético',
+                            'value' => '90 kcal = 376kJ',
+                            'percentage' => '5%'
+                        ],
+                    ],
+                    'obs' => [
+                        [
+                            'description' => '* %Valores Diários de referência com base em uma dieta de 2.000kcal ou 8.400kj. Seus valores diários podem ser maiores ou menores dependendo de suas necessidades energéticas.'
+                        ]
+                    ]
+                ],
+            ],
         ];
     }
 }

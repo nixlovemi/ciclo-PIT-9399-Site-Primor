@@ -33,7 +33,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="title">Margarina<br />Balde</div>
-                        <a class="products-btn" href="javascript:;">Conheça</a>
+                        <a class="products-btn" href="{{ route('site.produtosSingle', ['slug' => 'margarina-amanteigada-sal-primor-balde-3kg']) }}">Conheça</a>
                     </div>
                     <div class="col">
                         <div class="img" id="margarina-balde">
@@ -48,7 +48,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="title">Gordura<br />Vegetal</div>
-                        <a class="products-btn" href="javascript:;">Conheça</a>
+                        <a class="products-btn" href="{{ route('site.produtosSingle', ['slug' => 'gordura-vegetal-primor-pacote-500g']) }}">Conheça</a>
                     </div>
                     <div class="col">
                         <div class="img" id="gordura-vegetal">

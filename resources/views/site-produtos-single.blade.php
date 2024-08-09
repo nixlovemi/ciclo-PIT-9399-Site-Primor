@@ -1,3 +1,5 @@
+@inject('SysUtils', 'App\Helpers\SysUtils')
+
 @php
 /*
 View variables:
@@ -16,6 +18,47 @@ $PRODUCT = (object) $PRODUCT;
     <section id="product-single" class="sec-top">
         <div class="content-wrapper">
             <div class="container">
+                <div class="row">
+                    <div class="col text-right">
+                        @php
+                        $products = $SysUtils::getProducts();
+                        $family = $PRODUCT->family ?? '';
+
+                        $prodFamily = array_filter($products, function($v, $k) use ($family) {
+                            return ($v['family'] ?? '') === $family;
+                        }, ARRAY_FILTER_USE_BOTH);
+                        @endphp
+
+                        @if (is_array($prodFamily) && !empty($prodFamily))
+                            @php
+                            usort($prodFamily, function ($a, $b) {
+                                $first = $a['familyOrder'] ?? 0;
+                                $second = $b['familyOrder'] ?? 0;
+                                return $first <=> $second;
+                            });
+                            @endphp
+
+                            <ul id="product-family">
+                                @foreach ($prodFamily as $item)
+                                    @php
+                                    $bSelected = $PRODUCT?->familySize == $item['familySize'];
+                                    $strFamilySize = $item['familySize'] ?? '?';
+                                    @endphp
+
+                                    <li class="{{ $bSelected ? 'selected' : '' }}">
+                                        @if (!$bSelected)
+                                            <a href="{{ $item['url'] ?? 'javascript:;' }}">
+                                                {{ $strFamilySize }}
+                                            </a>
+                                        @else
+                                            {{ $strFamilySize }}
+                                        @endif
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-12 col-md-5">
                         @include('partials.titleSingle', [
@@ -37,7 +80,7 @@ $PRODUCT = (object) $PRODUCT;
                             </div>
                         @endif
                     </div>
-                    <div class="col-12 mt-4 col-md-7 mt-md-0">
+                    <div class="col-12 mt-4 col-md-7 mt-md-0 text-center">
                         <img alt="{{ $PRODUCT->title }}" class="responsive" src="{{ $PRODUCT->image ?? '' }}" />
                     </div>
                 </div>

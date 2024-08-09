@@ -514,6 +514,28 @@ section#product-single table#ps-info-nutri-table tbody tr td {
     border-bottom-color: rgba(0, 0, 0, 0.4);
     padding: .4rem;
 }
+section#product-single ul#product-family {
+    position: relative;
+    top: -40px;
+}
+section#product-single ul#product-family li {
+    display: inline-block;
+    background-color: #fff;
+    color: #c12a21;
+    border-radius: 8px;
+    padding: 3px 12px;
+    cursor: pointer;
+    font-size: 90%;
+}
+section#product-single ul#product-family li a {
+    color: inherit;
+}
+section#product-single ul#product-family li.selected {
+    background-color: #c12a21;
+    color: #fff;
+    font-size: 120%;
+    cursor: default;
+}
 section#banner-mes-nordestino {
     background-image: url(images/banner-bg-mes-nordestino.png);
 }
