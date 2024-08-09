@@ -614,11 +614,20 @@ footer #footer-social-media a {
     margin-right: 4px;
     font-size: 1.5em;
 }
+footer .container {
+    position: relative;
+}
 footer #footer-logo {
     position: absolute;
-    bottom: 40px;
-    right: 9vw;
-    max-width: 13%;
+    bottom: 0;
+    right: 0;
+    max-width: 16%;
+}
+
+@media screen and (min-width: 1201px) {
+    footer #footer-bg-wave {
+        width: 100%;
+    }
 }
 
 /* Bootstrap Extra Large */

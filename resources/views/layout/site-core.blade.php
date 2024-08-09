@@ -77,7 +77,7 @@ $V_TITLE = ($PAGE_TITLE ?? '') . ' | ' . env('SITE_DISPLAY_NAME');
         @yield('BODY_CONTENT')
 
         <footer>
-            <img class="responsive" src="{{ url('/') }}/templates/primor-v1/images/footer-bg-wave.png" />
+            <img id="footer-bg-wave" class="responsive" src="{{ url('/') }}/templates/primor-v1/images/footer-bg-wave.png" />
             <div class="container-fluid">
                 <div class="container">
                     &nbsp; <!-- need to have this here O___O -->
