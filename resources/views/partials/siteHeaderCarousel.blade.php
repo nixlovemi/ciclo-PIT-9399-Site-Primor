@@ -7,7 +7,7 @@ $items[] = [
         <<<HTML
             <span class="black">Conheça</span>
             <br />
-            <span class="black">o</span>&nbsp;<span class="stash">sabor</span>
+            <span class="black">o</span>&nbsp;&nbsp;<span class="stash">sabor</span>
             <br />
             <span class="black">que conta.</span>
         HTML,
