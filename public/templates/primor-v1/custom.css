@@ -572,7 +572,7 @@ section#banner-top-of-mind #btom-icon-top {
     position: absolute;
     top: 0;
     right: 0;
-    width: 20vw;
+    width: 15em;
 }
 section#banner-primor-60 {
     background-image: url(images/banner-bg-primor-60.jpg);
@@ -647,6 +647,9 @@ footer #footer-logo {
         margin-right: auto;
         left: -7vw;
         margin-bottom: -20vw;
+    }
+    section#banner-top-of-mind #btom-icon-top {
+        width: 12em;
     }
 }
 
@@ -737,9 +740,6 @@ footer #footer-logo {
     section#recipes-single h2 br {
         display: none;
     }
-    section#banner-top-of-mind #btom-icon-top {
-        width: 35vw;
-    }
 }
 
 /* Bootstrap Small */
@@ -767,9 +767,6 @@ footer #footer-logo {
     }
     #footer-menu {
         display: none;
-    }
-    section#banner-top-of-mind #btom-icon-top {
-        width: 55vw;
     }
     section#banner-primor-60-bot #bp6b-image {
         width: 56vw;
