@@ -11,6 +11,7 @@ use App\Helpers\ApiResponse;
 use App\Http\Requests\doFaleConosco;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactForm;
+use Dipesh79\LaravelShare\LaravelShare;
 
 class Site extends Controller
 {
@@ -53,8 +54,11 @@ class Site extends Controller
 
     public function receitaSingle(string $slug)
     {
+        $share = new LaravelShare();
+
         return view('site-receitas-single', [
-            'RECEITA' => $this->getReceitaBySlug($slug)
+            'RECEITA' => $this->getReceitaBySlug($slug),
+            'SHARE' => $share
         ]);
     }
 

@@ -3,6 +3,7 @@
 View variables:
 ===============
     - $RECEITA: array
+    - $SHARE: LaravelShare
 */
 $RECEITA = (object) $RECEITA;
 @endphp
@@ -45,7 +46,7 @@ $RECEITA = (object) $RECEITA;
                             </div>
                             <div class="col-6 mb-2 col-md-3 mb-md-0">
                                 <span class="rs-info no-border">
-                                    <a href="javascript:;">
+                                    <a href="javascript:;" data-toggle="modal" data-target="#modal-share">
                                         Compartilhar <i class="fas fa-share-alt"></i>
                                     </a>
                                 </span>
@@ -90,5 +91,29 @@ $RECEITA = (object) $RECEITA;
             </div>
         </div>
     </section>
+
+    <div class="modal fade" id="modal-share" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Compartilhe</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="row">
+                        <div style="font-size:3em;" class="col text-center">
+                            <a target="_blank" href="{{ $SHARE->facebook() }}"><i class="fab fa-facebook-square"></i></a>
+                            <a target="_blank" href="{{ $SHARE->twitter() }}"><i class="fab fa-twitter-square"></i></a>
+                            <a target="_blank" href="{{ $SHARE->pinterest() }}"><i class="fab fa-pinterest-square"></i></a>
+                            <a target="_blank" href="{{ $SHARE->whatsapp() }}"><i class="fab fa-whatsapp-square"></i></a>
+                            <a target="_blank" href="{{ $SHARE->telegram() }}"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection
