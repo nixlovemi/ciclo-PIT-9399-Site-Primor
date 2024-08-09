@@ -136,7 +136,7 @@ View variables:
                     </div>
                     <div class="col-12 mt-5 col-md-6 mt-md-0">
                         <div id="canais-atendimento">
-                            <h3 class="mb-5">Nossos canais de atendimento</h3>
+                            <h3 class="mb-5"><strong>Nossos canais de atendimento</strong></h3>
 
                             <p>
                                 <i class="fas fa-phone-alt fa-border"></i>

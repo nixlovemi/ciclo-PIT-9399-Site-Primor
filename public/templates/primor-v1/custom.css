@@ -447,7 +447,7 @@ section#our-history-about img#nossa-historia-food-min {
 }
 section#contact-form #canais-atendimento {
     width: 100%;
-    padding: 10px 30px;
+    padding: 35px 30px;
     background-color: #b2271f;
     color: #FFF;
     border-radius: 15px;
@@ -647,6 +647,7 @@ footer #footer-logo {
     }
     #header-menu-mobile {
         display: block;
+        height: 63px; /* to click easily */
     }
     .slick-dots li button::before {
         font-size: 8px;

@@ -9,8 +9,8 @@
 
     $(document).ready(function() {
         MOBILE_MENU.hide();
-        $("#header-menu-mobile #hmm-icon").click(function() {
-            MOBILE_MENU.slideToggle( "slow");
+        $("#header-menu-mobile a").click(function() {
+            MOBILE_MENU.slideToggle("slow");
         });
 
         CAROUSEL_SINGLE.slick({
