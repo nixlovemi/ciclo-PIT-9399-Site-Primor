@@ -26,7 +26,7 @@
         <div class="content-wrapper">
             <div class="container">
                 <h2>
-                    <span class="title stash">Sobre Nós</span><br /><br />
+                    <span class="title stash">Sobre Nós</span>
                 </h2>
                 <h5>
                     <span class="title black color-red">Nosso sabor<br />chama para perto</span>
