@@ -16,11 +16,11 @@
                 <p>Do Norte ao Nordeste, cozinhar bem é uma questão de Primor.</p>
 
                 @include('layout.video-embed', [
-                    'VIDEO_SRC' => 'https://www.youtube.com/embed/QhifyOknFjI?rel=0'
+                    'VIDEO_SRC' => url('/') . '/templates/primor-v1/images/primor_sabor_que_conta_30seg_WEB.mp4'
                 ])
 
                 <p class="text-center">
-                    <a class="button-clear" href="javascript:;">VER TODOS OS VÍDEOS</a>
+                    <a class="button-clear" href="{{ route('site.campanha') }}">VER TODOS OS VÍDEOS</a>
                 </p>
             </div>
         </div>

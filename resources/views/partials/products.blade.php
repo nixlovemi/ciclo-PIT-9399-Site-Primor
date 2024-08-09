@@ -9,42 +9,42 @@
                     </div>
                     <div class="col">
                         <div class="img" id="margarina-tradicional">
-                            <img alt="Primor - Margarina Tradicional" class="responsive" src="templates/primor-v1/images/product-01.png" />
+                            <img alt="Primor - Margarina Tradicional" class="responsive" src="{{ url('/') }}/templates/primor-v1/images/product-01.png" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col2">
-            <div class="products">
+            <div class="products no-image text-center">
                 <div class="row">
                     <div class="col">
                         <div class="title">Margarina<br />Tablete</div>
                         <a class="products-btn" href="javascript:;">Conheça</a>
-                    </div>
-                    <div class="col">
-                        <div class="img" id="margarina-tablete">
-                            <img alt="Primor - Margarina Tablete" class="responsive" src="templates/primor-v1/images/product-02.png" />
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row mt-0 mt-sm-5 ml-0 mr-0 text-center">
+    <div class="row mt-0 mt-sm-5 ml-0 mr-0">
         <div class="col1">
-            <div class="products no-image">
+            <div class="products">
                 <div class="row">
                     <div class="col">
                         <div class="title">Margarina<br />Balde</div>
                         <a class="products-btn" href="javascript:;">Conheça</a>
                     </div>
+                    <div class="col">
+                        <div class="img" id="margarina-balde">
+                            <img alt="Primor - Margarina Balde" class="responsive" src="{{ url('/') }}/templates/primor-v1/images/product-03-margarina-balde-3kg.png" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col2">
-            <div class="products no-image">
+            <div class="products no-image text-center">
                 <div class="row">
                     <div class="col">
                         <div class="title">Gordura<br />Vegetal</div>

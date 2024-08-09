@@ -93,10 +93,10 @@ $V_TITLE = ($PAGE_TITLE ?? '') . ' | ' . env('SITE_DISPLAY_NAME');
                             </p>
                         </div>
                         <div id="footer-social-media" class="col">
-                            <a href="javascript:;"><i class="fab fa-tiktok"></i></a>
-                            <a href="javascript:;"><i class="fab fa-instagram"></i></a>
-                            <a href="javascript:;"><i class="fab fa-facebook-square"></i></a>
-                            <a href="javascript:;"><i class="fab fa-youtube"></i></a>
+                            <a target="_blank" href="https://www.tiktok.com/@primor.oficial"><i class="fab fa-tiktok"></i></a>
+                            <a target="_blank" href="https://www.instagram.com/primor/"><i class="fab fa-instagram"></i></a>
+                            <a target="_blank" href="https://www.facebook.com/PrimorAlimentos/"><i class="fab fa-facebook-square"></i></a>
+                            <a target="_blank" href="https://www.youtube.com/@PrimorAlimentos"><i class="fab fa-youtube"></i></a>
                             <span>Acompanhe nas redes sociais</span>
                         </div>
                     </div>
