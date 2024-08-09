@@ -54,7 +54,9 @@ View variables:
                         </p>
                     </div>
 
-                    <img id="bp6b-image" class="responsive" src="{{ url('/') }}/templates/primor-v1/images/page-primor-60-bot-image.jpg" />
+                    <div class="col-12 col-lg-7 text-lg-left text-center">
+                        <img id="bp6b-image-old" class="responsive" src="{{ url('/') }}/templates/primor-v1/images/page-primor-60-bot-image.jpg" />
+                    </div>
                 </div>
             </div>
         </div>
