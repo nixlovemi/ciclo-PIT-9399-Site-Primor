@@ -20,6 +20,7 @@ $V_TITLE = ($PAGE_TITLE ?? '') . ' | ' . env('SITE_DISPLAY_NAME');
         <link rel="apple-touch-icon" href="{{ url('/') }}/templates/primor-v1/images/favicon.png" />
 
         <!-- Custom CSS -->
+        <link rel="preload" as="font" href="{{ url('/') }}/templates/primor-v1/fonts/StashBold/Stash-Bold.woff2">
         @livewireStyles
         @yield('HEADER_CUSTOM_CSS')
         <link rel='stylesheet' href='{{ url('/') }}/templates/primor-v1/reset.css' type='text/css' media='all' />
