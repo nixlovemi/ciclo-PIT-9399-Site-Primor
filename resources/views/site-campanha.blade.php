@@ -29,7 +29,7 @@
                 <div class="row mt-1 mt-sm-4 pt-1 pt-sm-4">
                     <div class="col">
                         @include('layout.video-embed', [
-                            'VIDEO_SRC' => 'https://www.youtube.com/embed/1nv_pS5SqzQ?rel=0',
+                            'VIDEO_SRC' => url('/') . '/templates/primor-v1/images/Clipe-campanha.mp4',
                             'ROUNDED' => true
                         ])
                     </div>

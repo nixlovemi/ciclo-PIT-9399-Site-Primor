@@ -335,7 +335,8 @@ section#produtos {
     max-width: 78%;
 }
 .products .img#margarina-tablete img,
-.products .img#margarina-balde img {
+.products .img#margarina-balde img,
+.products .img#gordura-vegetal img {
     max-width: 58%;
 }
 .products .products-btn {
@@ -600,7 +601,8 @@ footer #footer-logo {
         max-width: 100%;
     }
     .products .img#margarina-tablete img,
-    .products .img#margarina-balde img {
+    .products .img#margarina-balde img,
+    .products .img#gordura-vegetal img {
         max-width: 85%;
     }
     section#our-history-about img#nossa-historia-food-min {
@@ -666,10 +668,12 @@ footer #footer-logo {
         bottom: -8px;
     }
     .products .img#margarina-tablete img,
-    .products .img#margarina-balde img {
+    .products .img#margarina-balde img,
+    .products .img#gordura-vegetal img {
         max-width: 98%;
     }
-    .products .img#margarina-balde img {
+    .products .img#margarina-balde img,
+    .products .img#gordura-vegetal img {
         top: -1.5vw;
     }
     #footer-menu ul li {
@@ -724,7 +728,8 @@ footer #footer-logo {
         bottom: -3.5vw;
     }
     .products .img#margarina-tablete img,
-    .products .img#margarina-balde img {
+    .products .img#margarina-balde img,
+    .products .img#gordura-vegetal img {
         max-width: 48%;
     }
     #footer-menu {

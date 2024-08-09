@@ -44,11 +44,16 @@
             </div>
         </div>
         <div class="col2">
-            <div class="products no-image text-center">
+            <div class="products">
                 <div class="row">
                     <div class="col">
                         <div class="title">Gordura<br />Vegetal</div>
                         <a class="products-btn" href="javascript:;">Conheça</a>
+                    </div>
+                    <div class="col">
+                        <div class="img" id="gordura-vegetal">
+                            <img alt="Primor - Gordura Vegetal" class="responsive" src="{{ url('/') }}/templates/primor-v1/images/product-04-gordura-vegetal.png" />
+                        </div>
                     </div>
                 </div>
             </div>

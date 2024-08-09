@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <p class="text-center mt-4">
-                            <a class="button-red" href="javascript:;">VER RECEITAS</a>
+                            <a target="_blank" class="button-red" href="https://www.youtube.com/@PrimorAlimentos">VER RECEITAS</a>
                         </p>
                     </div>
                 </div>
