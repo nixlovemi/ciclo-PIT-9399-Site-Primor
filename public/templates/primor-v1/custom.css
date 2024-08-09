@@ -606,12 +606,13 @@ footer .container-fluid {
     color: #FFF;
     padding-bottom: 40px;
 }
+footer #footer-social-media {
+    margin-left: -6%;
+}
 footer #footer-social-media a {
     color: #fff;
     margin-right: 4px;
-}
-footer #footer-social-media a i {
-    font-size: 1em;
+    font-size: 1.5em;
 }
 footer #footer-logo {
     position: absolute;
