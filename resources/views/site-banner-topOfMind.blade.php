@@ -27,7 +27,7 @@ View variables:
                             <span class="title black clear">suas melhores</span><br />
                             <span class="title black clear">memórias.</span>
                         </h2>
-
+                        
                         <img id="btom-icon-top" class="responsive" src="{{ url('/') }}/templates/primor-v1/images/page-top-of-mind-header-icon.png" />
                     </div>
                     <div class="col-12 col-md-6 pt-5">
@@ -49,12 +49,6 @@ View variables:
                         na mesa de milhões de pessoas.</p>
                     </div>
                 </div>
-
-                <div class="row mt-4 pt-4">
-                    <div class="col">
-                        <img class="responsive border-rounded" alt="Primor - Top of Mind" src="{{ url('/') }}/templates/primor-v1/images/page-top-of-mind-topo.jpg" />
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -63,73 +57,14 @@ View variables:
         <div class="content-wrapper pt-2 pt-sm-5">
             <div class="container pt-2 pt-sm-5">
                 <div class="row">
-                    <div class="col-10 offset-1">
-                        <div id="bcn-row-photos" class="row">
-                            <div class="col">
-                                <a href="javascript:;" data-toggle="modal" data-target="#modal-img-1">
-                                    <img class="responsive border-rounded" alt="Top of Mind 01" src="{{ url('/') }}/templates/primor-v1/images/page-top-of-mind-img-01.jpg" />
-                                </a>
-                            </div>
-                            <div class="col">
-                                <a href="javascript:;" data-toggle="modal" data-target="#modal-img-2">
-                                    <img class="responsive border-rounded" alt="Top of Mind 02" src="{{ url('/') }}/templates/primor-v1/images/page-top-of-mind-img-02.jpg" />
-                                </a>
-                            </div>
-                            <div class="col">
-                                <a href="javascript:;" data-toggle="modal" data-target="#modal-img-3">
-                                    <img class="responsive border-rounded" alt="Top of Mind 03" src="{{ url('/') }}/templates/primor-v1/images/page-top-of-mind-img-03.jpg" />
-                                </a>
-                            </div>
-                        </div>
+                    <div class="col text-center">
+                        @include('layout.video-embed', [
+                            'VIDEO_SRC' => url('/') . '/templates/primor-v1/images/page-top-of-mind-header-video.mp4'
+                        ])
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <div class="modal fade" id="modal-img-1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <img class="responsive border-rounded" alt="Círio de Nazaré 01" src="{{ url('/') }}/templates/primor-v1/images/page-top-of-mind-img-01.jpg" />
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal-img-2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <img class="responsive border-rounded" alt="Círio de Nazaré 01" src="{{ url('/') }}/templates/primor-v1/images/page-top-of-mind-img-02.jpg" />
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modal-img-3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <img class="responsive border-rounded" alt="Círio de Nazaré 01" src="{{ url('/') }}/templates/primor-v1/images/page-top-of-mind-img-03.jpg" />
-                </div>
-            </div>
-        </div>
-    </div>
 
 @endsection
