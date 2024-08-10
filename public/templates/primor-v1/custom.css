@@ -285,7 +285,8 @@ section#receitas {
     width: 98%;
     margin-left: 0;
 }
-.recipes-item:hover > div.img {
+.recipes-item:hover > div.img,
+#bcn-row-photos .col img:hover {
     transform: scale(1.05);
 }
 .recipes-item .type {
