@@ -95,7 +95,7 @@ $PRODUCT = (object) $PRODUCT;
                             </span>
                         </h4>
 
-                        <p class="text-clear">{{ $PRODUCT->ingredients ?? '' }}</p>
+                        <p class="text-clear">{!! $PRODUCT->ingredients ?? '' !!}</p>
                     </div>
                     <div class="col-12 col-lg-6">
                         <h4 class="mb-3">
@@ -125,6 +125,10 @@ $PRODUCT = (object) $PRODUCT;
                                 @endforeach
                             </tbody>
                         </table>
+
+                        @foreach ($nutritionalInfo->obs as $item)
+                            <p style="font-size:0.8em" class="text-clear">{!! $item['description'] ?? '' !!}</p>
+                        @endforeach
                     </div>
                 </div>
             </div>

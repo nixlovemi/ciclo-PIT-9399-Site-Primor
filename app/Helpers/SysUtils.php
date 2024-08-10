@@ -382,7 +382,23 @@ final class SysUtils {
                     $iconCozinhar,
                     $iconServir
                 ],
-                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, cloreto de potássio, emulsificantes mono e diglicerídeos de ácidos graxos, ésteres de poliglicerol de ácidos graxos e lecitina de soja*, aromatizantes, conservador benzoato de sódio, corante natural de urucum e cúrcuma, antioxidantes EDTA cálcio dissódico, BHT e ácido cítrico e acidulante ácido láctico. *Geneticamente modificado a partir de streptomyces viridochromogenes e/ou agrobacterium tumefaciens e/ou bacillus thuringiensis. NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
+                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, cloreto de potássio,
+                        emulsificantes mono e diglicerídeos de ácidos graxos, ésteres de poliglicerol de ácidos graxos e lecitina
+                        de soja*, aromatizantes, conservador benzoato de sódio, corante natural de urucum e cúrcuma,
+                        antioxidantes EDTA cálcio dissódico, BHT e ácido cítrico e acidulante ácido láctico. *Geneticamente
+                        modificado a partir de streptomyces viridochromogenes e/ou agrobacterium tumefaciens e/ou bacillus
+                        thuringiensis.
+                        <br /><br />
+                        <strong>Alérgicos:</strong>
+                        <br />
+                        Contém Glúten*: Não Contém
+                        <br />
+                        Aromatizante*: Sintético Idêntico ao Natural
+                        <br />
+                        Contém Lactose*: Contém
+                        <br />
+                        Contém Leite: Pode Conter<br />
+                        Contém Soja - Derivados: Contém',
                 'nutritionalInfo' => [
                     'title' => 'Quantidade por porção de 10g',
                     'items' => [
@@ -434,8 +450,17 @@ final class SysUtils {
                     ],
                     'obs' => [
                         [
+                            'description' => 'Referência para Valores Diários:'
+                        ],
+                        [
                             'description' => '*Percentual de valores diários fornecidos pela porção.'
-                        ]
+                        ],
+                        [
+                            'description' => 'Informação Complementar Nutricional: 60% de gordura.'
+                        ],
+                        [
+                            'description' => 'Tabela Nutricional - RDC 429: Conforme'
+                        ],
                     ]
                 ],
             ],
@@ -453,7 +478,24 @@ final class SysUtils {
                     $iconCozinhar,
                     $iconServir
                 ],
-                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, cloreto de potássio, emulsificantes: mono e diglicerídeos de ácidos graxos, lecitina de soja* e ésteres de poliglicerol de ácidos graxos, aromatizantes, conservador benzoato de sódio, corante natural de urucum e cúrcuma, antioxidantes: EDTA cálcio dissódico, BHT e ácido cítrico e acidulante ácido láctico. *(Geneticamente modificado a partir de Streptomyces viridochromogenes e/ou Agrobacterium tumefaciens e/ou Bacillus thuringiensis). NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
+                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, cloreto de potássio,
+                    emulsificantes mono e diglicerídeos de ácidos graxos, ésteres de poliglicerol de ácidos graxos e lecitina
+                    de soja*, aromatizantes, conservador benzoato de sódio, corante natural de urucum e cúrcuma,
+                    antioxidantes EDTA cálcio dissódico, BHT e ácido cítrico e acidulante ácido láctico. *Geneticamente
+                    modificado a partir de streptomyces viridochromogenes e/ou agrobacterium tumefaciens e/ou bacillus
+                    thuringiensis.
+                    <br /><br />
+                    <strong>Alérgicos:</strong>
+                    <br />
+                    Contém Glúten*: Não Contém
+                    <br />
+                    Aromatizante*: Sintético Idêntico ao Natural
+                    <br />
+                    Contém Lactose*: Contém
+                    <br />
+                    Contém Leite: Pode Conter
+                    <br />
+                    Contém Soja - Derivados: Contém',
                 'nutritionalInfo' => [
                     'title' => 'Quantidade por porção de 10g',
                     'items' => [
@@ -500,10 +542,17 @@ final class SysUtils {
                     ],
                     'obs' => [
                         [
-                            'description' => '* % Valores Diários de Referência com base em uma dieta de 2.000 kcal ou 8.400 kJ. Seus valores diários podem ser maiores ou menores dependendo de suas necessidades energéticas.'
+                            'description' => 'Referência para Valores Diários:'
                         ],
                         [
-                            'description' => '** VD não estabelecido'
+                            'description' => '*Percentual de valores diários fornecidos pela porção. Não contém quantidades significativas de
+                                carboidratos, açúcares totais, açúcares adicionados, proteínas e fibras alimentares.'
+                        ],
+                        [
+                            'description' => 'Informação Complementar Nutricional: 60% de gordura.'
+                        ],
+                        [
+                            'description' => 'Tabela Nutricional - RDC 429: Conforme'
                         ],
                     ]
                 ],
@@ -522,7 +571,24 @@ final class SysUtils {
                     $iconCozinhar,
                     $iconServir
                 ],
-                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, cloreto de potássio, emulsificantes mono e diglicerídeos de ácidos graxos, ésteres de poliglicerol de ácidos graxos e lecitina de soja*, aromatizantes, conservador benzoato de sódio, corante natural de urucum e cúrcuma, antioxidantes EDTA cálcio dissódico, BHT e ácido cítrico e acidulante ácido láctico. *Geneticamente modificado a partir de streptomyces viridochromogenes e/ou agrobacterium tumefaciens e/ou bacillus thuringiensis. NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
+                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, cloreto de potássio,
+                    emulsificantes mono e diglicerídeos de ácidos graxos, ésteres de poliglicerol de ácidos graxos e lecitina
+                    de soja*, aromatizantes, conservador benzoato de sódio, corante natural de urucum e cúrcuma,
+                    antioxidantes EDTA cálcio dissódico, BHT e ácido cítrico e acidulante ácido láctico. *Geneticamente
+                    modificado a partir de streptomyces viridochromogenes e/ou agrobacterium tumefaciens e/ou bacillus
+                    thuringiensis.
+                    <br /><br />
+                    <strong>Alérgicos:</strong>
+                    <br />
+                    Contém Glúten*:Não Contém
+                    <br />
+                    Aromatizante*: Sintético Idêntico ao Natural
+                    <br />
+                    Contém Lactose*: Contém
+                    <br />
+                    Contém Leite: Pode Conter
+                    <br />
+                    Contém Soja - Derivados: Contém',
                 'nutritionalInfo' => [
                     'title' => 'Quantidade por porção de 10g',
                     'items' => [
@@ -554,10 +620,19 @@ final class SysUtils {
                     ],
                     'obs' => [
                         [
+                            'description' => 'Referência para Valores Diários:'
+                        ],
+                        [
                             'description' => '*Percentual de valores diários fornecidos pela porção. Não contém quantidades significativas de carboidratos, açúcares totais, açúcares adicionados, proteínas e fibras alimentares.'
                         ],
                         [
                             'description' => '** VD não estabelecido'
+                        ],
+                        [
+                            'description' => 'Informação Complementar Nutricional: 60% de gordura.'
+                        ],
+                        [
+                            'description' => 'Tabela Nutricional - RDC 429: Conforme'
                         ],
                     ]
                 ],
@@ -577,7 +652,23 @@ final class SysUtils {
                     $iconCozinhar,
                     $iconServir
                 ],
-                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, emulsificantes mono e diglicerídeos de ácidos graxos, ésteres de poliglicerol de ácidos graxos e lecitina de soja*, aromatizantes, conservador benzoato de sódio, corante natural de urucum e cúrcuma, antioxidantes EDTA cálcio dissódico, BHT e ácido cítrico e acidulante ácido láctico. *Geneticamente modificado a partir de streptomyces viridochromogenes e/ou agrobacterium tumefaciens e/ou bacillus thuringiensis. NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
+                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, emulsificantes mono e
+                    diglicerídeos de ácidos graxos, ésteres de poliglicerol de ácidos graxos e lecitina de soja*, aromatizantes,
+                    conservador benzoato de sódio, corante natural de urucum e cúrcuma, antioxidantes EDTA cálcio
+                    dissódico, BHT e ácido cítrico e acidulante ácido láctico. *Geneticamente modificado a partir de
+                    streptomyces viridochromogenes e/ou agrobacterium tumefaciens e/ou bacillus thuringiensis.
+                    <br /><br />
+                    <strong>Alérgicos</strong>
+                    <br />
+                    Contém Glúten*: Não Contém
+                    <br />
+                    Aromatizante*: Sintético Idêntico ao Natural
+                    <br />
+                    Contém Lactose*: Pode Conter
+                    <br />
+                    Contém Leite: Pode Conter
+                    <br />
+                    Contém Soja - Derivados: Contém',
                 'nutritionalInfo' => [
                     'title' => 'Quantidade por porção de 10g',
                     'items' => [
@@ -634,8 +725,17 @@ final class SysUtils {
                     ],
                     'obs' => [
                         [
+                            'description' => 'Referência para Valores Diários:'
+                        ],
+                        [
                             'description' => '* Percentual de valores diários fornecidos pela porção.'
-                        ]
+                        ],
+                        [
+                            'description' => 'Informação Complementar Nutricional: 60% de gordura.'
+                        ],
+                        [
+                            'description' => 'Tabela Nutricional - RDC 429: Conforme'
+                        ],
                     ]
                 ],
             ],
@@ -653,7 +753,23 @@ final class SysUtils {
                     $iconCozinhar,
                     $iconServir
                 ],
-                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, emulsificantes lecitina de soja*, mono e diglicerídeos de ácidos graxos e ésteres de poliglicerol de ácidos graxos, conservador benzoato de sódio, aromatizante, acidulante ácido láctico, antioxidantes EDTA cálcio dissódico, BHT e ácido cítrico e corante natural de urucum e cúrcuma. *(Geneticamente modificado a partir de streptomyces viridochromogenes e/ou agrobacterium tumefaciens e/ou bacillus thuringiensis). NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
+                'ingredients' => 'Óleos vegetais líquidos e interesterificados (contém óleo de soja*), água, sal, emulsificantes lecitina de
+                    soja*, mono e diglicerídeos de ácidos graxos e ésteres de poliglicerol de ácidos graxos, conservador
+                    benzoato de sódio, aromatizante, acidulante ácido láctico, antioxidantes EDTA cálcio dissódico, BHT e
+                    ácido cítrico e corante natural de urucum e cúrcuma. *(Geneticamente modificado a partir de
+                    streptomyces viridochromogenes e/ou agrobacterium tumefaciens e/ou bacillus thuringiensis).
+                    <br /><br />
+                    <strong>Alérgicos:</strong>`
+                    <br />
+                    Contém Glúten*: Não Contém
+                    <br />
+                    Aromatizante*: Sintético Idêntico ao Natural
+                    <br />
+                    Contém Lactose*: Contém
+                    <br />
+                    Contém Leite: Pode Conter
+                    <br />
+                    Contém Soja - Derivados: Contém',
                 'nutritionalInfo' => [
                     'title' => 'Quantidade por porção de 10g',
                     'items' => [
@@ -710,8 +826,17 @@ final class SysUtils {
                     ],
                     'obs' => [
                         [
+                            'description' => 'Referência para Valores Diários:'
+                        ],
+                        [
                             'description' => '* Percentual de valores diários fornecidos pela porção.'
-                        ]
+                        ],
+                        [
+                            'description' => 'Informação Complementar Nutricional: 75% de gorduras.'
+                        ],
+                        [
+                            'description' => 'Tabela Nutricional - RDC 429: Conforme'
+                        ],
                     ]
                 ],
             ],
@@ -730,7 +855,17 @@ final class SysUtils {
                     $iconCozinhar,
                     $iconServir
                 ],
-                'ingredients' => 'Gordura de palma e antioxidantes: BHT e ácido cítrico. NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
+                'ingredients' => 'Gordura de palma e antioxidantes: BHT e ácido cítrico.
+                    <br /><br />
+                    <strong>Alérgicos:</strong>
+                    <br />
+                    Contém Glúten*: Não Contém
+                    <br />
+                    Aromatizante*: Não Contém
+                    <br />
+                    Contém Lactose*: Não Contém
+                    <br />
+                    Aromatizante Artificial: Não Contém',
                 'nutritionalInfo' => [
                     'title' => 'Quantidade por porção de 10g',
                     'items' => [
@@ -742,8 +877,25 @@ final class SysUtils {
                     ],
                     'obs' => [
                         [
-                            'description' => '* %Valores Diários de referência com base em uma dieta de 2.000kcal ou 8.400kj. Seus valores diários podem ser maiores ou menores dependendo de suas necessidades energéticas.'
-                        ]
+                            'description' => 'Referência para Valores Diários:'
+                        ],
+                        [
+                            'description' => '* %Valores Diários de referência com base em uma dieta de 2.000kcal ou 8.400kj. Seus
+                                valores diários podem ser maiores ou menores dependendo de suas necessidades
+                                energéticas.'
+                        ],
+                        [
+                            'description' => 'Informação Complementar Nutricional:'
+                        ],
+                        [
+                            'description' => 'Tabela Nutricional - RDC 429:'
+                        ],
+                        [
+                            'description' => ''
+                        ],
+                        [
+                            'description' => ''
+                        ],
                     ]
                 ],
             ],
