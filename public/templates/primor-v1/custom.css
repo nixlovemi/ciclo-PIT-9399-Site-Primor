@@ -607,7 +607,7 @@ footer .container-fluid {
     padding-bottom: 40px;
 }
 footer #footer-social-media {
-    margin-left: -6%;
+    margin-top: 12px;
 }
 footer #footer-social-media a {
     color: #fff;
@@ -619,7 +619,7 @@ footer .container {
 }
 footer #footer-logo {
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     right: 0;
     max-width: 16%;
 }

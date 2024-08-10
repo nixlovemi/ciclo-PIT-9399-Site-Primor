@@ -90,18 +90,18 @@ $V_TITLE = ($PAGE_TITLE ?? '') . ' | ' . env('SITE_DISPLAY_NAME');
                         0800 021 5260 | (11) 91035-4902
                     </p>
                     <div class="row no-gutters">
-                        <div class="col-5">
+                        <div class="col-12 col-md-5">
                             <p class="mb-0">
                                 <i class="fas fa-envelope mr-1"></i>
                                 sac@seara.com.br
                             </p>
-                        </div>
-                        <div id="footer-social-media" class="col">
-                            <a target="_blank" href="https://www.tiktok.com/@primor.oficial"><i class="fab fa-tiktok"></i></a>
-                            <a target="_blank" href="https://www.instagram.com/primor/"><i class="fab fa-instagram"></i></a>
-                            <a target="_blank" href="https://www.facebook.com/PrimorAlimentos/"><i class="fab fa-facebook-square"></i></a>
-                            <a target="_blank" href="https://www.youtube.com/@PrimorAlimentos"><i class="fab fa-youtube"></i></a>
-                            <span>Acompanhe nas redes sociais</span>
+                            <p id="footer-social-media">
+                                <a target="_blank" href="https://www.tiktok.com/@primor.oficial"><i class="fab fa-tiktok"></i></a>
+                                <a target="_blank" href="https://www.instagram.com/primor/"><i class="fab fa-instagram"></i></a>
+                                <a target="_blank" href="https://www.facebook.com/PrimorAlimentos/"><i class="fab fa-facebook-square"></i></a>
+                                <a target="_blank" href="https://www.youtube.com/@PrimorAlimentos"><i class="fab fa-youtube"></i></a>
+                                <span>Acompanhe nas redes sociais</span>
+                            </p>
                         </div>
                     </div>
                     <img class="responsive" id="footer-logo" src="{{ url('/') }}/templates/primor-v1/images/footer-logo.png" />
