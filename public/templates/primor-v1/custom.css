@@ -746,11 +746,15 @@ footer #footer-logo {
     section#recipes-single h2 {
         text-align: center;
         font-size: 3.5em;
+        margin-bottom: 30px;
     }
     section#campaign h2 br,
     section#product-single h2 br,
     section#recipes-single h2 br {
         display: none;
+    }
+    span.title.stash {
+        font-size: 1.7em;
     }
 }
 
@@ -783,5 +787,12 @@ footer #footer-logo {
     section#banner-primor-60-bot #bp6b-image {
         width: 56vw;
         left: -10vw;
+    }
+    section#campaign h2,
+    section#product-single h2,
+    section#recipes-single h2 {
+        text-align: center;
+        font-size: 3.5em;
+        margin-bottom: 15px;
     }
 }

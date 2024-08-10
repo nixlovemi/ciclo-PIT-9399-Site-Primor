@@ -123,7 +123,583 @@ final class SysUtils {
 
     public static function getRecipes(): array
     {
+        $typeAlmoço = 'Almoço';
+        $typeSobremesa = 'Sobremesa';
+        $typeLanche = 'Lanche';
+        $typeJantar = 'Jantar';
+
         return [
+            [
+                'type' => $typeAlmoço,
+                'title' => 'Arroz de Cuxá',
+                'image' => url('/') . '/templates/primor-v1/images/receitas-arroz-de-cuxa-single.jpg',
+                'bannerSingle' => url('/') . '/templates/primor-v1/images/receitas-arroz-de-cuxa-banner.jpg',
+                'details' => null,
+                'timeStr' => '60 min',
+                'portionsStr' => '6 porções',
+                'difficultyStr' => 'Fácil',
+                'url' => route('site.receitaSingle', ['slug' => 'almoco-arroz-de-cuxa']),
+                'ingredients' => [
+                    [
+                        'qty' => '2',
+                        'item' => 'xícaras de arroz'
+                    ],
+                    [
+                        'qty' => '1',
+                        'item' => 'maço de vinagreira (ou hibisco) picada'
+                    ],
+                    [
+                        'qty' => 2,
+                        'item' => 'colheres de sopa de Margarina Primor'
+                    ],
+                    [
+                        'qty' => 1,
+                        'item' => 'cebola grande picada'
+                    ],
+                    [
+                        'qty' => 3,
+                        'item' => 'dentes de alho picados'
+                    ],
+                    [
+                        'qty' => 2,
+                        'item' => 'xícaras de camarão seco'
+                    ],
+                    [
+                        'qty' => 1,
+                        'item' => 'xícara de gergelim torrado e triturado'
+                    ],
+                    [
+                        'qty' => null,
+                        'item' => 'Sal a gosto'
+                    ],
+                    [
+                        'qty' => null,
+                        'item' => 'Água suficiente para cozinhar o arroz'
+                    ],
+                ],
+                'steps' => [
+                    [
+                        'title' => null,
+                        'desc' => 'Em uma panela, derreta a Margarina Primor e refogue a cebola e o alho até dourarem.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Adicione a vinagreira e refogue até que murche.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Acrescente o arroz e misture bem.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Adicione água suficiente para cozinhar o arroz e tempere com sal a gosto.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Quando o arroz estiver quase cozido, adicione o camarão seco e o gergelim torrado.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Misture bem e termine o cozimento do arroz.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Sirva quente.'
+                    ],
+                ]
+            ],
+
+            [
+                'type' => $typeSobremesa,
+                'title' => 'Arroz Doce',
+                'image' => url('/') . '/templates/primor-v1/images/receitas-arroz-doce-single.jpg',
+                'bannerSingle' => url('/') . '/templates/primor-v1/images/receitas-arroz-doce-banner.jpg',
+                'details' => null,
+                'timeStr' => '20 min',
+                'portionsStr' => '4 porções',
+                'difficultyStr' => 'Fácil',
+                'url' => route('site.receitaSingle', ['slug' => 'sobremesa-arroz-doce']),
+                'ingredients' => [
+                    [
+                        'qty' => '1',
+                        'item' => 'xícara de arroz'
+                    ],
+                    [
+                        'qty' => '1',
+                        'item' => 'litro de leite'
+                    ],
+                    [
+                        'qty' => 1,
+                        'item' => 'lata de leite condensado'
+                    ],
+                    [
+                        'qty' => 1,
+                        'item' => 'vidro de leite de coco (200ml)'
+                    ],
+                    [
+                        'qty' => 1,
+                        'item' => 'xícara de açúcar'
+                    ],
+                    [
+                        'qty' => 1,
+                        'item' => 'pau de canela'
+                    ],
+                    [
+                        'qty' => 3,
+                        'item' => 'cravos-da-índia'
+                    ],
+                    [
+                        'qty' => 2,
+                        'item' => 'colheres de sopa de Margarina Primor'
+                    ],
+                    [
+                        'qty' => null,
+                        'item' => 'Canela em pó para polvilhar'
+                    ],
+                ],
+                'steps' => [
+                    [
+                        'title' => null,
+                        'desc' => 'Em uma panela grande, cozinhe o arroz em 2 xícaras de água até que esteja macio.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Adicione o leite, o leite condensado, o leite de coco, o açúcar, o pau de canela e os cravos-da-índia.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Cozinhe em fogo baixo, mexendo sempre, até que o arroz esteja bem cremoso.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Acrescente a Margarina Primor e misture bem.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Retire os cravos e o pau de canela.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Despeje o arroz doce em uma travessa e polvilhe com canela em pó.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Sirva quente ou frio.'
+                    ],
+                ]
+            ],
+
+            [
+                'type' => $typeJantar,
+                'title' => 'Pato no Tucupi',
+                'image' => url('/') . '/templates/primor-v1/images/receitas-pato-no-tucupi-single.jpg',
+                'bannerSingle' => url('/') . '/templates/primor-v1/images/receitas-pato-no-tucupi-banner.jpg',
+                'details' => null,
+                'timeStr' => '180 min',
+                'portionsStr' => '4 porções',
+                'difficultyStr' => 'Difícil',
+                'url' => route('site.receitaSingle', ['slug' => 'jantar-pato-no-tucupi']),
+                'ingredients' => [
+                    [
+                        'qty' => '1',
+                        'item' => 'pato inteiro (cerca de 2kg) cortado em pedaços'
+                    ],
+                    [
+                        'qty' => '2',
+                        'item' => 'limões'
+                    ],
+                    [
+                        'qty' => null,
+                        'item' => 'Sal e pimenta-do-reino a gosto'
+                    ],
+                    [
+                        'qty' => '3',
+                        'item' => 'colheres de sopa de Margarina Primor'
+                    ],
+                    [
+                        'qty' => '1',
+                        'item' => 'cebola grande picada'
+                    ],
+                    [
+                        'qty' => '4',
+                        'item' => 'dentes de alho picados'
+                    ],
+                    [
+                        'qty' => '2',
+                        'item' => 'litros de tucupi'
+                    ],
+                    [
+                        'qty' => '1',
+                        'item' => 'maço de jambu'
+                    ],
+                    [
+                        'qty' => '3',
+                        'item' => 'folhas de chicória (ou alfavaca)'
+                    ],
+                    [
+                        'qty' => null,
+                        'item' => 'Pimenta-de-cheiro a gosto'
+                    ],
+                ],
+                'steps' => [
+                    [
+                        'title' => null,
+                        'desc' => 'Tempere os pedaços de pato com sal, pimenta-do-reino e suco de limão. Deixe marinar por pelo menos 1 hora.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Em uma panela grande, derreta a Margarina Primor e frite os pedaços de pato até dourarem.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Acrescente a cebola e o alho e refogue até dourarem.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Adicione o tucupi, a chicória e a pimenta-de-cheiro. Cozinhe em fogo baixo por cerca de 2 horas, ou até que o pato esteja bem macio.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Enquanto isso, cozinhe o jambu em água fervente até que esteja macio. Escorra e reserve.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Adicione o jambu ao pato e deixe cozinhar por mais 10 minutos.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Ajuste o sal e a pimenta-do-reino.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Sirva quente com arroz branco.'
+                    ],
+                ]
+            ],
+
+            [
+                'type' => $typeLanche,
+                'title' => 'Cuscuz',
+                'image' => url('/') . '/templates/primor-v1/images/receitas-cuscuz-single.jpg',
+                'bannerSingle' => url('/') . '/templates/primor-v1/images/receitas-cuscuz-banner.jpg',
+                'details' => null,
+                'timeStr' => '15 min',
+                'portionsStr' => '5 porções',
+                'difficultyStr' => 'Fácil',
+                'url' => route('site.receitaSingle', ['slug' => 'lanche-cuscuz']),
+                'ingredients' => [
+                    [
+                        'qty' => '2',
+                        'item' => 'xícaras de farinha de milho flocada'
+                    ],
+                    [
+                        'qty' => '1/2',
+                        'item' => 'xícara de água'
+                    ],
+                    [
+                        'qty' => '1',
+                        'item' => 'colher de chá de sal'
+                    ],
+                    [
+                        'qty' => '2',
+                        'item' => 'colheres de sopa de Margarina Primor'
+                    ],
+                ],
+                'steps' => [
+                    [
+                        'title' => null,
+                        'desc' => 'Em uma tigela, misture a farinha de milho, a água e o sal. Deixe descansar por 10 minutos.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Coloque a mistura de farinha de milho em uma cuscuzeira.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Cozinhe em banho-maria por cerca de 15 minutos ou até que o cuscuz esteja cozido.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Retire o cuscuz da cuscuzeira e transfira para um prato.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Derreta a Margarina Primor e regue sobre o cuscuz.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Sirva quente.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                ]
+            ],
+
+            [
+                'type' => $typeAlmoço,
+                'title' => 'Baião de Dois',
+                'image' => url('/') . '/templates/primor-v1/images/receitas-baiao-de-dois-single.jpg',
+                'bannerSingle' => url('/') . '/templates/primor-v1/images/receitas-baiao-de-dois-banner.jpg',
+                'details' => null,
+                'timeStr' => '30 min',
+                'portionsStr' => '6 porções',
+                'difficultyStr' => 'Moderado',
+                'url' => route('site.receitaSingle', ['slug' => 'almoco-baiao-de-dois']),
+                'ingredients' => [
+                    [
+                        'qty' => '1',
+                        'item' => 'xícara de arroz'
+                    ],
+                    [
+                        'qty' => '1',
+                        'item' => 'xícara de feijão verde (ou feijão fradinho) cozido'
+                    ],
+                    [
+                        'qty' => '200g',
+                        'item' => 'de carne seca dessalgada e desfiada'
+                    ],
+                    [
+                        'qty' => '150g',
+                        'item' => 'de bacon picado'
+                    ],
+                    [
+                        'qty' => '200g',
+                        'item' => 'de queijo coalho em cubos'
+                    ],
+                    [
+                        'qty' => '2',
+                        'item' => 'colheres de sopa de Margarina Primor'
+                    ],
+                    [
+                        'qty' => '1',
+                        'item' => 'cebola grande picada'
+                    ],
+                    [
+                        'qty' => '3',
+                        'item' => 'dentes de alho picados'
+                    ],
+                    [
+                        'qty' => '1',
+                        'item' => 'pimentão verde picado'
+                    ],
+                    [
+                        'qty' => null,
+                        'item' => 'Sal e pimenta-do-reino a gosto'
+                    ],
+                    [
+                        'qty' => null,
+                        'item' => 'Coentro picado a gosto'
+                    ],
+                ],
+                'steps' => [
+                    [
+                        'title' => null,
+                        'desc' => 'Em uma panela, derreta a Margarina Primor e frite o bacon até dourar.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Acrescente a cebola, o alho e o pimentão e refogue até dourarem.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Adicione a carne seca e refogue por mais alguns minutos.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Acrescente o arroz e misture bem.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Adicione o feijão cozido e o caldo do cozimento do feijão suficiente para cozinhar o arroz.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Tempere com sal e pimenta-do-reino a gosto.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Quando o arroz estiver quase cozido, adicione o queijo coalho e misture delicadamente.'
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => 'Finalize com coentro picado e sirva quente.'
+                    ],
+                ]
+            ],
+
+            /*
+            [
+                'type' => $typeSobremesa|$typeAlmoço|$typeLanche|$typeJantar,
+                'title' => '',
+                'image' => url('/') . '/templates/primor-v1/images/receitas-arroz-doce-single.jpg',
+                'bannerSingle' => url('/') . '/templates/primor-v1/images/receitas-arroz-doce-banner.jpg',
+                'details' => null,
+                'timeStr' => 'XXX min',
+                'portionsStr' => 'YYY porções',
+                'difficultyStr' => 'Fácil|Moderado|Difícil',
+                'url' => route('site.receitaSingle', ['slug' => '']),
+                'ingredients' => [
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                    [
+                        'qty' => '',
+                        'item' => ''
+                    ],
+                ],
+                'steps' => [
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                    [
+                        'title' => null,
+                        'desc' => ''
+                    ],
+                ]
+            ],
+            */
+
+            /*
             [
                 'type' => 'Lanche',
                 'title' => 'Salgadinho de Queijo',
@@ -358,6 +934,7 @@ final class SysUtils {
                     ]
                 ]
             ],
+            */
         ];
     }
 

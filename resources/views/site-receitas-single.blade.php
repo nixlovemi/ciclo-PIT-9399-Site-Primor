@@ -23,7 +23,7 @@ $RECEITA = (object) $RECEITA;
                     'TITLE' => $RECEITA->title
                 ])
 
-                <div class="search-holder mb-5 pb-5">
+                <div class="search-holder mb-5">
                     <div class="sh-image">
                         <img alt="Primor - Receitas" class="responsive" src="{{ $RECEITA->bannerSingle ?? '' }}" />
                     </div>
