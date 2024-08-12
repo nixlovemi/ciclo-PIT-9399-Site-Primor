@@ -30,7 +30,8 @@
                     <div class="col">
                         @include('layout.video-embed', [
                             'VIDEO_SRC' => url('/') . '/templates/primor-v1/images/Clipe-campanha.mp4',
-                            'ROUNDED' => true
+                            'ROUNDED' => true,
+                            'POSTER' => url('/') . '/templates/primor-v1/images/page-campanha-video-poster.jpg',
                         ])
                     </div>
                 </div>
