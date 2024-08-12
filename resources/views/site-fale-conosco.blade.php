@@ -163,7 +163,7 @@ View variables:
                                 <br />
                                 <strong>Email</strong>
                                 <br />
-                                nonono@nonono.com.br
+                                sac@seara.com.br
                                 <br />
                                 Segunda à Sexta - 8h às 20h
                             </p>
