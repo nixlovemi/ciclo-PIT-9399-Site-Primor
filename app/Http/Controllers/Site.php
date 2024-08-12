@@ -43,6 +43,7 @@ class Site extends Controller
             Mail::to(ENV('CONTACT_FORM_MAIL_TO'))->send(new ContactForm($form));
             return redirect()->route('site.faleConosco')->withSuccess('Contato enviado com sucesso!');
         } catch (\Throwable $th) {
+            \App\Helpers\LocalLogger::log($th->getMessage());
             return redirect()->route('site.faleConosco')->withErrors(['msg' => 'Erro ao enviar contato. Tente novamente mais tarde.']);
         }
     }

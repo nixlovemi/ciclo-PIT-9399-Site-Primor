@@ -1082,38 +1082,23 @@ final class SysUtils {
                             'percentage' => '3%'
                         ],
                         [
-                            'description' => 'Carboidratos',
-                            'value' => '0g',
-                            'percentage' => '0%'
-                        ],
-                        [
-                            'description' => 'Proteínas',
-                            'value' => '0g',
-                            'percentage' => '0%'
-                        ],
-                        [
                             'description' => 'Gorduras totais',
                             'value' => '6g',
-                            'percentage' => '11%'
-                        ],
-                        [
-                            'description' => 'Gorduras saturadas',
-                            'value' => '1,9g',
                             'percentage' => '9%'
                         ],
                         [
-                            'description' => 'Gorduras trans',
-                            'value' => '0g',
-                            'percentage' => '**'
+                            'description' => 'Gorduras saturadas',
+                            'value' => '2,1g',
+                            'percentage' => '11%'
                         ],
                         [
-                            'description' => 'Fibra alimentar',
-                            'value' => '0g',
-                            'percentage' => '0%'
+                            'description' => 'Gorduras trans',
+                            'value' => '0,1g',
+                            'percentage' => '5%'
                         ],
                         [
                             'description' => 'Sódio',
-                            'value' => '64mg',
+                            'value' => '66mg',
                             'percentage' => '3%'
                         ],
                     ],
