@@ -111,7 +111,9 @@ $PRODUCT = (object) $PRODUCT;
                         <table id="ps-info-nutri-table" class="table text-clear">
                             <thead>
                                 <tr>
-                                    <th colspan="2">{{ $nutritionalInfo->title ?? '' }}</th>
+                                    <th>{{ $nutritionalInfo->title ?? '' }}</th>
+                                    <th>100g</th>
+                                    <th>10g</th>
                                     <th>%VD*</th>
                                 </tr>
                             </thead>
@@ -119,7 +121,8 @@ $PRODUCT = (object) $PRODUCT;
                                 @foreach($nutritionalInfo->items ?? [] as $item)
                                     <tr>
                                         <td>{{ $item['description'] ?? '' }}</td>
-                                        <td>{{ $item['value'] ?? '' }}</td>
+                                        <td>{{ $item['value_100g'] ?? '' }}</td>
+                                        <td>{{ $item['value_10g'] ?? '' }}</td>
                                         <td>{{ $item['percentage'] ?? '' }}</td>
                                     </tr>
                                 @endforeach

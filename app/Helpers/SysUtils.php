@@ -977,51 +977,66 @@ final class SysUtils {
                         Contém Leite: Pode Conter<br />
                         Contém Soja - Derivados: Contém',
                 'nutritionalInfo' => [
-                    'title' => 'Quantidade por porção de 10g',
+                    'title' => 'Quantidade por porção:',
                     'items' => [
                         [
                             'description' => 'Valor energético',
-                            'value' => '54 kcal = 227kJ',
+                            'value_10g' => '54 kcal',
+                            'value_100g' => '540 kcal',
                             'percentage' => '3%'
                         ],
                         [
                             'description' => 'Carboidratos',
-                            'value' => '0g',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
                             'percentage' => '0%'
                         ],
                         [
                             'description' => 'Açucares Totais',
-                            'value' => '0g',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
+                            'percentage' => '0%'
+                        ],
+                        [
+                            'description' => 'Açucares Adicionados',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
                             'percentage' => '0%'
                         ],
                         [
                             'description' => 'Proteínas',
-                            'value' => '0g',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
                             'percentage' => '0%'
                         ],
                         [
                             'description' => 'Gorduras totais',
-                            'value' => '6g',
+                            'value_10g' => '6g',
+                            'value_100g' => '60g',
                             'percentage' => '9%'
                         ],
                         [
                             'description' => 'Gorduras saturadas',
-                            'value' => '2,1g',
+                            'value_10g' => '2,1g',
+                            'value_100g' => '21g',
                             'percentage' => '11%'
                         ],
                         [
                             'description' => 'Gorduras trans',
-                            'value' => '0,1g',
+                            'value_10g' => '0,1g',
+                            'value_100g' => '0,5g',
                             'percentage' => '5%'
                         ],
                         [
                             'description' => 'Fibra alimentar',
-                            'value' => '0g',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
                             'percentage' => '0%'
                         ],
                         [
                             'description' => 'Sódio',
-                            'value' => '6mg',
+                            'value_10g' => '6mg',
+                            'value_100g' => '660',
                             'percentage' => '3%'
                         ],
                     ],
@@ -1074,31 +1089,36 @@ final class SysUtils {
                     <br />
                     Contém Soja - Derivados: Contém',
                 'nutritionalInfo' => [
-                    'title' => 'Quantidade por porção de 10g',
+                    'title' => 'Quantidade por porção:',
                     'items' => [
                         [
                             'description' => 'Valor energético',
-                            'value' => '54 kcal = 227kJ',
+                            'value_10g' => '54 kcal',
+                            'value_100g' => '540 kcal',
                             'percentage' => '3%'
                         ],
                         [
                             'description' => 'Gorduras totais',
-                            'value' => '6g',
+                            'value_10g' => '6g',
+                            'value_100g' => '60g',
                             'percentage' => '9%'
                         ],
                         [
                             'description' => 'Gorduras saturadas',
-                            'value' => '2,1g',
+                            'value_10g' => '2,1g',
+                            'value_100g' => '21g',
                             'percentage' => '11%'
                         ],
                         [
                             'description' => 'Gorduras trans',
-                            'value' => '0,1g',
+                            'value_10g' => '0,1g',
+                            'value_100g' => '0,5g',
                             'percentage' => '5%'
                         ],
                         [
                             'description' => 'Sódio',
-                            'value' => '66mg',
+                            'value_10g' => '66mg',
+                            'value_100g' => '660mg',
                             'percentage' => '3%'
                         ],
                     ],
@@ -1152,31 +1172,36 @@ final class SysUtils {
                     <br />
                     Contém Soja - Derivados: Contém',
                 'nutritionalInfo' => [
-                    'title' => 'Quantidade por porção de 10g',
+                    'title' => 'Quantidade por porção:',
                     'items' => [
                         [
                             'description' => 'Valor energético',
-                            'value' => '54 kcal = 227kJ',
+                            'value_10g' => '54 kcal',
+                            'value_100g' => '540 kcal',
                             'percentage' => '3%'
                         ],
                         [
                             'description' => 'Gorduras totais',
-                            'value' => '6g',
+                            'value_10g' => '6g',
+                            'value_100g' => '60g',
                             'percentage' => '9%'
                         ],
                         [
                             'description' => 'Gorduras saturadas',
-                            'value' => '2,1g',
+                            'value_10g' => '2,1g',
+                            'value_100g' => '21g',
                             'percentage' => '11%'
                         ],
                         [
                             'description' => 'Gorduras trans',
-                            'value' => '0,1g',
+                            'value_10g' => '0,1g',
+                            'value_100g' => '0,5g',
                             'percentage' => '5%'
                         ],
                         [
                             'description' => 'Sódio',
-                            'value' => '66mg',
+                            'value_10g' => '66mg',
+                            'value_100g' => '660mg',
                             'percentage' => '3%'
                         ],
                     ],
@@ -1232,56 +1257,66 @@ final class SysUtils {
                     <br />
                     Contém Soja - Derivados: Contém',
                 'nutritionalInfo' => [
-                    'title' => 'Quantidade por porção de 10g',
+                    'title' => 'Quantidade por porção:',
                     'items' => [
                         [
                             'description' => 'Valor energético',
-                            'value' => '54 kcal = 225kJ',
+                            'value_10g' => '54 kcal',
+                            'value_100g' => '540 kcal',
                             'percentage' => '3%'
                         ],
                         [
                             'description' => 'Carboidratos',
-                            'value' => '0g',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
                             'percentage' => '0%'
                         ],
                         [
                             'description' => 'Açucares Totais',
-                            'value' => '0g',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
                             'percentage' => '0%'
                         ],
                         [
                             'description' => 'Açucares Adicionados',
-                            'value' => '0g',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
                             'percentage' => '0%'
                         ],
                         [
                             'description' => 'Proteínas',
-                            'value' => '0g',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
                             'percentage' => '0%'
                         ],
                         [
                             'description' => 'Gorduras Totais',
-                            'value' => '6g',
+                            'value_10g' => '6g',
+                            'value_100g' => '60g',
                             'percentage' => '9%'
                         ],
                         [
                             'description' => 'Gorduras saturadas',
-                            'value' => '2,2g',
+                            'value_10g' => '2,2g',
+                            'value_100g' => '22g',
                             'percentage' => '11%'
                         ],
                         [
                             'description' => 'Gorduras trans',
-                            'value' => '0,1g',
+                            'value_10g' => '0,1g',
+                            'value_100g' => '0,5g',
                             'percentage' => '5%'
                         ],
                         [
                             'description' => 'Fibra Alimentar',
-                            'value' => '0g',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
                             'percentage' => '0%'
                         ],
                         [
                             'description' => 'Sódio',
-                            'value' => '60mg',
+                            'value_10g' => '60mg',
+                            'value_100g' => '660mg',
                             'percentage' => '3%'
                         ],
                     ],
@@ -1333,56 +1368,66 @@ final class SysUtils {
                     <br />
                     Contém Soja - Derivados: Contém',
                 'nutritionalInfo' => [
-                    'title' => 'Quantidade por porção de 10g',
+                    'title' => 'Quantidade por porção:',
                     'items' => [
                         [
                             'description' => 'Valor energético',
-                            'value' => '68 kcal = 284kJ',
+                            'value_10g' => '68 kcal',
+                            'value_100g' => '675 kcal',
                             'percentage' => '3%'
                         ],
                         [
                             'description' => 'Carboidratos',
-                            'value' => '0g',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
                             'percentage' => '0%'
                         ],
                         [
                             'description' => 'Açucares Totais',
-                            'value' => '0g',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
                             'percentage' => '0%'
                         ],
                         [
                             'description' => 'Açucares Adicionados',
-                            'value' => '0g',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
                             'percentage' => '0%'
                         ],
                         [
                             'description' => 'Proteínas',
-                            'value' => '0g',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
                             'percentage' => '0%'
                         ],
                         [
                             'description' => 'Gorduras Totais',
-                            'value' => '7,5g',
+                            'value_10g' => '7,5g',
+                            'value_100g' => '75g',
                             'percentage' => '12%'
                         ],
                         [
                             'description' => 'Gorduras saturadas',
-                            'value' => '4g',
+                            'value_10g' => '4g',
+                            'value_100g' => '40g',
                             'percentage' => '20%'
                         ],
                         [
                             'description' => 'Gorduras trans',
-                            'value' => '0,1g',
+                            'value_10g' => '0,1g',
+                            'value_100g' => '0,7g',
                             'percentage' => '5%'
                         ],
                         [
                             'description' => 'Fibra Alimentar',
-                            'value' => '0g',
+                            'value_10g' => '0g',
+                            'value_100g' => '0g',
                             'percentage' => '0%'
                         ],
                         [
                             'description' => 'Sódio',
-                            'value' => '68mg',
+                            'value_10g' => '68mg',
+                            'value_100g' => '680mg',
                             'percentage' => '3%'
                         ],
                     ],
@@ -1429,12 +1474,19 @@ final class SysUtils {
                     <br />
                     Aromatizante Artificial: Não Contém',
                 'nutritionalInfo' => [
-                    'title' => 'Quantidade por porção de 10g',
+                    'title' => 'Quantidade por porção:',
                     'items' => [
                         [
                             'description' => 'Valor energético',
-                            'value' => '90 kcal = 376kJ',
+                            'value_10g' => '90 kcal',
+                            'value_100g' => 'Não informado',
                             'percentage' => '5%'
+                        ],
+                        [
+                            'description' => 'Valor energético',
+                            'value_10g' => '378 kJ',
+                            'value_100g' => 'Não informado',
+                            'percentage' => ''
                         ],
                     ],
                     'obs' => [
@@ -1478,12 +1530,19 @@ final class SysUtils {
                 ],
                 'ingredients' => 'Óleos vegetais líquidos e totalmente hidrogenados (contém óleo de soja), água, sal, emulsificantes: mono e diglicerídeos de ácidos graxos e lecitina de soja, conservador benzoato de sódio, aromatizantes, antioxidantes: EDTA cálcio dissódico, BHT e ácido cítrico, acidulante ácido láctico e corante idêntico ao natural betacaroteno. NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
                 'nutritionalInfo' => [
-                    'title' => 'Quantidade por porção de 10g',
+                    'title' => 'Quantidade por porção:',
                     'items' => [
                         [
                             'description' => 'Valor energético',
-                            'value' => '63 kcal = 265kJ',
+                            'value_10g' => '63 kcal',
+                            'value_100g' => 'Não informado',
                             'percentage' => '3%'
+                        ],
+                        [
+                            'description' => 'Valor energético',
+                            'value_10g' => '265 kJ',
+                            'value_100g' => 'Não informado',
+                            'percentage' => ''
                         ],
                     ],
                     'obs' => [
