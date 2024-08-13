@@ -107,12 +107,15 @@ $PRODUCT = (object) $PRODUCT;
                         @php
                         $nutritionalInfo = $PRODUCT?->nutritionalInfo ?? [];
                         $nutritionalInfo = (object) $nutritionalInfo;
+                        $hide100g = $nutritionalInfo->hide_100g ?? false;
                         @endphp
                         <table id="ps-info-nutri-table" class="table text-clear">
                             <thead>
                                 <tr>
                                     <th>{{ $nutritionalInfo->title ?? '' }}</th>
-                                    <th>100g</th>
+                                    @if (!$hide100g)
+                                        <th>100g</th>
+                                    @endif
                                     <th>10g</th>
                                     <th>%VD*</th>
                                 </tr>
@@ -121,7 +124,9 @@ $PRODUCT = (object) $PRODUCT;
                                 @foreach($nutritionalInfo->items ?? [] as $item)
                                     <tr>
                                         <td>{{ $item['description'] ?? '' }}</td>
-                                        <td>{{ $item['value_100g'] ?? '' }}</td>
+                                        @if (!$hide100g)
+                                            <td>{{ $item['value_100g'] ?? '' }}</td>
+                                        @endif
                                         <td>{{ $item['value_10g'] ?? '' }}</td>
                                         <td>{{ $item['percentage'] ?? '' }}</td>
                                     </tr>

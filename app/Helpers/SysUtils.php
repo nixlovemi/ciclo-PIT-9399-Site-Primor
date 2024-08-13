@@ -663,6 +663,7 @@ final class SysUtils {
                     Aromatizante Artificial: Não Contém',
                 'nutritionalInfo' => [
                     'title' => 'Quantidade por porção:',
+                    'hide_100g' => true,
                     'items' => [
                         [
                             'description' => 'Valor energético',
@@ -719,6 +720,7 @@ final class SysUtils {
                 'ingredients' => 'Óleos vegetais líquidos e totalmente hidrogenados (contém óleo de soja), água, sal, emulsificantes: mono e diglicerídeos de ácidos graxos e lecitina de soja, conservador benzoato de sódio, aromatizantes, antioxidantes: EDTA cálcio dissódico, BHT e ácido cítrico, acidulante ácido láctico e corante idêntico ao natural betacaroteno. NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
                 'nutritionalInfo' => [
                     'title' => 'Quantidade por porção:',
+                    'hide_100g' => true,
                     'items' => [
                         [
                             'description' => 'Valor energético',
