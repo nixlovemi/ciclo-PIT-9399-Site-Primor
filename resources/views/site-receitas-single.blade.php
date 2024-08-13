@@ -2,10 +2,9 @@
 /*
 View variables:
 ===============
-    - $RECEITA: array
+    - $RECEITA: App\Models\Recipe
     - $SHARE: LaravelShare
 */
-$RECEITA = (object) $RECEITA;
 @endphp
 
 @inject('SysUtils', 'App\Helpers\SysUtils')
@@ -25,23 +24,23 @@ $RECEITA = (object) $RECEITA;
 
                 <div class="search-holder mb-5">
                     <div class="sh-image">
-                        <img alt="Primor - Receitas" class="responsive" src="{{ $RECEITA->bannerSingle ?? '' }}" />
+                        <img alt="Primor - Receitas" class="responsive" src="{{ $RECEITA->getBannerFullUrl() ?? '' }}" />
                     </div>
                     <div class="sh-search">
                         <div class="row pb-3">
                             <div class="col-6 mb-2 col-md-3 mb-md-0">
                                 <span class="rs-info">
-                                    <i class="far fa-clock"></i> {{ $RECEITA->timeStr ?? '' }}
+                                    <i class="far fa-clock"></i> {{ $RECEITA->time_str ?? '' }}
                                 </span>
                             </div>
                             <div class="col-6 mb-2 col-md-3 mb-md-0">
                                 <span class="rs-info">
-                                    <i class="fas fa-user-friends"></i> {{ $RECEITA->portionsStr ?? '' }}
+                                    <i class="fas fa-user-friends"></i> {{ $RECEITA->portions_str ?? '' }}
                                 </span>
                             </div>
                             <div class="col-6 mb-2 col-md-3 mb-md-0">
                                 <span class="rs-info">
-                                    <i class="fas fa-user-friends"></i> {{ $RECEITA->difficultyStr }}
+                                    <i class="fas fa-user-friends"></i> {{ $RECEITA->difficulty }}
                                 </span>
                             </div>
                             <div class="col-6 mb-2 col-md-3 mb-md-0">
@@ -61,13 +60,13 @@ $RECEITA = (object) $RECEITA;
                             <span class="title black">Ingredientes</span>
                         </h4>
 
-                        @foreach ($RECEITA->ingredients ?? [] as $ingredient)
+                        @foreach ($RECEITA->ingredients as $ingredient)
                             <p>
-                                @if (isset($ingredient['qty']) && !empty($ingredient['qty']))
-                                    <span class="color-red">{{ $ingredient['qty'] }}</span>
+                                @if (isset($ingredient->quantity) && !empty($ingredient->quantity))
+                                    <span class="color-red">{{ $ingredient->quantity }}</span>
                                 @endif
 
-                                {{ $ingredient['item'] ?? '' }}
+                                {{ $ingredient->description ?? '' }}
                             </p>
                         @endforeach
                     </div>
@@ -76,14 +75,14 @@ $RECEITA = (object) $RECEITA;
                             <span class="title black">Modo de Preparo</span>
                         </h4>
 
-                        @foreach ($RECEITA->steps ?? [] as $step)
+                        @foreach ($RECEITA->steps as $step)
                             <p>
-                                @if (isset($step['title']) && !empty($step['title']))
-                                    <strong>{{ $step['title'] }}</strong>
+                                @if (isset($step->title) && !empty($step->title))
+                                    <strong>{{ $step->title }}</strong>
                                     <br />
                                 @endif
 
-                                {{ $step['desc'] ?? '' }}
+                                {{ $step->description ?? '' }}
                             </p>
                         @endforeach
                     </div>

@@ -2,25 +2,21 @@
 /*
 View variables:
 ===============
-    - $RECIPES: array
+    - $RECIPES: Illuminate\Database\Eloquent\Collection ([] of App\Models\Recipe)
 */
 $RECIPES = $RECIPES ?? [];
 @endphp
 
 <div class="row">
     @foreach ($RECIPES as $item)
-        @php
-        $item = (object) $item;
-        @endphp
-
         <div class="col-6 col-sm-4 col-md-3 mb-4">
             <x-recipes-item
                 :type="$item->type ?? ''"
                 :title="$item->title ?? ''"
-                :image="$item->image ?? ''"
-                :timeStr="$item->timeStr ?? ''"
-                :portionsStr="$item->portionsStr ?? ''"
-                :url="$item->url ?? null"
+                :image="$item->getThumbFullUrl()"
+                :timeStr="$item->time_str ?? ''"
+                :portionsStr="$item->portions_str ?? ''"
+                :url="$item->getSingleUrl()"
             />
         </div>
     @endforeach

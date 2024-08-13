@@ -28,20 +28,13 @@ class Api extends Controller
         }
 
         if (strlen($search) >= 3) {
-            $recipes = SysUtils::getRecipes();
-            $filteredRecipes = array_filter($recipes, function($v, $k) use ($search) {
-                $search = mb_strtolower($search);
-                $r_type = mb_strtolower($v['type'] ?? '');
-                $r_title = mb_strtolower($v['title'] ?? '');
-                $r_details = mb_strtolower($v['details'] ?? '');
-
-                return mb_strpos($r_type, $search) !== false ||
-                    mb_strpos($r_title, $search) !== false ||
-                    mb_strpos($r_details, $search) !== false;
-            }, ARRAY_FILTER_USE_BOTH);
-
             $html = view('partials.pageRecipesList', [
-                'RECIPES' => $filteredRecipes
+                'RECIPES' => \App\Models\Recipe::where('active', 1)
+                                ->where(function ($query) use ($search) {
+                                    $query->orWhere('type', 'LIKE', '%' . $search . '%')
+                                        ->orWhere('title', 'LIKE', '%' . $search . '%')
+                                        ->orWhere('slug', 'LIKE', '%' . $search . '%');
+                                })->get()
             ])->render();
         }
         

@@ -8,11 +8,11 @@
             <x-recipes-item
                 :type="$item->type ?? ''"
                 :title="$item->title ?? ''"
-                :image="$item->image ?? ''"
-                :details="$item->details ?? null"
-                :timeStr="$item->timeStr ?? ''"
-                :portionsStr="$item->portionsStr ?? ''"
-                :url="$item->url ?? null"
+                :image="$item->getThumbFullUrl()"
+                :details="null"
+                :timeStr="$item->time_str ?? ''"
+                :portionsStr="$item->portions_str ?? ''"
+                :url="$item->getSingleUrl()"
             />
         </div>
     @endforeach

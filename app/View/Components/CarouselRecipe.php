@@ -3,10 +3,11 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use Illuminate\Database\Eloquent\Collection;
 
 class CarouselRecipe extends Component
 {
-    public array $_recipes = [];
+    public Collection $_recipes;
 
     /**
      * Create a new component instance.
@@ -18,7 +19,7 @@ class CarouselRecipe extends Component
         $this->_recipes = $this->getRecipes();
     }
 
-    private function getRecipes()
+    private function getRecipes(): Collection
     {
         return \App\Helpers\SysUtils::getRecipes();
     }

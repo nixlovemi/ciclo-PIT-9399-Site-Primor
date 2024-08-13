@@ -12,6 +12,7 @@ use App\Http\Requests\doFaleConosco;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactForm;
 use Dipesh79\LaravelShare\LaravelShare;
+use App\Models\Recipe;
 
 class Site extends Controller
 {
@@ -63,15 +64,11 @@ class Site extends Controller
         ]);
     }
 
-    private function getReceitaBySlug(string $slug): array
+    private function getReceitaBySlug(string $slug): ?Recipe
     {
-        $receitas = \App\Helpers\SysUtils::getRecipes();
-        $receita = array_filter($receitas, function($v, $k) use ($slug) {
-            return ($v['url'] ?? '') === route('site.receitaSingle', ['slug' => $slug]);
-        }, ARRAY_FILTER_USE_BOTH);
-
-        // returning first element or blank array
-        return (!is_array($receita) || empty($receita)) ? []: reset($receita);
+        return Recipe::where('active', 1)
+            ->where('slug', $slug)
+            ->first();
     }
 
     public function campanha()
