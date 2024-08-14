@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d28f426f2758f4c20e6cfdf77ce438a4",
+    "content-hash": "c0a70e3102083ad9ce36232901e507c8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1053,6 +1053,58 @@
                 }
             ],
             "time": "2023-04-17T16:11:26+00:00"
+        },
+        {
+            "name": "ifc/cookiebar",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/IFC-DTI/Cookiebar.git",
+                "reference": "e7d041895b10d995d861934c06e35dfd7853f31b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/IFC-DTI/Cookiebar/zipball/e7d041895b10d995d861934c06e35dfd7853f31b",
+                "reference": "e7d041895b10d995d861934c06e35dfd7853f31b",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "IFC\\Cookiebar\\Providers\\CookiebarProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "IFC\\Cookiebar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "CC0-1.0",
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Regis Amaral",
+                    "email": "amaral.regis@gmail.com",
+                    "homepage": "https://github.com/regis-amaral"
+                }
+            ],
+            "description": "CookieBar do Padrão Digital de Governo adaptado para o framework Laravel",
+            "keywords": [
+                "IFC",
+                "brcookiebar",
+                "cookie",
+                "cookiebar"
+            ],
+            "support": {
+                "issues": "https://github.com/IFC-DTI/Cookiebar/issues",
+                "source": "https://github.com/IFC-DTI/Cookiebar/tree/v1.0.0"
+            },
+            "time": "2024-04-18T13:58:42+00:00"
         },
         {
             "name": "intervention/image",

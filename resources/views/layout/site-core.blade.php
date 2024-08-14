@@ -39,6 +39,11 @@ $V_TITLE = ($PAGE_TITLE ?? '') . ' | ' . env('SITE_DISPLAY_NAME');
     </head>
 
     <body>
+        <style>
+            .br-cookiebar.default {
+                background: rgba(63, 12, 12, 0.85) !important;
+            }
+        </style>
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0" nonce="XB46yiPG"></script>
 

@@ -123,4 +123,9 @@ class Site extends Controller
     {
         return view('site-banner-saborQueConta');
     }
+
+    public function politicaDePrivacidade()
+    {
+        return view('site-politicaDePrivacidade');
+    }
 }
