@@ -186,7 +186,8 @@ final class SysUtils {
                     produto.</p>
                 ',
                 'nutritionalInfo' => [
-                    'title' => 'Quantidade por porção:',
+                    'title' => 'Porção de 10g (1 colher de sopa)<br />Quantidade por porção:',
+                    'hide_100g' => true,
                     'items' => [
                         [
                             'description' => 'Valor energético',
@@ -209,12 +210,12 @@ final class SysUtils {
                             'percentage' => '11%'
                         ],
                         [
-                            'description' => 'Gorduras saturadas',
+                            'description' => '&emsp;Gorduras saturadas',
                             'value_10g' => '1,9g',
                             'percentage' => '9%'
                         ],
                         [
-                            'description' => 'Gorduras trans',
+                            'description' => '&emsp;Gorduras trans',
                             'value_10g' => '0g',
                             'percentage' => '**'
                         ],
@@ -360,67 +361,67 @@ final class SysUtils {
                     produto.</p>
                     ',
                 'nutritionalInfo' => [
-                    'title' => 'Quantidade por porção:',
+                    'title' => 'Porções por embalagem: 300<br />Porção de 10g (1 colher de sopa)',
                     'items' => [
                         [
-                            'description' => 'Valor energético',
-                            'value_10g' => '54 kcal',
-                            'value_100g' => '540 kcal',
+                            'description' => 'Valor energético (kcal)',
+                            'value_10g' => '54',
+                            'value_100g' => '540',
                             'percentage' => '3%'
                         ],
                         [
-                            'description' => 'Carboidratos',
-                            'value_10g' => '0g',
-                            'value_100g' => '0g',
-                            'percentage' => '0%'
+                            'description' => 'Carboidratos (g)',
+                            'value_10g' => '0',
+                            'value_100g' => '0',
+                            'percentage' => '0'
                         ],
                         [
-                            'description' => 'Açucares Totais',
-                            'value_10g' => '0g',
-                            'value_100g' => '0g',
-                            'percentage' => '0%'
+                            'description' => 'Açúcares totais (g)',
+                            'value_10g' => '0',
+                            'value_100g' => '0',
+                            'percentage' => ''
                         ],
                         [
-                            'description' => 'Açucares Adicionados',
-                            'value_10g' => '0g',
-                            'value_100g' => '0g',
-                            'percentage' => '0%'
+                            'description' => '&emsp;Açúcares adicionados (g)',
+                            'value_10g' => '0',
+                            'value_100g' => '0',
+                            'percentage' => '0'
                         ],
                         [
-                            'description' => 'Proteínas',
-                            'value_10g' => '0g',
-                            'value_100g' => '0g',
-                            'percentage' => '0%'
+                            'description' => 'Proteínas (g)',
+                            'value_10g' => '0',
+                            'value_100g' => '0',
+                            'percentage' => '0'
                         ],
                         [
-                            'description' => 'Gorduras Totais',
-                            'value_10g' => '6g',
-                            'value_100g' => '60g',
-                            'percentage' => '9%'
+                            'description' => 'Gorduras totais (g)',
+                            'value_10g' => '6',
+                            'value_100g' => '60',
+                            'percentage' => '9'
                         ],
                         [
-                            'description' => 'Gorduras saturadas',
-                            'value_10g' => '2,2g',
-                            'value_100g' => '22g',
-                            'percentage' => '11%'
+                            'description' => '&emsp;Gorduras saturadas (g)',
+                            'value_10g' => '2,2',
+                            'value_100g' => '22',
+                            'percentage' => '11'
                         ],
                         [
-                            'description' => 'Gorduras trans',
-                            'value_10g' => '0,1g',
-                            'value_100g' => '0,5g',
-                            'percentage' => '5%'
+                            'description' => '&emsp;Gorduras trans (g)',
+                            'value_10g' => '0,1',
+                            'value_100g' => '0,5',
+                            'percentage' => '5'
                         ],
                         [
-                            'description' => 'Fibras Alimentares',
-                            'value_10g' => '0g',
-                            'value_100g' => '0g',
-                            'percentage' => '0%'
+                            'description' => 'Fibras alimentares (g)',
+                            'value_10g' => '0',
+                            'value_100g' => '0',
+                            'percentage' => '0'
                         ],
                         [
-                            'description' => 'Sódio',
-                            'value_10g' => '60mg',
-                            'value_100g' => '660mg',
-                            'percentage' => '3%'
+                            'description' => 'Sódio (mg)',
+                            'value_10g' => '60',
+                            'value_100g' => '660',
+                            'percentage' => '3'
                         ],
                     ],
                     'obs' => [
@@ -615,8 +616,8 @@ final class SysUtils {
                     produto.</p>
                 ',
                 'nutritionalInfo' => [
-                    'title' => 'Quantidade por porção:',
-                    'hide_100g' => true,
+                    'title' => 'Porção: 10g (1 colher de sopa)',
+                    'hide_100g' => false,
                     'items' => [
                         [
                             'description' => 'Valor energético (kcal)',
@@ -637,7 +638,7 @@ final class SysUtils {
                             'percentage' => ''
                         ],
                         [
-                            'description' => 'Açúcares adicionados (g)',
+                            'description' => '&emsp;Açúcares adicionados (g)',
                             'value_10g' => '0',
                             'value_100g' => '0',
                             'percentage' => '0'
@@ -655,13 +656,13 @@ final class SysUtils {
                             'percentage' => '15%'
                         ],
                         [
-                            'description' => 'Gorduras saturadas (g)',
+                            'description' => '&emsp;Gorduras saturadas (g)',
                             'value_10g' => '5,1',
                             'value_100g' => '51',
                             'percentage' => '26%'
                         ],
                         [
-                            'description' => 'Gorduras trans (g)',
+                            'description' => '&emsp;Gorduras trans (g)',
                             'value_10g' => '0,1',
                             'value_100g' => '0,6',
                             'percentage' => '5%'
@@ -727,7 +728,6 @@ final class SysUtils {
                 'ingredients' => 'Óleos vegetais líquidos e totalmente hidrogenados (contém óleo de soja), água, sal, emulsificantes: mono e diglicerídeos de ácidos graxos e lecitina de soja, conservador benzoato de sódio, aromatizantes, antioxidantes: EDTA cálcio dissódico, BHT e ácido cítrico, acidulante ácido láctico e corante idêntico ao natural betacaroteno. NÃO CONTÉM GLÚTEN. ALÉRGICOS: CONTÉM DERIVADOS DE SOJA. PODE CONTER LEITE.',
                 'nutritionalInfo' => [
                     'title' => 'Quantidade por porção:',
-                    'hide_100g' => true,
                     'items' => [
                         [
                             'description' => 'Valor energético',

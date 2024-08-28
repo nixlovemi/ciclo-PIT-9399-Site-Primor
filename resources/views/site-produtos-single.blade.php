@@ -112,7 +112,7 @@ $PRODUCT = (object) $PRODUCT;
                         <table id="ps-info-nutri-table" class="table text-clear">
                             <thead>
                                 <tr>
-                                    <th>{{ $nutritionalInfo->title ?? '' }}</th>
+                                    <th>{!! $nutritionalInfo->title ?? '' !!}</th>
                                     @if (!$hide100g)
                                         <th>100g</th>
                                     @endif
@@ -123,7 +123,7 @@ $PRODUCT = (object) $PRODUCT;
                             <tbody>
                                 @foreach($nutritionalInfo->items ?? [] as $item)
                                     <tr>
-                                        <td>{{ $item['description'] ?? '' }}</td>
+                                        <td>{!! $item['description'] ?? '' !!}</td>
                                         @if (!$hide100g)
                                             <td>{{ $item['value_100g'] ?? '' }}</td>
                                         @endif
