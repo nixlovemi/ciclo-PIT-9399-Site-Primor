@@ -135,7 +135,7 @@ $PRODUCT = (object) $PRODUCT;
                         </table>
 
                         @foreach ($nutritionalInfo->obs as $item)
-                            <p style="font-size:0.8em" class="text-clear">{!! $item['description'] ?? '' !!}</p>
+                            {!! $item['description'] ?? '' !!}
                         @endforeach
                     </div>
                 </div>
