@@ -27,10 +27,12 @@ class Recipe extends Model
     public const DIFFICULTY_FACIL = 'Fácil';
     public const DIFFICULTY_MODERADA = 'Moderada';
     public const DIFFICULTY_DIFICIL = 'Difícil';
+    public const DIFFICULTY_MUITO_DIFICIL = 'Muito Difícil';
     public const DIFFICULTIES = [
         self::DIFFICULTY_FACIL,
         self::DIFFICULTY_MODERADA,
         self::DIFFICULTY_DIFICIL,
+        self::DIFFICULTY_MUITO_DIFICIL,
     ];
 
     /**
@@ -101,12 +103,12 @@ class Recipe extends Model
         $validation = new ModelValidation($this->toArray());
         $validation->addIdField(self::class, 'Receita', 'id', 'ID');
         $validation->addField('type', ['required', function ($attribute, $value, $fail) {
-            if (!in_array($value, Recipes::TYPES)) {
+            if (!in_array($value, self::TYPES)) {
                 $fail('O tipo da Receita não é válido');
             }
         }], 'Tipo');
         $validation->addField('difficulty', ['required', function ($attribute, $value, $fail) {
-            if (!in_array($value, Recipes::DIFFICULTIES)) {
+            if (!in_array($value, self::DIFFICULTIES)) {
                 $fail('A dificuldade da Receita não é válida');
             }
         }], 'Dificuldade');
