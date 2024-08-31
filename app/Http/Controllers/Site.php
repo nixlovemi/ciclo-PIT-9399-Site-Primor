@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Http\Request;
-use App\Helpers\ModelValidation;
-use App\Helpers\ApiResponse;
+use App\Interfaces\Product\ProductAbstract;
 use App\Http\Requests\doFaleConosco;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactForm;
@@ -20,7 +18,12 @@ class Site extends Controller
 
     public function home()
     {
-        return view('site-home');
+        return view('site-home', [
+            'MARG_TRAD_URL' => (new \App\Interfaces\Product\Items\MargarinaTradicional500g)->getUrl(),
+            'MARG_TABLETE_URL' => 'javascript:;',
+            'MARG_BALDE_URL' => (new \App\Interfaces\Product\Items\MargarinaBalde3kg)->getUrl(),
+            'GORD_VEGETAL_URL' => (new \App\Interfaces\Product\Items\GorduraVegetal500g)->getUrl(),
+        ]);
     }
 
     public function nossaHistoria()
@@ -78,7 +81,12 @@ class Site extends Controller
 
     public function produtos()
     {
-        return view('site-produtos');
+        return view('site-produtos', [
+            'MARG_TRAD_URL' => (new \App\Interfaces\Product\Items\MargarinaTradicional500g)->getUrl(),
+            'MARG_TABLETE_URL' => 'javascript:;',
+            'MARG_BALDE_URL' => (new \App\Interfaces\Product\Items\MargarinaBalde3kg)->getUrl(),
+            'GORD_VEGETAL_URL' => (new \App\Interfaces\Product\Items\GorduraVegetal500g)->getUrl(),
+        ]);
     }
 
     public function produtosSingle(string $slug)
@@ -88,15 +96,20 @@ class Site extends Controller
         ]);
     }
 
-    private function getProductBySlug(string $slug): array
+    private function getProductBySlug(string $slug): ?ProductAbstract
     {
         $products = \App\Helpers\SysUtils::getProducts();
         $product = array_filter($products, function($v, $k) use ($slug) {
-            return ($v['url'] ?? '') === route('site.produtosSingle', ['slug' => $slug]);
+            return ($v::SLUG === $slug);
         }, ARRAY_FILTER_USE_BOTH);
 
         // returning first element or blank array
-        return (!is_array($product) || empty($product)) ? []: reset($product);
+        if (!is_array($product) || empty($product)) {
+            return null;
+        }
+
+        $class = reset($product);
+        return new $class();
     }
 
     public function bannerMesDoNordestino()

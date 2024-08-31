@@ -1,16 +1,15 @@
-@inject('SysUtils', 'App\Helpers\SysUtils')
+@inject('mNutritionalInfo', 'App\Interfaces\Product\NutritionalInfo')
 
 @php
 /*
 View variables:
 ===============
-    - $PRODUCT: array
+    - $PRODUCT: App\Interfaces\Product\ProductAbstract;
 */
-$PRODUCT = (object) $PRODUCT;
 @endphp
 
 @extends('layout.site-core', [
-    'PAGE_TITLE' => ($PRODUCT->titleShort ?? '')
+    'PAGE_TITLE' => ($PRODUCT?->getTitleShort() ?? '')
 ])
 
 @section('BODY_CONTENT')
@@ -21,33 +20,21 @@ $PRODUCT = (object) $PRODUCT;
                 <div class="row">
                     <div class="col text-right">
                         @php
-                        $products = $SysUtils::getProducts();
-                        $family = $PRODUCT->family ?? '';
-
-                        $prodFamily = array_filter($products, function($v, $k) use ($family) {
-                            return ($v['family'] ?? '') === $family;
-                        }, ARRAY_FILTER_USE_BOTH);
+                        $prodFamily = $PRODUCT?->getFamilyProdItems() ?? [];
                         @endphp
 
                         @if (is_array($prodFamily) && !empty($prodFamily))
-                            @php
-                            usort($prodFamily, function ($a, $b) {
-                                $first = $a['familyOrder'] ?? 0;
-                                $second = $b['familyOrder'] ?? 0;
-                                return $first <=> $second;
-                            });
-                            @endphp
-
                             <ul id="product-family">
                                 @foreach ($prodFamily as $item)
                                     @php
-                                    $bSelected = $PRODUCT?->familySize == $item['familySize'];
-                                    $strFamilySize = $item['familySize'] ?? '?';
+                                    $item = new $item();
+                                    $bSelected = $PRODUCT?->getFamilySize() == $item->getFamilySize();
+                                    $strFamilySize = $item->getFamilySize() ?? '?';
                                     @endphp
 
                                     <li class="{{ $bSelected ? 'selected' : '' }}">
                                         @if (!$bSelected)
-                                            <a href="{{ $item['url'] ?? 'javascript:;' }}">
+                                            <a href="{{ $item->getUrl() ?? 'javascript:;' }}">
                                                 {{ $strFamilySize }}
                                             </a>
                                         @else
@@ -62,27 +49,27 @@ $PRODUCT = (object) $PRODUCT;
                 <div class="row">
                     <div class="col-12 col-md-5">
                         @include('partials.titleSingle', [
-                            'TITLE' => $PRODUCT->titleShort,
+                            'TITLE' => $PRODUCT?->getTitleShort(),
                             'TITLE_CLASS' => 'text-clear'
                         ])
 
-                        <p class="mt-4 text-clear">{{ $PRODUCT->description ?? '' }}</p>
+                        <p class="mt-4 text-clear">{{ $PRODUCT?->getDescription() ?? '' }}</p>
 
-                        @if (is_array($PRODUCT->iconChoices) && !empty($PRODUCT->iconChoices))
+                        @if (is_array($PRODUCT?->getIconChoices()) && !empty($PRODUCT?->getIconChoices()))
                             <div class="text-center text-md-left">
                                 <h5 class="mt-4 mb-4 text-clear">
                                     <strong>Certa para qualquer escolha:</strong>
                                 </h5>
 
-                                @foreach ($PRODUCT->iconChoices as $icon)
+                                @foreach ($PRODUCT?->getIconChoices() ?? [] as $icon)
                                     <img class="ps-icon-choices responsive mr-3" src="{{ $icon ?? '' }}" />
                                 @endforeach
                             </div>
                         @endif
                     </div>
                     <div class="col-12 mt-4 col-md-7 mt-md-0 text-center">
-                        @if (!empty($PRODUCT->image))
-                            <img alt="{{ $PRODUCT->title }}" class="responsive" src="{{ $PRODUCT->image ?? '' }}" />
+                        @if (!empty($PRODUCT?->getImageUrl()))
+                            <img alt="{{ $PRODUCT?->getTitle() }}" class="responsive" src="{{ $PRODUCT?->getImageUrl() ?? '' }}" />
                         @endif
                     </div>
                 </div>
@@ -95,7 +82,7 @@ $PRODUCT = (object) $PRODUCT;
                             </span>
                         </h4>
 
-                        <p class="text-clear">{!! $PRODUCT->ingredients ?? '' !!}</p>
+                        <p class="text-clear">{!! $PRODUCT?->getIngredients() ?? '' !!}</p>
                     </div>
                     <div class="col-12 col-lg-6">
                         <h4 class="mb-3">
@@ -105,14 +92,13 @@ $PRODUCT = (object) $PRODUCT;
                         </h4>
 
                         @php
-                        $nutritionalInfo = $PRODUCT?->nutritionalInfo ?? [];
-                        $nutritionalInfo = (object) $nutritionalInfo;
-                        $hide100g = $nutritionalInfo->hide_100g ?? false;
+                        $nutritionalInfo = $PRODUCT?->getNutritionalInfo() ?? null;
+                        $hide100g = $nutritionalInfo?->is100gHidden() ?? false;
                         @endphp
                         <table id="ps-info-nutri-table" class="table text-clear">
                             <thead>
                                 <tr>
-                                    <th>{!! $nutritionalInfo->title ?? '' !!}</th>
+                                    <th>{!! $nutritionalInfo?->getTitle() ?? '' !!}</th>
                                     @if (!$hide100g)
                                         <th>100g</th>
                                     @endif
@@ -121,21 +107,21 @@ $PRODUCT = (object) $PRODUCT;
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($nutritionalInfo->items ?? [] as $item)
+                                @foreach($nutritionalInfo?->getItems() ?? [] as $item)
                                     <tr>
-                                        <td>{!! $item['description'] ?? '' !!}</td>
+                                        <td>{!! $item[$mNutritionalInfo::ITEM_DESCRIPTION] ?? '' !!}</td>
                                         @if (!$hide100g)
-                                            <td>{{ $item['value_100g'] ?? '' }}</td>
+                                            <td>{{ $item[$mNutritionalInfo::ITEM_VALUE_100G] ?? '' }}</td>
                                         @endif
-                                        <td>{{ $item['value_10g'] ?? '' }}</td>
-                                        <td>{{ $item['percentage'] ?? '' }}</td>
+                                        <td>{{ $item[$mNutritionalInfo::ITEM_VALUE_10G] ?? '' }}</td>
+                                        <td>{{ $item[$mNutritionalInfo::ITEM_PERCENTAGE] ?? '' }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
 
-                        @foreach ($nutritionalInfo->obs as $item)
-                            {!! $item['description'] ?? '' !!}
+                        @foreach ($nutritionalInfo?->getObs() ?? [] as $item)
+                            {!! $item[$mNutritionalInfo::OBS_DESCRIPTION] ?? '' !!}
                         @endforeach
                     </div>
                 </div>
@@ -152,7 +138,7 @@ $PRODUCT = (object) $PRODUCT;
                 </h2>
                 <h5 class="mb-5 color-red">
                     <strong>
-                        Receitas primorosas que combinam com {{ $PRODUCT->titleShort ?? '' }}
+                        Receitas primorosas que combinam com {{ $PRODUCT?->getTitleShort() ?? '' }}
                     </strong>
                 </h5>
 

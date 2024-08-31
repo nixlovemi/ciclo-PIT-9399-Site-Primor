@@ -1,3 +1,18 @@
+@php
+/*
+View variables:
+===============
+    - $MARG_TRAD_URL: string
+    - $MARG_TABLETE_URL: string
+    - $MARG_BALDE_URL: string
+    - $GORD_VEGETAL_URL: string
+*/
+$MARG_TRAD_URL = $MARG_TRAD_URL ?? 'javascript:;';
+$MARG_TABLETE_URL = $MARG_TABLETE_URL ?? 'javascript';
+$MARG_BALDE_URL = $MARG_BALDE_URL ?? 'javascript';
+$GORD_VEGETAL_URL = $GORD_VEGETAL_URL ?? 'javascript';
+@endphp
+
 <div class="partials-products">
     <div class="row ml-0 mr-0">
         <div class="col1">
@@ -5,7 +20,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="title">Margarina<br />Tradicional</div>
-                        <a class="products-btn" href="{{ route('site.produtosSingle', ['slug' => 'margarina-original-sal-primor-pote-500g']) }}">Conheça</a>
+                        <a class="products-btn" href="{{ $MARG_TRAD_URL }}">Conheça</a>
                     </div>
                     <div class="col">
                         <div class="img" id="margarina-tradicional">
@@ -20,7 +35,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="title">Margarina<br />Tablete</div>
-                        <a class="products-btn" href="javascript:;">Conheça</a>
+                        <a class="products-btn" href="{{ $MARG_TABLETE_URL }}">Conheça</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +48,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="title">Margarina<br />Balde</div>
-                        <a class="products-btn" href="{{ route('site.produtosSingle', ['slug' => 'margarina-amanteigada-sal-primor-balde-3kg']) }}">Conheça</a>
+                        <a class="products-btn" href="{{ $MARG_BALDE_URL }}">Conheça</a>
                     </div>
                     <div class="col">
                         <div class="img" id="margarina-balde">
@@ -48,7 +63,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="title">Gordura<br />Vegetal</div>
-                        <a class="products-btn" href="{{ route('site.produtosSingle', ['slug' => 'gordura-vegetal-primor-pacote-500g']) }}">Conheça</a>
+                        <a class="products-btn" href="{{ $GORD_VEGETAL_URL }}">Conheça</a>
                     </div>
                     <div class="col">
                         <div class="img" id="gordura-vegetal">

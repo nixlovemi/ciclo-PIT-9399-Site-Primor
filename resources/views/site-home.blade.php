@@ -1,3 +1,18 @@
+@php
+/*
+View variables:
+===============
+    - $MARG_TRAD_URL: string
+    - $MARG_TABLETE_URL: string
+    - $MARG_BALDE_URL: string
+    - $GORD_VEGETAL_URL: string
+*/
+$MARG_TRAD_URL = $MARG_TRAD_URL ?? 'javascript:;';
+$MARG_TABLETE_URL = $MARG_TABLETE_URL ?? 'javascript';
+$MARG_BALDE_URL = $MARG_BALDE_URL ?? 'javascript';
+$GORD_VEGETAL_URL = $GORD_VEGETAL_URL ?? 'javascript';
+@endphp
+
 @extends('layout.site-core', [
     'PAGE_TITLE' => 'Home'
 ])
@@ -55,7 +70,12 @@
                     Conheça a nossa linha de produtos primorosos.
                 </p>
 
-                @include('partials.products')
+                @include('partials.products', [
+                    'MARG_TRAD_URL' => $MARG_TRAD_URL,
+                    'MARG_TABLETE_URL' => $MARG_TABLETE_URL,
+                    'MARG_BALDE_URL' => $MARG_BALDE_URL,
+                    'GORD_VEGETAL_URL' => $GORD_VEGETAL_URL,
+                ])
             </div>
         </div>
     </section>
