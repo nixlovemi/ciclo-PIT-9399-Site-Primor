@@ -39,5 +39,5 @@ Route::get('/fale-conosco', 'App\Http\Controllers\Site@faleConosco')->name('site
 Route::post('/do-fale-conosco', 'App\Http\Controllers\Site@doFaleConosco')->name('site.doFaleConosco');
 Route::get('/politica-de-privacidade', 'App\Http\Controllers\Site@politicaDePrivacidade')->name('site.politicaDePrivacidade');
 
-Route::get('/test/addNewRecipe', 'App\Http\Controllers\Test@testAddNewRecipe')->name('site.testAddNewRecipe');
+Route::get('/test/addNewRecipe', 'App\Http\Controllers\Test@addNewRecipe')->name('site.testAddNewRecipe');
 Route::get('/test/fix', 'App\Http\Controllers\Test@fix')->name('site.testFix');
