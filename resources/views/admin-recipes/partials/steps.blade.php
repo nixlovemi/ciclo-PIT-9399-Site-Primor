@@ -12,7 +12,7 @@ View variables:
 <div class="row">
     <div class="col">
         <livewire:table
-            :config="App\Tables\RecipeIngredientsTable::class"
+            :config="App\Tables\RecipeStepsTable::class"
             :configParams="[
                 'recipeID' => $RECIPE?->id ?? 0,
                 'readOnly' => $READONLY ?? true,

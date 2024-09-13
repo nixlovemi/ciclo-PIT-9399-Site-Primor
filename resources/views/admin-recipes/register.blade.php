@@ -65,6 +65,18 @@ $RECIPE = $RECIPE ?? null;
             :content="$accordionTwo"
         />
 
+        @php
+        $accordionThree = view('admin-recipes.partials.steps', [
+            'RECIPE' => $RECIPE,
+            'READONLY' => $TYPE === $hlpConstants::FORM_VIEW
+        ])->render();
+        @endphp
+        <x-accordeon 
+            id="accordion-three"
+            title="Modo de Preparo"
+            :content="$accordionThree"
+        />
+
         <div class="form-actions pb-4">
             <div class="text-right">
                 @if ($hlpConstants::FORM_VIEW !== $TYPE)
