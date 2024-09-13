@@ -17,7 +17,7 @@ class Authenticate extends Middleware
     {
         if (! $request->expectsJson()) {
             Notification::setWarning('Atenção!', 'Faça o login antes de acessar esse conteúdo!');
-            return route('site.login');
+            return route('admin.login');
         }
     }
 }
