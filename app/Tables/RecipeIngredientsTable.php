@@ -6,9 +6,8 @@ use App\Models\RecipeIngredient;
 use App\Models\Recipe;
 use Okipa\LaravelTable\Abstracts\AbstractTableConfiguration;
 use Okipa\LaravelTable\Column;
-use Okipa\LaravelTable\Formatters\DateFormatter;
 use Okipa\LaravelTable\RowActions\DestroyRowAction;
-use Okipa\LaravelTable\RowActions\EditRowAction;
+use App\Tables\RowActions\OpenModalRowAction;
 use Okipa\LaravelTable\Table;
 use Illuminate\Database\Eloquent\Builder;
 use App\Tables\HeadActions\OpenModalHeadAction;
@@ -34,6 +33,15 @@ class RecipeIngredientsTable extends AbstractTableConfiguration
                 $this->addHeadAction()->when($this->readOnly === false)
             )
             ->rowActions(fn(RecipeIngredient $recipeIngredient) => [
+                (new OpenModalRowAction(
+                    'Editar',
+                    route('admin.receitas.addIngredient', [
+                        'recipeCodedId' => $this->Recipe?->codedId,
+                        'recipeIngCodedId' => $recipeIngredient?->codedId,
+                        'json' => true
+                    ]),
+                    '<i class="fa-solid fas fa-pencil-alt fa-fw"></i>'
+                ))->when($this->readOnly === false),
                 (new DestroyRowAction())
                     ->feedbackMessage('O ingrediente foi removido com sucesso.')
                     ->when($this->readOnly === false),

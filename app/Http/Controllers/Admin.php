@@ -126,11 +126,14 @@ class Admin extends Controller
     public function addIngredient(Request $request)
     {
         $recipeCodedId = $request->input('recipeCodedId') ?: '';
+        $recipeIngCodedId = $request->input('recipeIngCodedId') ?: '';
         $json = $request->input('json') ?: 'false';
         $Recipe = Recipe::getModelByCodedId($recipeCodedId);
+        $RecipeIngredient = RecipeIngredient::getModelByCodedId($recipeIngCodedId);
 
         $view = view('admin-recipes.add-ingredient', [
             'RECIPE' => $Recipe,
+            'RECIPE_INGREDIENT' => $RecipeIngredient,
         ]);
 
         if (true === (bool) $json) {
@@ -156,6 +159,7 @@ class Admin extends Controller
         if (!$RecipeIngredient instanceof RecipeIngredient) {
             $RecipeIngredient = new RecipeIngredient();
         }
+        $isEdit = $RecipeIngredient->id > 0;
 
         $form = [
             'quantity' => $request->input('f-quantity') ?: null,
@@ -173,7 +177,8 @@ class Admin extends Controller
             $RecipeIngredient->save();
             $RecipeIngredient->refresh();
 
-            return $this->returnResponse(false, 'Ingrediente adicionado!', [], Response::HTTP_OK);
+            $msg = ($isEdit) ? 'Ingrediente atualizado!' : 'Ingrediente adicionado!';
+            return $this->returnResponse(false, $msg, [], Response::HTTP_OK);
         } catch (\Throwable $exception) {
             LocalLogger::log('Erro ao salvar ingrediente! Msg: ' . $exception->getMessage());
             return $this->returnResponse(true, 'Erro ao salvar ingrediente!', [], Response::HTTP_OK);

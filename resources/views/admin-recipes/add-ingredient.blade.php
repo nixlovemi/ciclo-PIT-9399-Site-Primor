@@ -43,7 +43,7 @@ $RECIPE_INGREDIENT = $RECIPE_INGREDIENT ?? null;
         <div class="form-actions">
             <div class="text-right">
                 <button type="submit" class="btn btn-primary">Salvar</button>
-                <a href="javascript:;" class="btn-modal-close btn btn-light">Fechar</a>
+                <a href="javascript:;" data-dismiss="modal" aria-label="Close" class="btn-modal-close btn btn-light">Fechar</a>
             </div>
         </div>
     </form>

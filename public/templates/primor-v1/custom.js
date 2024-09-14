@@ -87,11 +87,6 @@
         }
     });
 
-    $(document).on('click', 'div.modal-dialog .btn-modal-close', function(e) {
-        $(this).closest('div[id^=bootstrap-modal-]').remove();
-        $(document).find('div.modal-backdrop').remove();
-    });
-
     $(document).on('submit', 'form#recipeIngredient-add', function(e) {
         e.preventDefault();
         let FORM = $(this);
