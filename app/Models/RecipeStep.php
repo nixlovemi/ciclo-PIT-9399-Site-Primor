@@ -44,6 +44,8 @@ class RecipeStep extends Model
         'codedId',
     ];
 
+    public $timestamps = false;
+
     // relations
     public function recipe()
     {

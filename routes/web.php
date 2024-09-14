@@ -54,6 +54,8 @@ Route::middleware(['authWeb'])->group(function () {
             Route::post('/doEdit', 'App\Http\Controllers\Admin@receitasDoEdit')->name('admin.receitas.doEdit');
             Route::get('/addIngredient', 'App\Http\Controllers\Admin@addIngredient')->name('admin.receitas.addIngredient');
             Route::post('/doSaveIngredient', 'App\Http\Controllers\Admin@doSaveIngredient')->name('admin.receitas.doSaveIngredient');
+            Route::get('/addStep', 'App\Http\Controllers\Admin@addStep')->name('admin.receitas.addStep');
+            Route::post('/doSaveStep', 'App\Http\Controllers\Admin@doSaveStep')->name('admin.receitas.doSaveStep');
         });
     });
 });

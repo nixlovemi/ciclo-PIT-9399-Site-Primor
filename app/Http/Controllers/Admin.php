@@ -14,6 +14,7 @@ use App\Helpers\SysUtils;
 use App\Helpers\Constants;
 use Symfony\Component\HttpFoundation\Response;
 use App\Helpers\LocalLogger;
+use App\Models\RecipeStep;
 
 class Admin extends Controller
 {
@@ -152,7 +153,7 @@ class Admin extends Controller
 
     public function doSaveIngredient(Request $request)
     {
-        $requestData = $request->only(['rcid', 'icid', 'f-quantity', 'f-description']);
+        $requestData = $request->only(['rcid', 'icid']);
         $Recipe = Recipe::getModelByCodedId($requestData['rcid'] ?? '');
         $RecipeIngredient = RecipeIngredient::getModelByCodedId($requestData['icid'] ?? '');
 
@@ -182,6 +183,68 @@ class Admin extends Controller
         } catch (\Throwable $exception) {
             LocalLogger::log('Erro ao salvar ingrediente! Msg: ' . $exception->getMessage());
             return $this->returnResponse(true, 'Erro ao salvar ingrediente!', [], Response::HTTP_OK);
+        }
+    }
+
+    public function addStep(Request $request)
+    {
+        $recipeCodedId = $request->input('recipeCodedId') ?: '';
+        $recipeStepCodedId = $request->input('recipeStepCodedId') ?: '';
+        $json = $request->input('json') ?: 'false';
+        $Recipe = Recipe::getModelByCodedId($recipeCodedId);
+        $RecipeStep = RecipeStep::getModelByCodedId($recipeStepCodedId);
+
+        $view = view('admin-recipes.add-step', [
+            'RECIPE' => $Recipe,
+            'RECIPE_STEP' => $RecipeStep,
+        ]);
+
+        if (true === (bool) $json) {
+            return $this->returnResponse(
+                false,
+                'HTML retornado com sucesso!',
+                [
+                    'html' => $view->render()
+                ],
+                Response::HTTP_OK
+            );
+        }
+
+        return $view;
+    }
+
+    public function doSaveStep(Request $request)
+    {
+        $requestData = $request->only(['rcid', 'scid']);
+        $Recipe = Recipe::getModelByCodedId($requestData['rcid'] ?? '');
+        $RecipeStep = RecipeStep::getModelByCodedId($requestData['scid'] ?? '');
+
+        if (!$RecipeStep instanceof RecipeStep) {
+            $RecipeStep = new RecipeStep();
+        }
+        $isEdit = $RecipeStep->id > 0;
+
+        $form = [
+            'title' => $request->input('f-title') ?: null,
+            'description' => $request->input('f-description') ?: null,
+        ];
+        $RecipeStep->fill($form);
+        $RecipeStep->recipe_id = optional($Recipe)->id;
+
+        try {
+            $validationResult = $RecipeStep->validateModel();
+            if ($validationResult->isError()) {
+                return $this->returnResponse(true, ApiResponse::getValidateMessage($validationResult), [], Response::HTTP_OK);
+            }
+
+            $RecipeStep->save();
+            $RecipeStep->refresh();
+
+            $msg = ($isEdit) ? 'Modo de Preparo atualizado!' : 'Modo de Preparo adicionado!';
+            return $this->returnResponse(false, $msg, [], Response::HTTP_OK);
+        } catch (\Throwable $exception) {
+            LocalLogger::log('Erro ao salvar Modo de Preparo! Msg: ' . $exception->getMessage());
+            return $this->returnResponse(true, 'Erro ao salvar Modo de Preparo!', [], Response::HTTP_OK);
         }
     }
 }

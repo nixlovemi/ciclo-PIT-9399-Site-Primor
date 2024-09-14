@@ -17,7 +17,11 @@ $RECIPE_INGREDIENT = $RECIPE_INGREDIENT ?? null;
 
 @section('MODAL_HEADER')
     <h5 class="modal-title">
-        Adicionar Ingrediente
+        @if(null !== $RECIPE_INGREDIENT)
+            Editar Ingrediente
+        @else
+            Adicionar Ingrediente
+        @endif
     </h5>
 @endsection
 

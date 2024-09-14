@@ -87,10 +87,9 @@
         }
     });
 
-    $(document).on('submit', 'form#recipeIngredient-add', function(e) {
+    $(document).on('submit', 'form#recipeIngredient-add, form#recipeStep-add', function(e) {
         e.preventDefault();
         let FORM = $(this);
-        const SPAN_QUOTE_CARD = $('form#job-register span#job-partials-quoteCard');
     
         submitModalForm(FORM, function(retorno) {
             FORM.find('.btn-modal-close').click();
@@ -103,8 +102,6 @@
             setTimeout(function() {
                 refreshAllLivewireTables();
             }, 250);
-        }, null, {
-            'disabled': SPAN_QUOTE_CARD.data('disabled')
         });
     });
 
