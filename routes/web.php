@@ -50,6 +50,8 @@ Route::middleware(['authWeb'])->group(function () {
             Route::get('/view/{codedId}', 'App\Http\Controllers\Admin@receitasView')->name('admin.receitas.view');
             Route::get('/add', 'App\Http\Controllers\Admin@receitasAdd')->name('admin.receitas.add');
             Route::post('/doAdd', 'App\Http\Controllers\Admin@receitasDoAdd')->name('admin.receitas.doAdd');
+            Route::get('/edit/{codedId}', 'App\Http\Controllers\Admin@receitasEdit')->name('admin.receitas.edit');
+            Route::post('/doEdit', 'App\Http\Controllers\Admin@receitasDoEdit')->name('admin.receitas.doEdit');
             Route::get('/addIngredient', 'App\Http\Controllers\Admin@addIngredient')->name('admin.receitas.addIngredient');
         });
     });

@@ -93,13 +93,10 @@ View variables:
                 name="f-active"
                 {{ (!$READONLY) ?: 'disabled' }}
             >
-                @foreach (array_merge(
-                    ['' => 'Selecione ...'],
-                    [0 => 'Não', 1 => 'Sim']
-                ) as $active => $activeLabel)
+                @foreach (['1' => 'Sim', '0' => 'Não'] as $active => $activeLabel)
                     <option
                         value="{{ $active }}"
-                        {{ $active !== (old('f-active', 1) ?: $RECIPE?->active) ? '': 'selected' }}
+                        {{ $active != old('f-active', $RECIPE?->active ?? 1) ? '': 'selected' }}
                     >{{ $activeLabel }}</option>
                 @endforeach
             </select>
@@ -127,7 +124,7 @@ View variables:
             name="f-thumb-url"
             {{ (!$READONLY) ?: 'disabled' }}
         />
-        <small class="form-text text-muted">Selecione uma imagem na proporção 450x450</small>
+        <small class="form-text text-muted">Selecione uma imagem na proporção 400x400</small>
     </div>
 </div>
 

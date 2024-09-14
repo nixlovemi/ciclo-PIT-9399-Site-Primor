@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Image;
+use Illuminate\Support\Facades\File;
 
 class Recipe extends Model
 {
@@ -123,6 +124,11 @@ class Recipe extends Model
             if (!preg_match('/^[a-z][-a-z0-9]*$/', $value)) {
                 $fail('O slug da Receita não é válido');
             }
+
+            $Recipe = Recipe::where('slug', $value)->first();
+            if ($Recipe !== null && $Recipe->id !== $this->id) {
+                $fail('O slug da Receita já está em uso');
+            }
         }], 'Slug');
         $validation->addField('thumb_url', ['sometimes', 'required', 'string', 'min:3'], 'Thumb URL');
         $validation->addField('banner_url', ['sometimes', 'required', 'string', 'min:3'], 'Banner URL');
@@ -162,10 +168,22 @@ class Recipe extends Model
     // ===============
 
     // static functions
-    public static function fAdd(Request $request): ApiResponse
+    public static function fSave(Request $request): ApiResponse
     {
-        // validate images
-        if (false === $request->has(['f-thumb-url', 'f-banner-url'])) {
+        // get model for insert or update
+        $codedId = $request->input('f-cid');
+        if ($codedId !== '') {
+            $Recipe = Recipe::getModelByCodedId($codedId);
+            if ($Recipe === null) {
+                return new ApiResponse(true, 'Receita não encontrada para edição');
+            }
+        } else {
+            $Recipe = new Recipe();
+        }
+        $isEdit = $Recipe->id > 0;
+
+        // validate images - only for new recipes
+        if (!$isEdit && false === $request->has(['f-thumb-url', 'f-banner-url'])) {
             return new ApiResponse(true, 'As imagens da Receita são obrigatórias');
         }
 
@@ -177,60 +195,71 @@ class Recipe extends Model
             'slug' => $request->input('f-slug') ?: '',
             'time_str' => $request->input('f-time-str') ?: '',
             'portions_str' => $request->input('f-portions-str') ?: '',
-            'active' => $request->input('f-active') ?: '',
+            'active' => ($request->input('f-active') !== '') ? $request->input('f-active'): '',
         ];
-        $Recipe = new Recipe($form);
+
+        // fill model
+        $Recipe->fill($form);
         $validation = $Recipe->validateModel();
         if ($validation->isError()) {
             return $validation;
         }
 
         // all good, try to upload images
-        if (!$request->file('f-thumb-url')->isValid() || !$request->file('f-banner-url')->isValid()) {
+        if (!$isEdit && (!$request->file('f-thumb-url')?->isValid() || !$request->file('f-banner-url')?->isValid())) {
             return new ApiResponse(true, 'Ocorreu um problema no upload das imagens, tente novamente');
         }
 
         // thumb
-        $thumbUrl = self::saveRecipeImg(
-            $request->file('f-thumb-url'),
-            $Recipe->slug . '-thumb',
-            450,
-            450
-        );
-        if ($thumbUrl === null) {
-            return new ApiResponse(true, 'Ocorreu um problema no upload da Thumb, tente novamente');
+        if ($request->file('f-thumb-url')?->isValid()) {
+            $thumbUrl = self::saveRecipeImg(
+                $request->file('f-thumb-url'),
+                'receita-' . $Recipe->slug . '-thumb-' . date('YmdHis'),
+                400,
+                400
+            );
+            if ($thumbUrl === null) {
+                return new ApiResponse(true, 'Ocorreu um problema no upload da Thumb, tente novamente');
+            }
+            $Recipe->thumb_url = $thumbUrl;
         }
-        $Recipe->thumb_url = $thumbUrl;
 
         // banner
-        $bannerUrl = self::saveRecipeImg(
-            $request->file('f-banner-url'),
-            $Recipe->slug . '-banner',
-            1600,
-            524
-        );
-        if ($bannerUrl === null) {
-            return new ApiResponse(true, 'Ocorreu um problema no upload do Banner, tente novamente');
+        if ($request->file('f-banner-url')?->isValid()) {
+            $bannerUrl = self::saveRecipeImg(
+                $request->file('f-banner-url'),
+                'receita-' . $Recipe->slug . '-banner' . date('YmdHis'),
+                1600,
+                524
+            );
+            if ($bannerUrl === null) {
+                return new ApiResponse(true, 'Ocorreu um problema no upload do Banner, tente novamente');
+            }
+            $Recipe->banner_url = $bannerUrl;
         }
-        $Recipe->banner_url = $bannerUrl;
 
         // save model
         try {
             $Recipe->save();
             $Recipe->refresh();
         } catch (\Exception $e) {
-            return new ApiResponse(true, 'Ocorreu um problema ao salvar a Receita, tente novamente. Mensagem: ' . $e->getMessage());
+            File::delete(
+                public_path($Recipe->thumb_url),
+                public_path($Recipe->banner_url)
+            );
+            return new ApiResponse(true, 'Ocorreu um problema ao salvar a Receita, tente novamente.');
         }
 
         // all good, return success
-        return new ApiResponse(false, 'Receita cadastrada com sucesso!', [
+        $msg = $isEdit ? 'Receita atualizada com sucesso!' : 'Receita cadastrada com sucesso!';
+        return new ApiResponse(false, $msg, [
             'Recipe' => $Recipe
         ]);
     }
 
     public static function saveRecipeImg(UploadedFile $file, string $fileName, int $width, int $height): ?string
     {
-        $destinationPath = self::PICTURE_FOLDER;
+        $destinationPath = public_path(self::PICTURE_FOLDER);
         $newFileName = $fileName . '.' . $file->extension();
         $saveDestinationPath = $destinationPath . '/' . $newFileName;
 

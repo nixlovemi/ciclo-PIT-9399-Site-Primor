@@ -76,14 +76,49 @@ class Admin extends Controller
 
     public function receitasDoAdd(Request $request)
     {
-        $response = Recipe::fAdd($request);
+        $response = Recipe::fSave($request);
         if ($response->isError()) {
             return redirect()->route('admin.receitas.add')
                 ->withInput()
                 ->withErrors(['msg' => ApiResponse::getValidateMessage($response)]);
         }
 
-        return redirect()->route('admin.receitas.index')->with('msg', $response->getMessage());
+        $Receita = $response->getValueFromResponse('Recipe');
+        return redirect()
+            ->route('admin.receitas.edit', [
+                'codedId' => $Receita?->coded_id ?? ''
+            ])
+            ->withSuccess($response->getMessage());
+    }
+
+    public function receitasEdit(string $codedId)
+    {
+        /** @var ?Recipe $Client */
+        $Recipe = Recipe::getModelByCodedId($codedId);
+
+        return view('admin-recipes.register', [
+            'TITLE' => 'Editar Receita',
+            'TYPE' => Constants::FORM_EDIT,
+            'ACTION' => route('admin.receitas.doEdit'),
+            'RECIPE' => $Recipe,
+        ]);
+    }
+
+    public function receitasDoEdit(Request $request)
+    {
+        $response = Recipe::fSave($request);
+        if ($response->isError()) {
+            return redirect()->route('admin.receitas.edit', ['codedId' => $request->input('f-cid')])
+                ->withInput()
+                ->withErrors(['msg' => ApiResponse::getValidateMessage($response)]);
+        }
+
+        $Receita = $response->getValueFromResponse('Recipe');
+        return redirect()
+            ->route('admin.receitas.edit', [
+                'codedId' => $Receita?->coded_id ?? ''
+            ])
+            ->withSuccess($response->getMessage());
     }
 
     public function addIngredient(Request $request)

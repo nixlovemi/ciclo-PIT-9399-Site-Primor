@@ -39,6 +39,7 @@ $RECIPE = $RECIPE ?? null;
     @include('partials.alertReturnMessages')
 
     <form method="POST" action="{{ $ACTION }}" enctype="multipart/form-data">
+        <input type="hidden" name="f-cid" value="{{ $RECIPE?->codedId }}" />
         @csrf
 
         @php

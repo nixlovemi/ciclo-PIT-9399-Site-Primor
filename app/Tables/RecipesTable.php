@@ -6,6 +6,7 @@ use App\Models\Recipe;
 use Okipa\LaravelTable\Abstracts\AbstractTableConfiguration;
 use Okipa\LaravelTable\Column;
 use Okipa\LaravelTable\RowActions\ShowRowAction;
+use Okipa\LaravelTable\RowActions\EditRowAction;
 use Okipa\LaravelTable\Table;
 use App\Tables\RowActions\ActivateRowAction;
 use App\Tables\RowActions\DeactivateRowAction;
@@ -28,6 +29,8 @@ class RecipesTable extends AbstractTableConfiguration
                     ->feedbackMessage(false),
                 (new ShowRowAction(route('admin.receitas.view', ['codedId' => $Recipe->codedId])))
                     ->when(true),
+                (new EditRowAction(route('admin.receitas.edit', ['codedId' => $Recipe->codedId])))
+                    ->when($Recipe->active == 1),
             ])
             ->filters([
                 new ValueFilter(
