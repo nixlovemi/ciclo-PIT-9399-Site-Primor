@@ -13,7 +13,7 @@ return [
 
     /** Set all the displayed action icons. */
     'icon' => [
-        'filter' => '<i class="fa-solid fas fa-filter fa-2x"></i>',
+        'filter' => '<i style="font-size:1.3em; margin-right:5px;" class="fa-solid fas fa-filter"></i>',
         'rows_number' => '<i class="fa-solid fas fa-list-ol"></i>',
         'sort' => '<i class="fa-solid fas fa-sort fa-fw"></i>',
         'sort_asc' => '<i class="fa-solid fas fa-sort-up fa-fw"></i>',
@@ -44,5 +44,4 @@ return [
 
     /** The default number-of-rows-per-page-select options. */
     'number_of_rows_per_page_default_options' => [10, 25, 50, 75, 100],
-
 ];

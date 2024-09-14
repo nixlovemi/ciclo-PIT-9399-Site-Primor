@@ -29,7 +29,7 @@ class Admin extends Controller
     public function doLogin(Request $request)
     {
         $form = $request->only(['f-email', 'f-password']);
-        $response = User::fLogin($form['f-email'], $form['f-password']);
+        $response = User::fLogin($form['f-email'] ?? '', $form['f-password'] ?? '');
         if ($response->isError()) {
             return redirect()->route('admin.login')->withErrors(['msg' => $response->getMessage()]);
         }
