@@ -87,6 +87,32 @@
         }
     });
 
+    $(document).on('click', 'div.modal-dialog .btn-modal-close', function(e) {
+        $(this).closest('div[id^=bootstrap-modal-]').remove();
+        $(document).find('div.modal-backdrop').remove();
+    });
+
+    $(document).on('submit', 'form#recipeIngredient-add', function(e) {
+        e.preventDefault();
+        let FORM = $(this);
+        const SPAN_QUOTE_CARD = $('form#job-register span#job-partials-quoteCard');
+    
+        submitModalForm(FORM, function(retorno) {
+            FORM.find('.btn-modal-close').click();
+            showSuccessAlert({
+                'title': 'Sucesso!',
+                'text': retorno.message
+            });
+    
+            loadJqueryComponents();
+            setTimeout(function() {
+                refreshAllLivewireTables();
+            }, 250);
+        }, null, {
+            'disabled': SPAN_QUOTE_CARD.data('disabled')
+        });
+    });
+
     function showLoader()
     {
         $.LoadingOverlay("show");
@@ -156,6 +182,59 @@
         });
     }
 
+    function submitModalForm(oForm, successFnc, actionUrl=null, customData={}, skipDisableForm=false)
+    {
+        let FORM = oForm;
+        let CSRF = FORM.find('input[name="_token"]').val();
+
+        ajaxSetup(CSRF);
+        let formData = new FormData(FORM[0]);
+        for (const [key, value] of Object.entries(customData)) {
+            formData.append(key, value);
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: actionUrl ?? FORM.attr('action'),
+            data: formData,
+            dataType: 'json',
+            processData: false, // required for FormData with jQuery
+            contentType: false, // required for FormData with jQuery
+            beforeSend: function() {
+                showLoader();
+                if (!skipDisableForm) {
+                    disableFormWhileSaving(FORM);
+                }
+            },
+            success: function (retorno) {
+                if (retorno.error) {
+                    showErrorAlert({
+                        'title': 'Erro!',
+                        'text': retorno.message
+                    });
+                    return;
+                }
+
+                successFnc(retorno);
+            },
+            complete: function() {
+                closeLoader();
+                if (!skipDisableForm) {
+                    enableFormWhileSaving(FORM);
+                }
+            },
+            error: function (data) {
+                showErrorAlert({
+                    'title': 'Erro!',
+                    'text': 'Ocorreu um erro inesperado! Tente novamente.'
+                });
+                if (!skipDisableForm) {
+                    enableFormWhileSaving(FORM);
+                }
+            }
+        });
+    }
+
     function uuidv4() {
         return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
           (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
@@ -169,6 +248,16 @@
         }
     
         return data.responseJSON.message;
+    }
+
+    function enableFormWhileSaving(formObj)
+    {
+        formObj.find(":input").prop("disabled", false);
+    }
+
+    function disableFormWhileSaving(formObj)
+    {
+        formObj.find(":input").prop("disabled", true);
     }
 
     function loadJqueryComponents()
@@ -263,7 +352,7 @@
         showInfoAlert({
             icon: null,
             title: 'Informação',
-            html: feedbackMessage,
+            text: feedbackMessage,
         });
     });
 

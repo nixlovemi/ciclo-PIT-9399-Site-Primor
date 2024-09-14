@@ -31,13 +31,12 @@ class RecipeIngredientsTable extends AbstractTableConfiguration
                     ->orderBy('id', 'ASC');
             })
             ->headAction(
-                // TODO
-                (new OpenModalHeadAction(route('admin.receitas.addIngredient', ['recipeCodedId' => $this->Recipe->codedId, 'json' => true]), 'Adicionar', '<i class="fas fa-plus"></i>', [], ['btn', 'btn-primary', 'btn-sm']))
-                    ->when($this->readOnly === false)
+                $this->addHeadAction()->when($this->readOnly === false)
             )
             ->rowActions(fn(RecipeIngredient $recipeIngredient) => [
-                #new EditRowAction(route('recipeIngredient.edit', $recipeIngredient)),
-                (new DestroyRowAction())->when($this->readOnly === false),
+                (new DestroyRowAction())
+                    ->feedbackMessage('O ingrediente foi removido com sucesso.')
+                    ->when($this->readOnly === false),
             ]);
     }
 
@@ -52,5 +51,17 @@ class RecipeIngredientsTable extends AbstractTableConfiguration
     private function init(): void
     {
         $this->Recipe = Recipe::where('id', '=', $this->recipeID)->first();
+    }
+
+    private function addHeadAction(): OpenModalHeadAction
+    {
+        return new OpenModalHeadAction(
+            route('admin.receitas.addIngredient',
+            ['recipeCodedId' => $this->Recipe->codedId, 'json' => true]),
+            'Adicionar',
+            '<i class="fas fa-plus"></i>',
+            [],
+            ['btn', 'btn-primary', 'btn-sm']
+        );
     }
 }

@@ -53,6 +53,7 @@ Route::middleware(['authWeb'])->group(function () {
             Route::get('/edit/{codedId}', 'App\Http\Controllers\Admin@receitasEdit')->name('admin.receitas.edit');
             Route::post('/doEdit', 'App\Http\Controllers\Admin@receitasDoEdit')->name('admin.receitas.doEdit');
             Route::get('/addIngredient', 'App\Http\Controllers\Admin@addIngredient')->name('admin.receitas.addIngredient');
+            Route::post('/doSaveIngredient', 'App\Http\Controllers\Admin@doSaveIngredient')->name('admin.receitas.doSaveIngredient');
         });
     });
 });

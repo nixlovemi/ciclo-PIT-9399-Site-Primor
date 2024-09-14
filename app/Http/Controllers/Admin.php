@@ -9,9 +9,11 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Models\User;
 use App\Models\Recipe;
+use App\Models\RecipeIngredient;
 use App\Helpers\SysUtils;
 use App\Helpers\Constants;
 use Symfony\Component\HttpFoundation\Response;
+use App\Helpers\LocalLogger;
 
 class Admin extends Controller
 {
@@ -125,8 +127,11 @@ class Admin extends Controller
     {
         $recipeCodedId = $request->input('recipeCodedId') ?: '';
         $json = $request->input('json') ?: 'false';
+        $Recipe = Recipe::getModelByCodedId($recipeCodedId);
 
-        $view = view('admin-recipes.add-ingredient', []);
+        $view = view('admin-recipes.add-ingredient', [
+            'RECIPE' => $Recipe,
+        ]);
 
         if (true === (bool) $json) {
             return $this->returnResponse(
@@ -140,5 +145,38 @@ class Admin extends Controller
         }
 
         return $view;
+    }
+
+    public function doSaveIngredient(Request $request)
+    {
+        $requestData = $request->only(['rcid', 'icid', 'f-quantity', 'f-description']);
+        $Recipe = Recipe::getModelByCodedId($requestData['rcid'] ?? '');
+        $RecipeIngredient = RecipeIngredient::getModelByCodedId($requestData['icid'] ?? '');
+
+        if (!$RecipeIngredient instanceof RecipeIngredient) {
+            $RecipeIngredient = new RecipeIngredient();
+        }
+
+        $form = [
+            'quantity' => $request->input('f-quantity') ?: null,
+            'description' => $request->input('f-description') ?: null,
+        ];
+        $RecipeIngredient->fill($form);
+        $RecipeIngredient->recipe_id = optional($Recipe)->id;
+
+        try {
+            $validationResult = $RecipeIngredient->validateModel();
+            if ($validationResult->isError()) {
+                return $this->returnResponse(true, ApiResponse::getValidateMessage($validationResult), [], Response::HTTP_OK);
+            }
+
+            $RecipeIngredient->save();
+            $RecipeIngredient->refresh();
+
+            return $this->returnResponse(false, 'Ingrediente adicionado!', [], Response::HTTP_OK);
+        } catch (\Throwable $exception) {
+            LocalLogger::log('Erro ao salvar ingrediente! Msg: ' . $exception->getMessage());
+            return $this->returnResponse(true, 'Erro ao salvar ingrediente!', [], Response::HTTP_OK);
+        }
     }
 }

@@ -64,7 +64,7 @@ class RecipeIngredient extends Model
         $validation->addIdField(self::class, 'Ingredientes', 'id', 'ID');
         $validation->addIdField(Recipe::class, 'Receita', 'recipe_id', 'Receita', ['required']);
         $validation->addField('quantity', ['nullable', 'numeric', 'gt:0'], 'Quantidade');
-        $validation->addField('description', ['required', 'string', 'min:1', 'max:80'], 'Descrição');
+        $validation->addField('description', ['required', 'string', 'min:1', 'max:80'], 'Ingrediente');
 
         return $validation->validate();
     }
