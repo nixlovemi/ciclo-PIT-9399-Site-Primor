@@ -39,7 +39,7 @@ class Recipe extends Model
         self::DIFFICULTY_MUITO_DIFICIL,
     ];
 
-    private const PICTURE_FOLDER = '/templates/primor-v1/images';
+    private const PICTURE_FOLDER = DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR  . 'primor-v1' . DIRECTORY_SEPARATOR  . 'images';
 
     /**
      * The attributes that are mass assignable.
@@ -172,7 +172,7 @@ class Recipe extends Model
     {
         // get model for insert or update
         $codedId = $request->input('f-cid');
-        if ($codedId !== '') {
+        if (!empty($codedId)) {
             $Recipe = Recipe::getModelByCodedId($codedId);
             if ($Recipe === null) {
                 return new ApiResponse(true, 'Receita não encontrada para edição');
@@ -212,30 +212,28 @@ class Recipe extends Model
 
         // thumb
         if ($request->file('f-thumb-url')?->isValid()) {
-            $thumbUrl = self::saveRecipeImg(
-                $request->file('f-thumb-url'),
-                'receita-' . $Recipe->slug . '-thumb-' . date('YmdHis'),
-                400,
-                400
+            $filePath = self::saveRecipeImg(
+                $_FILES["f-thumb-url"],
+                'receita-' . $Recipe->slug . '-thumb' . date('YmdHis')
             );
-            if ($thumbUrl === null) {
+            if (null === $filePath) {
                 return new ApiResponse(true, 'Ocorreu um problema no upload da Thumb, tente novamente');
             }
-            $Recipe->thumb_url = $thumbUrl;
+
+            $Recipe->thumb_url = $filePath;
         }
 
         // banner
         if ($request->file('f-banner-url')?->isValid()) {
-            $bannerUrl = self::saveRecipeImg(
-                $request->file('f-banner-url'),
-                'receita-' . $Recipe->slug . '-banner' . date('YmdHis'),
-                1600,
-                524
+            $filePath = self::saveRecipeImg(
+                $_FILES["f-banner-url"],
+                'receita-' . $Recipe->slug . '-banner' . date('YmdHis')
             );
-            if ($bannerUrl === null) {
-                return new ApiResponse(true, 'Ocorreu um problema no upload do Banner, tente novamente');
+            if (null === $filePath) {
+                return new ApiResponse(true, 'Ocorreu um problema no upload da Thumb, tente novamente');
             }
-            $Recipe->banner_url = $bannerUrl;
+
+            $Recipe->banner_url = $filePath;
         }
 
         // save model
@@ -257,20 +255,17 @@ class Recipe extends Model
         ]);
     }
 
-    public static function saveRecipeImg(UploadedFile $file, string $fileName, int $width, int $height): ?string
+    public static function saveRecipeImg(array $file, string $newFileNameWoExt): ?string
     {
-        $destinationPath = public_path(self::PICTURE_FOLDER);
-        $newFileName = $fileName . '.' . $file->extension();
-        $saveDestinationPath = $destinationPath . '/' . $newFileName;
-
-        $retSave = Image::make($file->path())->resize($width, $height,
-            function ($constraint) {
-                $constraint->aspectRatio();
-            })
-            ->resizeCanvas($width, $height)
-            ->save($saveDestinationPath, 100);
-        if ($retSave) {
-            return self::PICTURE_FOLDER . '/' . $newFileName;
+        $originalFileName = basename($file["name"]);
+        $fileExtension = pathinfo($originalFileName, PATHINFO_EXTENSION);
+        $newFileName = $newFileNameWoExt . '.' . $fileExtension;
+        $ret = move_uploaded_file(
+            $file["tmp_name"],
+            public_path(self::PICTURE_FOLDER) . DIRECTORY_SEPARATOR . $newFileName
+        );
+        if ($ret) {
+            return self::PICTURE_FOLDER . DIRECTORY_SEPARATOR . $newFileName;
         }
 
         return null;

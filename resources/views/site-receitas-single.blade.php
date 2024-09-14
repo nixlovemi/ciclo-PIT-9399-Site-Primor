@@ -82,7 +82,7 @@ View variables:
                                     <br />
                                 @endif
 
-                                {{ $step->description ?? '' }}
+                                {{ ($step->description) ? nl2br($step->description): '' }}
                             </p>
                         @endforeach
                     </div>
