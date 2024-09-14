@@ -7,6 +7,9 @@ use App\Helpers\ModelValidation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use Image;
 
 class Recipe extends Model
 {
@@ -35,6 +38,8 @@ class Recipe extends Model
         self::DIFFICULTY_MUITO_DIFICIL,
     ];
 
+    private const PICTURE_FOLDER = '/templates/primor-v1/images';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -49,6 +54,7 @@ class Recipe extends Model
         'banner_url',
         'time_str',
         'portions_str',
+        'active',
     ];
 
     /**
@@ -113,15 +119,16 @@ class Recipe extends Model
             }
         }], 'Dificuldade');
         $validation->addField('title', ['required', 'string', 'min:2', 'max:120'], 'Título');
-        $validation->addField('slug', ['required', 'string', function ($attribute, $value, $fail) {
+        $validation->addField('slug', ['required', 'string', 'max:120', function ($attribute, $value, $fail) {
             if (!preg_match('/^[a-z][-a-z0-9]*$/', $value)) {
                 $fail('O slug da Receita não é válido');
             }
         }], 'Slug');
-        $validation->addField('thumb_url', ['required', 'string', 'min:3'], 'Thumb URL');
-        $validation->addField('banner_url', ['required', 'string', 'min:3'], 'Banner URL');
+        $validation->addField('thumb_url', ['sometimes', 'required', 'string', 'min:3'], 'Thumb URL');
+        $validation->addField('banner_url', ['sometimes', 'required', 'string', 'min:3'], 'Banner URL');
         $validation->addField('time_str', ['required', 'string', 'min:2', 'max:12'], 'Tempo');
         $validation->addField('portions_str', ['required', 'string', 'min:2', 'max:12'], 'Porções');
+        $validation->addField('active', ['required', 'filled', 'boolean'], 'Ativo');
 
         return $validation->validate();
     }
@@ -155,5 +162,89 @@ class Recipe extends Model
     // ===============
 
     // static functions
+    public static function fAdd(Request $request): ApiResponse
+    {
+        // validate images
+        if (false === $request->has(['f-thumb-url', 'f-banner-url'])) {
+            return new ApiResponse(true, 'As imagens da Receita são obrigatórias');
+        }
+
+        // form + validation
+        $form = [
+            'type' => $request->input('f-type') ?: '',
+            'difficulty' => $request->input('f-difficulty') ?: '',
+            'title' => $request->input('f-title') ?: '',
+            'slug' => $request->input('f-slug') ?: '',
+            'time_str' => $request->input('f-time-str') ?: '',
+            'portions_str' => $request->input('f-portions-str') ?: '',
+            'active' => $request->input('f-active') ?: '',
+        ];
+        $Recipe = new Recipe($form);
+        $validation = $Recipe->validateModel();
+        if ($validation->isError()) {
+            return $validation;
+        }
+
+        // all good, try to upload images
+        if (!$request->file('f-thumb-url')->isValid() || !$request->file('f-banner-url')->isValid()) {
+            return new ApiResponse(true, 'Ocorreu um problema no upload das imagens, tente novamente');
+        }
+
+        // thumb
+        $thumbUrl = self::saveRecipeImg(
+            $request->file('f-thumb-url'),
+            $Recipe->slug . '-thumb',
+            450,
+            450
+        );
+        if ($thumbUrl === null) {
+            return new ApiResponse(true, 'Ocorreu um problema no upload da Thumb, tente novamente');
+        }
+        $Recipe->thumb_url = $thumbUrl;
+
+        // banner
+        $bannerUrl = self::saveRecipeImg(
+            $request->file('f-banner-url'),
+            $Recipe->slug . '-banner',
+            1600,
+            524
+        );
+        if ($bannerUrl === null) {
+            return new ApiResponse(true, 'Ocorreu um problema no upload do Banner, tente novamente');
+        }
+        $Recipe->banner_url = $bannerUrl;
+
+        // save model
+        try {
+            $Recipe->save();
+            $Recipe->refresh();
+        } catch (\Exception $e) {
+            return new ApiResponse(true, 'Ocorreu um problema ao salvar a Receita, tente novamente. Mensagem: ' . $e->getMessage());
+        }
+
+        // all good, return success
+        return new ApiResponse(false, 'Receita cadastrada com sucesso!', [
+            'Recipe' => $Recipe
+        ]);
+    }
+
+    public static function saveRecipeImg(UploadedFile $file, string $fileName, int $width, int $height): ?string
+    {
+        $destinationPath = self::PICTURE_FOLDER;
+        $newFileName = $fileName . '.' . $file->extension();
+        $saveDestinationPath = $destinationPath . '/' . $newFileName;
+
+        $retSave = Image::make($file->path())->resize($width, $height,
+            function ($constraint) {
+                $constraint->aspectRatio();
+            })
+            ->resizeCanvas($width, $height)
+            ->save($saveDestinationPath, 100);
+        if ($retSave) {
+            return self::PICTURE_FOLDER . '/' . $newFileName;
+        }
+
+        return null;
+    }
     // ================
 }

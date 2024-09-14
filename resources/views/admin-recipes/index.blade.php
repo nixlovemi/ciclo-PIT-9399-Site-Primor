@@ -16,6 +16,11 @@ View variables:
 @section('DASH_BODY_CONTENT')
     <h2>Receitas</h2>
 
+    <a href="{{ route('admin.receitas.add') }}" class="btn btn-primary btn-sm">
+        <i class="fas fa-plus"></i>
+        Adicionar
+    </a>
+
     <div class="row">
         <div class="col">
             <livewire:table

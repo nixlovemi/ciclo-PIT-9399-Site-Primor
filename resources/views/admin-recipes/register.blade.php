@@ -53,34 +53,42 @@ $RECIPE = $RECIPE ?? null;
             :content="$accordionOne"
         />
 
-        @php
-        $accordionTwo = view('admin-recipes.partials.ingredients', [
-            'RECIPE' => $RECIPE,
-            'READONLY' => $TYPE === $hlpConstants::FORM_VIEW
-        ])->render();
-        @endphp
-        <x-accordeon 
-            id="accordion-two"
-            title="Ingredientes"
-            :content="$accordionTwo"
-        />
+        @if ($TYPE !== $hlpConstants::FORM_ADD)
+            @php
+            $accordionTwo = view('admin-recipes.partials.ingredients', [
+                'RECIPE' => $RECIPE,
+                'READONLY' => $TYPE === $hlpConstants::FORM_VIEW
+            ])->render();
+            @endphp
+            <x-accordeon 
+                id="accordion-two"
+                title="Ingredientes"
+                :content="$accordionTwo"
+            />
 
-        @php
-        $accordionThree = view('admin-recipes.partials.steps', [
-            'RECIPE' => $RECIPE,
-            'READONLY' => $TYPE === $hlpConstants::FORM_VIEW
-        ])->render();
-        @endphp
-        <x-accordeon 
-            id="accordion-three"
-            title="Modo de Preparo"
-            :content="$accordionThree"
-        />
+            @php
+            $accordionThree = view('admin-recipes.partials.steps', [
+                'RECIPE' => $RECIPE,
+                'READONLY' => $TYPE === $hlpConstants::FORM_VIEW
+            ])->render();
+            @endphp
+            <x-accordeon 
+                id="accordion-three"
+                title="Modo de Preparo"
+                :content="$accordionThree"
+            />
+        @endif
 
         <div class="form-actions pb-4">
             <div class="text-right">
                 @if ($hlpConstants::FORM_VIEW !== $TYPE)
-                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="submit" class="btn btn-primary">
+                        @if ($TYPE === $hlpConstants::FORM_ADD)
+                            Próxima Etapa
+                        @else
+                            Salvar
+                        @endif
+                    </button>
                 @endif
                 
                 <a href="{{ route('admin.receitas.index') }}" class="btn btn-outline-dark">Voltar para lista</a>

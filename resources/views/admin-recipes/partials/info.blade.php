@@ -13,7 +13,7 @@ View variables:
     <div class="col-12">
         <div class="form-group">
             <label>Nome *</label>
-            <input {{ (!$READONLY) ?: 'disabled' }} value="{{ old('f-title') ?: $RECIPE?->title }}" name="f-title" type="text" class="form-control input-default" placeholder="Nome" />
+            <input maxlength="120" {{ (!$READONLY) ?: 'disabled' }} value="{{ old('f-title') ?: $RECIPE?->title }}" name="f-title" type="text" class="form-control input-default" placeholder="Nome" />
         </div>
     </div>
 </div>
@@ -64,7 +64,7 @@ View variables:
     <div class="col-12 col-md-6">
         <div class="form-group">
             <label>Slug *</label>
-            <input {{ (!$READONLY) ?: 'disabled' }} value="{{ old('f-slug') ?: $RECIPE?->slug }}" name="f-slug" type="text" class="form-control input-default" placeholder="Slug" />
+            <input maxlength="120" {{ (!$READONLY) ?: 'disabled' }} value="{{ old('f-slug') ?: $RECIPE?->slug }}" name="f-slug" type="text" class="form-control input-default" placeholder="Slug" />
             <small class="form-text text-muted">Slug é a parte da URL que identifica a página em questão. Ex: primor.com.br/receitas/<b>jantar-arroz-com-feijao</b></small>
         </div>
     </div>
@@ -74,14 +74,14 @@ View variables:
     <div class="col-12 col-md-4">
         <div class="form-group">
             <label>Tempo *</label>
-            <input {{ (!$READONLY) ?: 'disabled' }} value="{{ old('f-time-str') ?: $RECIPE?->time_str }}" name="f-time-str" type="text" class="form-control input-default" placeholder="Tempo" />
+            <input maxlength="12" {{ (!$READONLY) ?: 'disabled' }} value="{{ old('f-time-str') ?: $RECIPE?->time_str }}" name="f-time-str" type="text" class="form-control input-default" placeholder="Tempo" />
         </div>
     </div>
 
     <div class="col-12 col-md-4">
         <div class="form-group">
             <label>Porções *</label>
-            <input {{ (!$READONLY) ?: 'disabled' }} value="{{ old('f-portions-str') ?: $RECIPE?->portions_str }}" name="f-portions-str" type="text" class="form-control input-default" placeholder="Porções" />
+            <input maxlength="12" {{ (!$READONLY) ?: 'disabled' }} value="{{ old('f-portions-str') ?: $RECIPE?->portions_str }}" name="f-portions-str" type="text" class="form-control input-default" placeholder="Porções" />
         </div>
     </div>
 
@@ -99,7 +99,7 @@ View variables:
                 ) as $active => $activeLabel)
                     <option
                         value="{{ $active }}"
-                        {{ $active !== (old('f-active') ?: $RECIPE?->active) ? '': 'selected' }}
+                        {{ $active !== (old('f-active', 1) ?: $RECIPE?->active) ? '': 'selected' }}
                     >{{ $activeLabel }}</option>
                 @endforeach
             </select>
@@ -111,9 +111,13 @@ View variables:
     <div class="col-12">
         <label>Thumb *</label>
         <br />
-        <a href="{{ $RECIPE->getThumbFullUrl() }}" target="_blank">
-            <img style="position:relative; top:6px; width:45px;" src="{{ $RECIPE->getThumbFullUrl() }}" alt="recipe-thumb" class="" width="50" />
-        </a>
+        @if (empty($RECIPE?->getThumbFullUrl()))
+            <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAMAAAANxBKoAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAADNQTFRF4+Pj4eHh3Nzcx8fH39/f09PTysrK0dHR1tbW1dXV3d3dycnJzMzM0NDQ2tra2NjYzc3N5aw23AAAALlJREFUeJzt010PgiAYBWAPA7/o4///y1ZioQwSrRvf16Ku2sIbGD6cHXGg+ORB1ll/pxHWkxdaAG6eKO/XnGoo2DjWoxgTmjRDDG/hbFJvIW0BXRhSmz2TGL73oWeCGD2FY9Rn7g2zNoXXA/nCTS1Dw5Te0pWrrUvVx27XSXp8vEYrLqpkwxldyT5AlNckfTDqFrdw4URDy1Mc2HCimyH4pY9J0PrxXyCWXW96P+8AvQs/fouz/gt9B/wPOS6V11N8AAAAAElFTkSuQmCC" alt="recipe-thumb" class="recipe-images-adm" />
+        @else
+            <a href="{{ $RECIPE?->getThumbFullUrl() }}" target="_blank">
+                <img src="{{ $RECIPE?->getThumbFullUrl() }}" alt="recipe-thumb" class="recipe-images-adm" />
+            </a>
+        @endif
         
         <input
             style="width:calc(100% - 65px); display:inline-block; margin-left:8px;"
@@ -131,9 +135,13 @@ View variables:
     <div class="col-12">
         <label>Banner *</label>
         <br />
-        <a href="{{ $RECIPE->getBannerFullUrl() }}" target="_blank">
-            <img style="position:relative; top:6px; width:45px;" src="{{ $RECIPE->getBannerFullUrl() }}" alt="recipe-banner" class="" width="50" />
-        </a>
+        @if (empty($RECIPE?->getThumbFullUrl()))
+            <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAMAAAANxBKoAAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAADNQTFRF4+Pj4eHh3Nzcx8fH39/f09PTysrK0dHR1tbW1dXV3d3dycnJzMzM0NDQ2tra2NjYzc3N5aw23AAAALlJREFUeJzt010PgiAYBWAPA7/o4///y1ZioQwSrRvf16Ku2sIbGD6cHXGg+ORB1ll/pxHWkxdaAG6eKO/XnGoo2DjWoxgTmjRDDG/hbFJvIW0BXRhSmz2TGL73oWeCGD2FY9Rn7g2zNoXXA/nCTS1Dw5Te0pWrrUvVx27XSXp8vEYrLqpkwxldyT5AlNckfTDqFrdw4URDy1Mc2HCimyH4pY9J0PrxXyCWXW96P+8AvQs/fouz/gt9B/wPOS6V11N8AAAAAElFTkSuQmCC" alt="recipe-thumb" class="recipe-images-adm" />
+        @else
+            <a href="{{ $RECIPE?->getBannerFullUrl() }}" target="_blank">
+                <img src="{{ $RECIPE?->getBannerFullUrl() }}" alt="recipe-banner" class="recipe-images-adm" />
+            </a>
+        @endif
         
         <input
             style="width:calc(100% - 65px); display:inline-block; margin-left:8px;"

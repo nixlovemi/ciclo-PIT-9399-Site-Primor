@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -9,6 +10,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Models\User;
 use App\Models\Recipe;
 use App\Helpers\SysUtils;
+use App\Helpers\Constants;
 use Symfony\Component\HttpFoundation\Response;
 
 class Admin extends Controller
@@ -56,10 +58,32 @@ class Admin extends Controller
 
         return view('admin-recipes.register', [
             'TITLE' => 'Visualizar Receita',
-            'TYPE' => 'view',
+            'TYPE' => Constants::FORM_VIEW,
             'ACTION' => '',
             'RECIPE' => $Recipe,
         ]);
+    }
+
+    public function receitasAdd()
+    {
+        return view('admin-recipes.register', [
+            'TITLE' => 'Adicionar Receita',
+            'TYPE' => Constants::FORM_ADD,
+            'ACTION' => route('admin.receitas.doAdd'),
+            'RECIPE' => null,
+        ]);
+    }
+
+    public function receitasDoAdd(Request $request)
+    {
+        $response = Recipe::fAdd($request);
+        if ($response->isError()) {
+            return redirect()->route('admin.receitas.add')
+                ->withInput()
+                ->withErrors(['msg' => ApiResponse::getValidateMessage($response)]);
+        }
+
+        return redirect()->route('admin.receitas.index')->with('msg', $response->getMessage());
     }
 
     public function addIngredient(Request $request)

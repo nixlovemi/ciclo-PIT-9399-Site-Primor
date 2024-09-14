@@ -641,6 +641,11 @@ footer #footer-logo {
     width: 56%;
     vertical-align: middle;
 }
+.recipe-images-adm {
+    position:relative;
+    top:6px;
+    width:45px;
+}
 
 @media screen and (min-width: 1201px) {
     footer #footer-bg-wave {
