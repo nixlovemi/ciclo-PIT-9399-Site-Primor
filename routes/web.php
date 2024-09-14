@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // ==============================================
 Route::group([], function(){
     Route::fallback(function () {
-        session()->flush();
+        // session()->flush(); # it's breaking the session when some JS/CSS are not found
         return view('404');
     })->name('site.404');
 });
@@ -38,6 +38,27 @@ Route::get('/nossa-historia', 'App\Http\Controllers\Site@nossaHistoria')->name('
 Route::get('/fale-conosco', 'App\Http\Controllers\Site@faleConosco')->name('site.faleConosco');
 Route::post('/do-fale-conosco', 'App\Http\Controllers\Site@doFaleConosco')->name('site.doFaleConosco');
 Route::get('/politica-de-privacidade', 'App\Http\Controllers\Site@politicaDePrivacidade')->name('site.politicaDePrivacidade');
+
+Route::get('/admin', 'App\Http\Controllers\Admin@login')->name('admin.login');
+Route::post('/doLogin', 'App\Http\Controllers\Admin@doLogin')->name('admin.doLogin');
+Route::middleware(['authWeb'])->group(function () {
+    Route::prefix('admin')->group(function () {
+        Route::get('/dashboard', 'App\Http\Controllers\Admin@dashboard')->name('admin.dashboard');
+
+        Route::prefix('receitas')->group(function () {
+            Route::get('/', 'App\Http\Controllers\Admin@receitasIndex')->name('admin.receitas.index');
+            Route::get('/view/{codedId}', 'App\Http\Controllers\Admin@receitasView')->name('admin.receitas.view');
+            Route::get('/add', 'App\Http\Controllers\Admin@receitasAdd')->name('admin.receitas.add');
+            Route::post('/doAdd', 'App\Http\Controllers\Admin@receitasDoAdd')->name('admin.receitas.doAdd');
+            Route::get('/edit/{codedId}', 'App\Http\Controllers\Admin@receitasEdit')->name('admin.receitas.edit');
+            Route::post('/doEdit', 'App\Http\Controllers\Admin@receitasDoEdit')->name('admin.receitas.doEdit');
+            Route::get('/addIngredient', 'App\Http\Controllers\Admin@addIngredient')->name('admin.receitas.addIngredient');
+            Route::post('/doSaveIngredient', 'App\Http\Controllers\Admin@doSaveIngredient')->name('admin.receitas.doSaveIngredient');
+            Route::get('/addStep', 'App\Http\Controllers\Admin@addStep')->name('admin.receitas.addStep');
+            Route::post('/doSaveStep', 'App\Http\Controllers\Admin@doSaveStep')->name('admin.receitas.doSaveStep');
+        });
+    });
+});
 
 Route::get('/test/addNewRecipe', 'App\Http\Controllers\Test@addNewRecipe')->name('site.testAddNewRecipe');
 Route::get('/test/fix', 'App\Http\Controllers\Test@fix')->name('site.testFix');

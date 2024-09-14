@@ -4,15 +4,13 @@ namespace App\Http\Middleware;
 
 use Closure;
 use App\View\Components\Notification;
-use Illuminate\Support\Facades\Route;
-use App\Helpers\Permissions;
+use App\Helpers\SysUtils;
 
 class AuthenticateWeb
 {
     public function handle($request, Closure $next)
     {
-        $routeName = Route::currentRouteName();
-        $canAccess = Permissions::checkPermission($routeName);
+        $canAccess = (SysUtils::getLoggedInUser() !== null);
         if (false === $canAccess) {
             return $this->redirectNoPermission();
         }
@@ -23,7 +21,6 @@ class AuthenticateWeb
 
     private function redirectNoPermission()
     {
-        Notification::setWarning('Atenção!', 'Você não tem acesso a esse conteúdo! Faça o login novamente.');
-        return redirect()->route('site.login');
+        return redirect()->route('admin.login')->withErrors(['msg' => 'Você não tem acesso a esse conteúdo! Faça o login novamente.']);
     }
 }

@@ -625,6 +625,28 @@ footer #footer-logo {
     max-width: 16%;
 }
 
+.login-form-bg,
+[data-nav-headerbg="color_1"] .nav-header {
+    background-color: #e60525;
+}
+.content-body {
+    background-color: #f3f3f9;
+}
+.nav-header .brand-logo a {
+    padding: 0.1rem;
+    text-align: center;
+    height: 5rem;
+}
+.nav-header .brand-logo a img {
+    width: 56%;
+    vertical-align: middle;
+}
+.recipe-images-adm {
+    position:relative;
+    top:6px;
+    width:45px;
+}
+
 @media screen and (min-width: 1201px) {
     footer #footer-bg-wave {
         width: 100%;
@@ -755,6 +777,9 @@ footer #footer-logo {
     }
     span.title.stash {
         font-size: 1.7em;
+    }
+    .nav-header .brand-logo a img {
+        margin-top: 30px;
     }
 }
 

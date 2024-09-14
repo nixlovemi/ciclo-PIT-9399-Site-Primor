@@ -1,4 +1,4 @@
-@extends('layout.core', [
+@extends('layout.site-core', [
     'PAGE_TITLE' => 'Oops, não encontrado',
 ])
 
@@ -30,7 +30,7 @@
                     </p>
                     <div class="col-lg-12 text-center">
                         <button
-                            onclick="javascript:document.location.href='{{ route('site.login') }}'"
+                            onclick="javascript:document.location.href='{{ route('admin.login') }}'"
                             type="button"
                             class="btn w-100 btn-ciclo-yellow"
                         >
