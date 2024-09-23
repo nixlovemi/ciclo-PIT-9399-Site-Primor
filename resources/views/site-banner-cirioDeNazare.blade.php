@@ -23,12 +23,20 @@ View variables:
                         </h2>
                     </div>
                     <div class="col-12 col-md-6 text-clear">
-                        <p>Em Belém do Pará, cultura e culinária sentam
-                        à mesa e fazem uma festança!</p>
-
-                        <p>O Círio de Nazaré, é um evento tradicional que reúne milhares de pessoas numa celebração de fé, sabores e tradições.</p>
-
-                        <p>E onde tem gastronomia, tem Primor fazendo essas receitas darem certo.</p>
+                        <p>A receita do Círio tá pronta: fé, tradição e Primor.</p>
+                        <p>
+                            Em 2024, seremos patrocinadores oficiais do Círio de Nazaré, em Belém-PA.
+                            Essa é uma celebração que movimenta não só o estado, mas também, o Brasil todo.
+                        </p>
+                        <p>
+                            A cidade fica repleta de visitantes, todos movidos por uma tradição que tem tudo a ver com a Primor.
+                            É pensando nisso que nossos trabalhos começaram desde já: Preparamos uma embalagem especial para o Círio, bonita de dar gosto.
+                            Mas não para por aí, em breve tem muito mais do sabor que conta para você.
+                            <strong>
+                                Para acompanhar tudo é fácil demais, basta nos seguir na sua rede social favorita.
+                                Estamos no Instagram, Facebook, Youtube e Tik Tok.
+                            </strong>
+                        </p>
                     </div>
                 </div>
 

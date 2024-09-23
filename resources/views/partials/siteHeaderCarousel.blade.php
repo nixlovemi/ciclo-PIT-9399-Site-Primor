@@ -49,17 +49,20 @@ $items[] = [
 $items[] = [
     'title' =>
         <<<HTML
-            <span class="black">Círio de</span>
+            <span class="black">o</span> <span class="stash" style="color:#FFF; margin-left:4px;">sabor</span>
             <br />
-            <span class="stash">Nazaré</span>
+            <span class="black">que conta</span>
+            <br />
+            <span class="black">no Círio</span>
         HTML,
     'description' =>
         <<<HTML
-            Já virou tradição.<br />
-            Todo ano tem Primor no Círio de Nazaré.
+            A receita do<br />
+            Círio tá pronta:<br />
+            <strong>fé, tradição e Primor</strong>
         HTML,
     'descriptionShort' => null,
-    'image' => 'templates/primor-v1/images/header-banner-03.jpg',
+    'image' => 'templates/primor-v1/images/header-banner-06.jpg',
     'url' => route('site.banner.cirioDeNazare'),
 ];
 
